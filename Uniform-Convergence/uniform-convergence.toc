@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Risk Decomposition}{3}{0}{1}
+\beamer@sectionintoc {2}{Approximation Error}{5}{0}{2}
+\beamer@sectionintoc {3}{Estimation Error}{8}{0}{3}
+\beamer@sectionintoc {4}{Uniform Convergence}{10}{0}{4}
+\beamer@sectionintoc {5}{Linear Hypothesis Space}{13}{0}{5}
+\beamer@sectionintoc {6}{Finite Hypothesis Space}{23}{0}{6}
+\beamer@sectionintoc {7}{Beyond Finite Hypothesis Space}{28}{0}{7}

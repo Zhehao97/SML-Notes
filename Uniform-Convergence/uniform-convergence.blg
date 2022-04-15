@@ -1,0 +1,9 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'uniform-convergence.blg'
+[22] biber-MSWIN32:313> INFO - === 
+[40] Biber.pm:371> INFO - Reading 'uniform-convergence.bcf'
+[112] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
+[117] Utils.pm:193> WARN - The file 'uniform-convergence.bcf' does not contain any citations!
+[122] bbl.pm:617> INFO - Writing 'uniform-convergence.bbl' with encoding 'UTF-8'
+[122] bbl.pm:720> INFO - Output to uniform-convergence.bbl
+[122] Biber.pm:110> INFO - WARNINGS: 1

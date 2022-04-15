@@ -1,0 +1,266 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{bach2021learning}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=93da2819ab01d8a5e7bae39ce6f17c1f}{%
+           family={Bach},
+           familyi={B\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Preparation}%
+      }
+      \strng{namehash}{93da2819ab01d8a5e7bae39ce6f17c1f}
+      \strng{fullhash}{93da2819ab01d8a5e7bae39ce6f17c1f}
+      \strng{bibnamehash}{93da2819ab01d8a5e7bae39ce6f17c1f}
+      \strng{authorbibnamehash}{93da2819ab01d8a5e7bae39ce6f17c1f}
+      \strng{authornamehash}{93da2819ab01d8a5e7bae39ce6f17c1f}
+      \strng{authorfullhash}{93da2819ab01d8a5e7bae39ce6f17c1f}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning Theory from First Principles}
+      \field{year}{2021}
+    \endentry
+    \entry{bartlett2006convexity}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=51fc11adc82c5171e6b03bb04073d8e6}{%
+           family={Bartlett},
+           familyi={B\bibinitperiod},
+           given={Peter\bibnamedelima L},
+           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a36116840c7ee55901618c95fd08a58}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Michael\bibnamedelima I},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2baf42315daa7e7288615fe2776de8e6}{%
+           family={McAuliffe},
+           familyi={M\bibinitperiod},
+           given={Jon\bibnamedelima D},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{95c97db356917ba77fd29dd6383d6394}
+      \strng{fullhash}{95c97db356917ba77fd29dd6383d6394}
+      \strng{bibnamehash}{95c97db356917ba77fd29dd6383d6394}
+      \strng{authorbibnamehash}{95c97db356917ba77fd29dd6383d6394}
+      \strng{authornamehash}{95c97db356917ba77fd29dd6383d6394}
+      \strng{authorfullhash}{95c97db356917ba77fd29dd6383d6394}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{number}{473}
+      \field{title}{Convexity, classification, and risk bounds}
+      \field{volume}{101}
+      \field{year}{2006}
+      \field{pages}{138\bibrangedash 156}
+      \range{pages}{19}
+    \endentry
+    \entry{mohri2018foundations}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8298c87c77cd46a5b2b7e799ba087945}{%
+           family={Mohri},
+           familyi={M\bibinitperiod},
+           given={Mehryar},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7aef26bccf2dba53f4b3c49adfb2983e}{%
+           family={Rostamizadeh},
+           familyi={R\bibinitperiod},
+           given={Afshin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=70e0fe957473b80f1b1b5dcb8e99d31e}{%
+           family={Talwalkar},
+           familyi={T\bibinitperiod},
+           given={Ameet},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MIT press}%
+      }
+      \strng{namehash}{79f7790e383ae556514d27a942686512}
+      \strng{fullhash}{79f7790e383ae556514d27a942686512}
+      \strng{bibnamehash}{79f7790e383ae556514d27a942686512}
+      \strng{authorbibnamehash}{79f7790e383ae556514d27a942686512}
+      \strng{authornamehash}{79f7790e383ae556514d27a942686512}
+      \strng{authorfullhash}{79f7790e383ae556514d27a942686512}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Foundations of machine learning}
+      \field{year}{2018}
+    \endentry
+    \entry{shalev2014understanding}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a6c5827676b0a2058e5b904c3dd7f878}{%
+           family={Shalev-Shwartz},
+           familyi={S\bibinithyphendelim S\bibinitperiod},
+           given={Shai},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=509866d90ae18bfca30c6f4cdc846529}{%
+           family={Ben-David},
+           familyi={B\bibinithyphendelim D\bibinitperiod},
+           given={Shai},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge university press}%
+      }
+      \strng{namehash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{fullhash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{bibnamehash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{authorbibnamehash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{authornamehash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{authorfullhash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding machine learning: From theory to algorithms}
+      \field{year}{2014}
+    \endentry
+    \entry{sridharan2008fast}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=816698cda686443bc07bd46a33cf20aa}{%
+           family={Sridharan},
+           familyi={S\bibinitperiod},
+           given={Karthik},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a6c5827676b0a2058e5b904c3dd7f878}{%
+           family={Shalev-Shwartz},
+           familyi={S\bibinithyphendelim S\bibinitperiod},
+           given={Shai},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a4fc057d8331655775a21a8994f3339}{%
+           family={Srebro},
+           familyi={S\bibinitperiod},
+           given={Nathan},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{214be7e0e239b8bbf9a1526be52d1c77}
+      \strng{fullhash}{214be7e0e239b8bbf9a1526be52d1c77}
+      \strng{bibnamehash}{214be7e0e239b8bbf9a1526be52d1c77}
+      \strng{authorbibnamehash}{214be7e0e239b8bbf9a1526be52d1c77}
+      \strng{authornamehash}{214be7e0e239b8bbf9a1526be52d1c77}
+      \strng{authorfullhash}{214be7e0e239b8bbf9a1526be52d1c77}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in neural information processing systems}
+      \field{title}{Fast rates for regularized objectives}
+      \field{volume}{21}
+      \field{year}{2008}
+    \endentry
+    \entry{tropp2012user}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=74341ae37266ceb0c254df25bcf296cd}{%
+           family={Tropp},
+           familyi={T\bibinitperiod},
+           given={Joel\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{74341ae37266ceb0c254df25bcf296cd}
+      \strng{fullhash}{74341ae37266ceb0c254df25bcf296cd}
+      \strng{bibnamehash}{74341ae37266ceb0c254df25bcf296cd}
+      \strng{authorbibnamehash}{74341ae37266ceb0c254df25bcf296cd}
+      \strng{authornamehash}{74341ae37266ceb0c254df25bcf296cd}
+      \strng{authorfullhash}{74341ae37266ceb0c254df25bcf296cd}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Foundations of computational mathematics}
+      \field{number}{4}
+      \field{title}{User-friendly tail bounds for sums of random matrices}
+      \field{volume}{12}
+      \field{year}{2012}
+      \field{pages}{389\bibrangedash 434}
+      \range{pages}{46}
+    \endentry
+    \entry{wainwright2019high}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7eb03239453694f59946ad6008e9f0ab}{%
+           family={Wainwright},
+           familyi={W\bibinitperiod},
+           given={Martin\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{7eb03239453694f59946ad6008e9f0ab}
+      \strng{fullhash}{7eb03239453694f59946ad6008e9f0ab}
+      \strng{bibnamehash}{7eb03239453694f59946ad6008e9f0ab}
+      \strng{authorbibnamehash}{7eb03239453694f59946ad6008e9f0ab}
+      \strng{authornamehash}{7eb03239453694f59946ad6008e9f0ab}
+      \strng{authorfullhash}{7eb03239453694f59946ad6008e9f0ab}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{High-dimensional statistics: A non-asymptotic viewpoint}
+      \field{volume}{48}
+      \field{year}{2019}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,11 @@
+\beamer@slide {sec:risk_decomposition}{3}
+\beamer@slide {sec:approximation_error}{5}
+\beamer@slide {sec:estimation_error}{8}
+\beamer@slide {eq:estimation-error}{8}
+\beamer@slide {sec:uniform_convergence}{10}
+\beamer@slide {sec:linear_hypothesis_space}{13}
+\beamer@slide {thm:matrix-Hoeffding}{16}
+\beamer@slide {sec:finite_hypothesis_space}{23}
+\beamer@slide {thm:expectation-of-maximum}{24}
+\beamer@slide {eq:finite-expectation-bounds}{24}
+\beamer@slide {sec:beyond_finite_hypothesis_space}{28}
