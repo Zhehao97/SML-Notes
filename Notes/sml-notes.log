@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.4.9)  15 APR 2022 12:50
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.4.9)  4 MAY 2022 18:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,19 +794,23 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 54
 
 (c:/texlive/2022/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) (./sml-notes.toc
-[1
+)
+
+LaTeX Warning: No \author given.
+
+(./sml-notes.toc [1
 
 ] [2])
 \tf@toc=\write5
 \openout5 = `sml-notes.toc'.
 
+ [3]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 87.
 
- (c:/texlive/2022/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+
+(c:/texlive/2022/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [3] [4]
-[5]
+) [4] [5]
 Overfull \hbox (23.96799pt too wide) detected at line 202
 [][]
  []
@@ -816,11 +820,7 @@ File: Pics/knn.png Graphic file (type bmp)
 <Pics/knn.png>
 File: Pics/knn_curve.png Graphic file (type bmp)
 <Pics/knn_curve.png>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8] [9]
+ [8] [9]
 File: Pics/erm.png Graphic file (type bmp)
 <Pics/erm.png>
  [10] [11] [12] [13]
@@ -833,7 +833,7 @@ File: Pics/separating_hyperplane.png Graphic file (type bmp)
 File: Pics/classification_calibrated.png Graphic file (type bmp)
 <Pics/classification_calibrated.png>
  [18]
-Overfull \hbox (60.19327pt too wide) detected at line 813
+Overfull \hbox (60.19327pt too wide) detected at line 795
 [][]
  []
 
@@ -843,8 +843,8 @@ File: Pics/excess-risk-hinge-loss.png Graphic file (type bmp)
  [20] [21]
 File: Pics/approximation_error.png Graphic file (type bmp)
 <Pics/approximation_error.png>
- [22] [23]
-Overfull \hbox (34.22537pt too wide) in paragraph at lines 980--983
+ [22]
+Overfull \hbox (34.22537pt too wide) in paragraph at lines 958--961
 \TU/lmr/m/n/10 where the random variables $\OML/cmm/m/it/10 z[] \OT1/cmr/m/n/10
  = (\OML/cmm/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )$ \TU/lmr/m/n/10 are independent 
 and identically distributed, and $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr
@@ -852,23 +852,22 @@ and identically distributed, and $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr
 OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[]\OT1/cmr/m/n/10 ))$\TU/lmr/m/n/10 .
  []
 
-[24]
-Overfull \hbox (28.02902pt too wide) detected at line 1060
+[23] [24]
+Overfull \hbox (28.02902pt too wide) detected at line 1038
 [][]
  []
 
 [25] [26]
-Overfull \hbox (11.5558pt too wide) detected at line 1131
+Overfull \hbox (11.5558pt too wide) detected at line 1109
 [][]
  []
 
-[27]
 File: Pics/covering_number_1.png Graphic file (type bmp)
 <Pics/covering_number_1.png>
 File: Pics/covering_number_2.png Graphic file (type bmp)
 <Pics/covering_number_2.png>
- [28] [29] [30] [31] [32]
-Overfull \hbox (7.30234pt too wide) in paragraph at lines 1381--1382
+[27] [28] [29] [30] [31]
+Overfull \hbox (7.30234pt too wide) in paragraph at lines 1358--1359
 []\TU/lmr/m/n/10 Let $\OML/cmm/m/it/10 h[]$ \TU/lmr/m/n/10 denote the vector of
  values taken by function $\OML/cmm/m/it/10 h$ \TU/lmr/m/n/10 over the sample $
 \OML/cmm/m/it/10 S$\TU/lmr/m/n/10 , namely, $\OML/cmm/m/it/10 h[] \OT1/cmr/m/n/
@@ -877,74 +876,118 @@ OML/cmm/m/it/10 ; [] ; h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Z[]\OT1/cmr/m/n/10 ))
 []$\TU/lmr/m/n/10 .
  []
 
-[33]
-Overfull \hbox (2.14479pt too wide) detected at line 1455
+[32] [33]
+Overfull \hbox (2.14479pt too wide) detected at line 1432
 [][]
  []
 
 [34]
-
-LaTeX Warning: Reference `thm:Rademacher-complexity-symmetrization' on page 35 
-undefined on input line 1466.
-
-
-Overfull \hbox (23.81148pt too wide) detected at line 1481
+Overfull \hbox (23.81148pt too wide) detected at line 1460
 [][]
  []
 
 [35]
-Overfull \hbox (1.09604pt too wide) detected at line 1506
+Overfull \hbox (1.09604pt too wide) detected at line 1485
 [][]
  []
 
 [36]
-Overfull \hbox (38.675pt too wide) detected at line 1555
+Overfull \hbox (38.675pt too wide) detected at line 1527
 [][]
  []
 
-[37] [38]
+[37]
 
-LaTeX Warning: Reference `prop:symmetrization' on page 39 undefined on input li
-ne 1646.
+LaTeX Warning: Reference `prop:symmetrization' on page 38 undefined on input li
+ne 1618.
 
-[39] [40] [41]
+[38] [39] [40] [41]
 Missing character: There is no ： (U+FF1A) in font [lmroman10-regular]:mapping=t
 ex-text;!
-[42] [43]
+[42]
 File: Pics/sine_function.png Graphic file (type bmp)
 <Pics/sine_function.png>
- [44] [45] [46]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[43] [44] [45] [46]
 File: Pics/covering-packing.png Graphic file (type bmp)
 <Pics/covering-packing.png>
- [47] [48] [49] [50] [51] [52] [53
+ [47] [48] [49] [50] [51]
+Underfull \hbox (badness 10000) in paragraph at lines 2184--2184
+[]|\TU/lmr/m/n/10 finite sum:
+ []
 
-] [54
+[52]
+File: Pics/XOR-classification.png Graphic file (type bmp)
+<Pics/XOR-classification.png>
+ [53]
+File: Pics/SVM-hyperplane.png Graphic file (type bmp)
+<Pics/SVM-hyperplane.png>
+File: Pics/SVM-feature-space.jpg Graphic file (type bmp)
+<Pics/SVM-feature-space.jpg>
 
-] [55] [56]
-[57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71]
-[72]
-Overfull \hbox (40.00021pt too wide) detected at line 3305
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[54] [55] [56] [57] [58]
+Overfull \hbox (17.7654pt too wide) detected at line 2478
 [][]
  []
 
-[73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87]
+[59]
+Overfull \hbox (9.40834pt too wide) in paragraph at lines 2504--2505
+\TU/lmr/m/n/10 Local averaging methods provide a different approach by minimizi
+ng the conditional expected risk $\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it
+/10 l\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Y; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\
+OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 j
+ []
+
+[60] [61]
+File: Pics/fixed-partitions.png Graphic file (type bmp)
+<Pics/fixed-partitions.png>
+ [62]
+File: Pics/k-nearest-neighbors.png Graphic file (type bmp)
+<Pics/k-nearest-neighbors.png>
+ [63]
+File: Pics/kernels-local-averaging.png Graphic file (type bmp)
+<Pics/kernels-local-averaging.png>
+File: Pics/nadaraya-watson-kernel-regression.png Graphic file (type bmp)
+<Pics/nadaraya-watson-kernel-regression.png>
+ [64]
+Overfull \hbox (22.35968pt too wide) detected at line 2690
+[][]
+ []
+
+[65] [66] [67
+
+] [68
+
+] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79]
+[80] [81] [82] [83] [84] [85] [86] [87]
+Overfull \hbox (40.00021pt too wide) detected at line 3841
+[][]
+ []
+
+[88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
 (./sml-notes.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `sml-notes.out' has not changed.
-(rerunfilecheck)             Checksum: 79C505C8724DB1ACAC1FEFAEFF3399BE;15262.
+(rerunfilecheck)             Checksum: 884DEE7260ED7ACB22CEA94C8CD8CCA7;18695.
 Package logreq Info: Writing requests to 'sml-notes.run.xml'.
 \openout1 = `sml-notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18576 strings out of 476179
- 326684 string characters out of 5813073
- 1082340 words of memory out of 5000000
- 39057 multiletter control sequences out of 15000+600000
- 477427 words of font info for 74 fonts, out of 8000000 for 9000
+ 18671 strings out of 476179
+ 329348 string characters out of 5813073
+ 1089371 words of memory out of 5000000
+ 39141 multiletter control sequences out of 15000+600000
+ 478354 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,16n,68p,1154b,4697s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,16n,68p,1154b,4699s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on sml-notes.xdv (87 pages, 1357380 bytes).
+Output written on sml-notes.xdv (101 pages, 1623500 bytes).

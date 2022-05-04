@@ -1,4 +1,4 @@
-PWD C:/Users/Zhehao Li/OneDrive/文档/PhD/Projects/SML - Notes/Notes
+PWD C:/Users/Zhehao Li/OneDrive/Document/PhD/Projects/SML - Notes/Notes
 INPUT c:/texlive/2022/texmf.cnf
 INPUT c:/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2022/texmf-var/web2c/xetex/xelatex.fmt
@@ -917,6 +917,30 @@ INPUT Pics/sine_function.png
 INPUT ./Pics/covering-packing.png
 INPUT ./Pics/covering-packing.png
 INPUT Pics/covering-packing.png
+INPUT ./Pics/XOR-classification.png
+INPUT ./Pics/XOR-classification.png
+INPUT Pics/XOR-classification.png
+INPUT ./Pics/SVM-hyperplane.png
+INPUT ./Pics/SVM-hyperplane.png
+INPUT Pics/SVM-hyperplane.png
+INPUT ./Pics/SVM-feature-space.jpg
+INPUT ./Pics/SVM-feature-space.jpg
+INPUT Pics/SVM-feature-space.jpg
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT ./Pics/fixed-partitions.png
+INPUT ./Pics/fixed-partitions.png
+INPUT Pics/fixed-partitions.png
+INPUT ./Pics/k-nearest-neighbors.png
+INPUT ./Pics/k-nearest-neighbors.png
+INPUT Pics/k-nearest-neighbors.png
+INPUT ./Pics/kernels-local-averaging.png
+INPUT ./Pics/kernels-local-averaging.png
+INPUT Pics/kernels-local-averaging.png
+INPUT ./Pics/nadaraya-watson-kernel-regression.png
+INPUT ./Pics/nadaraya-watson-kernel-regression.png
+INPUT Pics/nadaraya-watson-kernel-regression.png
 INPUT sml-notes.aux
 INPUT ./sml-notes.out
 INPUT ./sml-notes.out

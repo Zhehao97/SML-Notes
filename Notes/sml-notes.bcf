@@ -2356,12 +2356,13 @@
     <bcf:citekey order="9">sridharan2008fast</bcf:citekey>
     <bcf:citekey order="10">mohri2018foundations</bcf:citekey>
     <bcf:citekey order="11">bach2021learning</bcf:citekey>
-    <bcf:citekey order="12">mohri2018foundations</bcf:citekey>
-    <bcf:citekey order="13">shalev2014understanding</bcf:citekey>
-    <bcf:citekey order="14">tropp2012user</bcf:citekey>
-    <bcf:citekey order="15">wainwright2019high</bcf:citekey>
-    <bcf:citekey order="16">bartlett2006convexity</bcf:citekey>
-    <bcf:citekey order="17">sridharan2008fast</bcf:citekey>
+    <bcf:citekey order="12">bach2021learning</bcf:citekey>
+    <bcf:citekey order="13">mohri2018foundations</bcf:citekey>
+    <bcf:citekey order="14">shalev2014understanding</bcf:citekey>
+    <bcf:citekey order="15">tropp2012user</bcf:citekey>
+    <bcf:citekey order="16">wainwright2019high</bcf:citekey>
+    <bcf:citekey order="17">bartlett2006convexity</bcf:citekey>
+    <bcf:citekey order="18">sridharan2008fast</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
