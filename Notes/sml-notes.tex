@@ -2,10 +2,10 @@
 \documentclass[letterpaper]{article}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathrsfs,bbm}
 \usepackage{booktabs,tabularx,multirow,setspace,diagbox}
-\usepackage{graphicx}
+\usepackage{graphicx,caption,subcaption}
 \usepackage{enumerate}
 \usepackage{hyperref}
-\usepackage{appendix}
+\usepackage[toc,page]{appendix}
 \usepackage[margin=1in]{geometry}
 \usepackage[style=authoryear]{biblatex}
 \addbibresource{sml-bib.bib}
@@ -32,19 +32,19 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 
-
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\sign}{\mathrm{sgn}}
-\DeclareMathOperator*{\var}{\mathrm{Var}}
-\DeclareMathOperator*{\minimize}{\mathrm{minimize}}
-\DeclareMathOperator*{\maximize}{\mathrm{maximize}}
-\DeclareMathOperator*{\tr}{\rm{tr}}
+\DeclareMathOperator*{\sign}{\text{sgn}}
+\DeclareMathOperator*{\var}{\text{Var}}
+\DeclareMathOperator*{\cov}{\text{Cov}}
+\DeclareMathOperator*{\minimize}{\text{minimize}}
+\DeclareMathOperator*{\maximize}{\text{maximize}}
+\DeclareMathOperator*{\tr}{\text{tr}}
 \DeclareMathOperator*{\ind}{\perp\!\!\!\!\perp}
 
 
-\title{Statistical Machine Learning - Notes}  
-% \author{Zhehao Li}
+\title{Statistical Machine Learning - Seminar Notes}  
+\author{Tsinghua MSE}
 \date{\today} 
 
 
@@ -66,6 +66,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
     \item the lecture notes of Patrick Rebeschini
 \end{itemize}
 
+\clearpage
 
 \section{Introduction to Supervised Learning} % (fold)
 \label{sec:introduction_to_supervised_learning}
@@ -342,7 +343,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
                 \end{minipage}
                 \begin{minipage}{0.40\textwidth}
                     \centering
-                    \includegraphics[width=\textwidth]{Pics/knn_curve.png}
+                    \includegraphics[width=\textwidth]{Pics/knn-curve.png}
                 \end{minipage}
                 \caption{$k$-nearest-neighbor}
             \end{figure}
@@ -553,6 +554,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
 % section introduction_to_supervised_learning (end)
 
+\clearpage
 
 \section{Convexification of the Risk} % (fold)
 \label{sec:convexification_of_the_risk}
@@ -590,7 +592,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=.6\textwidth]{Pics/connvex_surrogates.png}
+            \includegraphics[width=.6\textwidth]{Pics/connvex-surrogates.png}
         \end{figure}
 
         \begin{itemize}
@@ -628,7 +630,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
         \begin{figure}[htbp]
             \centering
-            \includegraphics[width=.6\textwidth]{Pics/separating_hyperplane.png}
+            \includegraphics[width=.6\textwidth]{Pics/separating-hyperplane.png}
         \end{figure}
 
         The distance from $x_i$ to the hyperplane $\{x \in \mathbb{R}^d, \omega^{\top} x + b = 0\}$ is equal to $\frac{|\omega^{\top} x_i + b|}{||\omega||_2}$, and thus, this minimal distance is
@@ -732,7 +734,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
         \begin{figure}[htb]
             \centering
-            \includegraphics[width=.7\linewidth]{Pics/classification_calibrated.png}
+            \includegraphics[width=.7\linewidth]{Pics/classification-calibrated.png}
             \caption{Classification calibration}
             \label{fig:classfication-calibration}
         \end{figure}
@@ -870,6 +872,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
 % subsection convexification_of_the_risk (end)
 
+\clearpage
 
 \section{Empirical Risk Minimization} % (fold)
 \label{sec:empirical_risk_minimization}
@@ -913,7 +916,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
         \begin{figure}[htb]
             \centering
-            \includegraphics[width=.5\textwidth]{Pics/approximation_error.png}
+            \includegraphics[width=.5\textwidth]{Pics/approximation-error.png}
             \caption{The distance between minimizer $\theta_{*}$ and set $\Theta$ on $\mathbb{R}$}
         \end{figure}
         For example, if the loss $l(y, \hat{y})$ which is considered as $G$-Lipschitz-continuous with respect to the second variable $\hat{y}$ (possible for regression or convex surrogate for binary classification), we have
@@ -1141,12 +1144,12 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
             \begin{figure}[h]
                 \centering
-                \begin{minipage}{.45\textwidth}
-                    \includegraphics[width=2in]{Pics/covering_number_1.png}
-                \end{minipage}
-                \begin{minipage}{.45\textwidth}
-                    \includegraphics[width=2in]{Pics/covering_number_2.png}
-                \end{minipage}
+                \begin{subfigure}[b]{.45\textwidth}
+                    \includegraphics[width=2in]{Pics/covering-number-1.png}
+                \end{subfigure}
+                \begin{subfigure}[b]{.45\textwidth}
+                    \includegraphics[width=2in]{Pics/covering-number-2.png}
+                \end{subfigure}
                 \caption{The left picture is an example in two dimensions of a covering with Euclidean balls; The right is an example of $l_{\infty}$-balls}
             \end{figure}
 
@@ -1185,6 +1188,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
 % section empirical_risk_minimization (end)
 
+\clearpage
 
 \section{PAC Learning and Uniform Convergence} % (fold)
 \label{sec:pac_learn_and_uniform_convergence}
@@ -1301,6 +1305,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
 % section pac_learning_and_uniform_convergence (end)
 
+\clearpage
 
 \section{Rademacher Complexity} % (fold)
 \label{sec:rademacher_complexity}
@@ -1403,16 +1408,16 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
         \end{proof}
 
-        \begin{theorem}[Generalization bonud via Rademacher Complexity]
+        \begin{theorem}[Empirical Process bonud via Rademacher Complexity]
             Suppose for all $h \in \mathcal{H}$, $0 \leq h(Z) \leq 1$. Then, with probability at least $1 - \delta$,
             \begin{equation}
                 \begin{aligned}
                     \sup_{h \in \mathcal{H}} \left[\frac{1}{n} \sum_{i=1}^{n}h(Z_i) - \mathbb{E}[h(Z)] \right] &\leq 2 R_{n}(\mathcal{H}) + \sqrt{\frac{\log (2 / \delta) }{2n}} \\
-                    \sup_{h \in \mathcal{H}} \left[\frac{1}{n} \sum_{i=1}^{n}h(Z_i) - \mathbb{E}[h(Z)] \right] &\leq 2 \hat{R}_{S}(\mathcal{H}) + 3 \sqrt{\frac{\log (2 / \delta) }{2n}} \\
+                    \sup_{h \in \mathcal{H}} \left[\frac{1}{n} \sum_{i=1}^{n}h(Z_i) - \mathbb{E}[h(Z)] \right] &\leq 2 \hat{R}_{S_n}(\mathcal{H}) + 3 \sqrt{\frac{\log (2 / \delta) }{2n}} \\
                 \end{aligned}
-                \label{eq:generalization-bound-Rademacher-complexity}
+                \label{eq:empirical-process-bound-Rademacher-complexity}
             \end{equation}
-            \label{thm:generalization-bound-Radeamcher-complexity}
+            \label{thm:empirical-process-bound-Radeamcher-complexity}
         \end{theorem}
 
         \begin{proof}
@@ -1484,13 +1489,26 @@ This note \textbf{aggregates} the contents from the following books, articles an
                         \end{aligned}
                     \end{equation*}
             \end{itemize}
+
         \end{proof}
+
+        \begin{corollary}[Generalization Bonud via Rademacher Complexity]
+            Suppose for all $h \in \mathcal{H}$, $0 \leq h(Z) \leq 1$. Then, with probability at least $1 - \delta$,
+            \begin{equation}
+                \begin{aligned}
+                    \mathbb{E}[h(Z)] &\leq \frac{1}{n} \sum_{i=1}^{n}h(Z_i) + 2 R_{n}(\mathcal{H}) + \sqrt{\frac{\log (2 / \delta) }{2n}} \\
+                    \mathbb{E}[h(Z)] &\leq \frac{1}{n} \sum_{i=1}^{n}h(Z_i) + 2 \hat{R}_{S}(\mathcal{H}) + 3 \sqrt{\frac{\log (2 / \delta) }{2n}} \\
+                \end{aligned}
+                \label{eq:generlization-bound-Rademacher-complexity}
+            \end{equation}
+            \label{thm:generalization-bound-Radeamcher-complexity}
+        \end{corollary}
 
         A useful fact is that both empirical Rademacher complexity and expected Rademacher complexity are translation invariant.
 
-        \begin{proposition}
+        \begin{proposition}[Translation Invariant]
             Let $\mathcal{H}$ be a family of functions mapping $\mathcal{Z} \mapsto \mathbb{R}$ and define $\mathcal{H}' = \{h'(Z) = h(Z) + c_0 \mid h \in \mathcal{H} \}$ for some $c_0 \in \mathbb{R}$. Then we have 
-            $$ \hat{R}_{S}(\mathcal{H}) = \hat{R}_{S}(\mathcal{H}') \quad \text{and} \quad R_{n}(\mathcal{H}) = R_{n}(\mathcal{H}') $$
+            $$ \hat{R}_{S_n}(\mathcal{H}) = \hat{R}_{S_n}(\mathcal{H}') \quad \text{and} \quad R_{n}(\mathcal{H}) = R_{n}(\mathcal{H}') $$
         \end{proposition}
 
         \begin{proof}[Hint]
@@ -1615,7 +1633,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
         \end{proposition}
 
         \begin{proof}
-            Using Proposition \ref{prop:symmetrization}, equation \ref{eq:Rademacher-complexity-of-hypothesis-class} and \ref{eq:Rademacher-complexity-of-function-class}, we get the desire result.
+            Using Proposition \ref{thm:symmetrization-Rademacher-complexity}, equation \ref{eq:Rademacher-complexity-of-hypothesis-class} and \ref{eq:Rademacher-complexity-of-function-class}, we get the desire result.
         \end{proof}
 
         \begin{proposition}[Approximation Error]
@@ -1672,6 +1690,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
 % section rademacher_complexity (end)
 
+\clearpage
 
 \section{Growth Function and VC-Dimension} % (fold)
 \label{sec:growth_function_and_vc_dimension}
@@ -1832,7 +1851,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
                 \begin{figure}[h]
                     \centering
-                    \includegraphics[width=.6\textwidth]{Pics/sine_function.png}
+                    \includegraphics[width=.6\textwidth]{Pics/sine-function.png}
                     \caption{An example of a sine function used for classification}
                     \label{fig:sine-function}
                 \end{figure}
@@ -1938,6 +1957,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
 % section growth_function_and_vc_dimension (end)
 
+\clearpage
 
 \section{Covering Number and Chaining} % (fold)
 \label{sec:covering_number_and_chaining}
@@ -2165,37 +2185,495 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
 % section covering_number_and_chaining (end)
 
+\clearpage
 
-\section{Optimization Algorithm} % (fold)
-\label{sec:optimization_algorithm}
+\section{Optimization for Machine Learning} % (fold)
+\label{sec:optimization_for_machine_learning}
 
     \begin{table}[h]
         \centering
-        \begin{tabularx}{.8\linewidth}{lXX}
+        \begin{tabularx}{\linewidth}{lXX}
             \toprule
-                        & convex                            & strongly convex \\
+                        & Convex                 & Strongly Convex \\
             \midrule
-            nonsmooth   & deterministic: $BD / \sqrt{t}$    & deterministic: $B^2 / (t \mu) $ \\
-                        & stochastic: $BD / \sqrt{t}$       & stochastic: $B^2 / (t \mu) $  \\
-            smooth      & deterministic: $LD^2 / t$         & deterministic: $\exp(- t \sqrt{\mu / L})$ \\
-                        & stochasic: $LD^2 / \sqrt{t}$      & stochastic: $L / (t \mu)$ \\
-                        & finite sum: $n/t$                 & finite sum: $\exp(- t \min\{1/n, \mu/L\})$ \\
+            Non-smooth  & deterministic: $BD /\sqrt{t}$ & deterministic: $B^2 / (t \mu) $ \\
+                        & stochastic: $BD / \sqrt{t}$   & stochastic: $B^2 / (t \mu) $  \\
+            Smooth      & deterministic: $LD^2 / t$     & deterministic: $\exp(-t \sqrt{\mu /L}) $ \\
+                        & stochastic: $LD^2 / \sqrt{t}$ & stochastic: $L / (t \mu)$ \\
+                        & finite sum: $n/t$             & finite sum: $\exp(- t \min\{1/n, \mu/L \} )$ \\
             \bottomrule
         \end{tabularx}
+        \caption{Above, $L$ is the smoothness constant, $\mu$ the strong convexity constant, $B$ the Lipschitz constant and $D$ the distance to optimum at initialization}
         \label{tab:optimization-algo-rate}
     \end{table}
 
     \subsection{Optimization in Machine Learning} % (fold)
     \label{sub:optimization_in_machine_learning}
 
-        In supervised machine learning, we are given $n$ i.i.d. samples $(X_i, Y_i)$, $i = 1, \dots, n$ of a couple of random variables $(X, Y)$ on $\mathcal{X} \times \mathcal{Y}$ and the goal is to find a predictor $f: \mathcal{X} \mapsto \mathbb{R}$ with a small risk
-        $$ \mathcal{R}(f) := \mathbb{E}[l(Y, f(X))] $$
-        where $l: \mathbb{Y} \times \mathcal{Y} \mapsto \mathbb{R}$ is a loss function. This loss is typlically chosen to be convex, whih is thus considered as a weak assumption. 
+        In supervised machine learning, we are given $n$ i.i.d. samples $(x_i, y_i)$, $i = 1, \dots, n$ of a couple of random variables $(X, Y)$ on $\mathcal{X} \times \mathcal{Y}$ and the goal is to find a predictor $f: \mathcal{X} \mapsto \mathbb{R}$ with a small risk
+        \begin{equation*}
+            \mathcal{R}(f) := \mathbb{E}[l(Y, f(X))] 
+        \end{equation*}
+        where $l: \mathbb{Y} \times \mathcal{Y} \mapsto \mathbb{R}$ is a loss function. This loss is typlically convex, which is considered as a weak assumption. 
+        In the empirical risk minimization (ERM) approach desribed in Section \ref{sec:empirical_risk_minimization}, for a parametrization $\{f_\theta\}_{\theta \in \mathbb{R}^d} $ and a regularizer $\Omega: \mathbb{R}^d \mapsto \mathbb{R}$ (e.g. $\Omega(\theta) = ||\theta||_2^2$ or $\Omega(\theta) = ||\theta||_1$ ), this require to minimize
+        \begin{equation}
+            F(\theta) := \frac{1}{n} \sum_{i=1}^{n} l(y_i, f_{\theta}(x_i) ) + \Omega(\theta)
+        \end{equation}
+        In optimization, the function $F: \mathbb{R}^d \mapsto \mathbb{R}$ is called the objective function.
+
+        In general, the minimizer has no closed form. Even when it has one (e.g. linear predictor and square loss), it could be expensive to compute for large problems. We thus resort to iterative algorithms. If the algorithm return $\hat{\theta}$ and let $\theta^* \in \argmin_{\theta} \mathcal{R}(f_{\theta})$, we can decompose the estimation errpr into (the approximation error due to the selection of hypothesis class $\Theta$ is ignored)
+
+        \begin{equation*}
+            \mathcal{R}(f_{\hat{\theta}}) - \inf_{\theta \in \mathbb{R}^d} \mathcal{R}(f_{\theta}) = \underbrace{ \big\{\mathcal{R}(f_{\hat{\theta}} ) - \hat{\mathcal{R}}(f_{\hat{\theta}} ) \big\} }_{\leq \text{estimation error}} + \underbrace{ \big\{\hat{\mathcal{R}}(f_{\hat{\theta}}) - \hat{\mathcal{R}}(f_{\theta^*} ) \big\} }_{\leq \text{optimization error}} + \underbrace{ \big\{\hat{\mathcal{R}}(f_{\theta^*}) - \mathcal{R}(f_{\theta^*} ) \big\} }_{\leq \text{estimation error}}
+        \end{equation*}
+        It is thus sufficient to reach an optimization accuracy of the order of the estimation error (usually of the order $\mathcal{O}(1/\sqrt{n})$ or $\mathcal{O}(1/ \sqrt{n})$). 
+
+        In the following content, we use the notation $\theta^{*}$ for the minimizer of the expected risk and the notation $\theta^{\star}$ (not $\hat{\theta}$) for the minimizer of the empirical (potentially regularized) risk.
     
     % subsection optimization_in_machine_learning (end)
 
-% section optimization_algorithm (end)
+    \subsection{Gradient Descent on Smooth Problems} % (fold)
+    \label{sub:gradient_descent_on_smooth_problems}
+    
+        Suppose we want to solve, for a function $F: \mathbb{R}^d \mapsto \mathbb{R}$, the optimization problem
+        \begin{equation*}
+            \min_{\theta \in \mathbb{R}^d} \ F(\theta)              
+        \end{equation*}        
+        In this section, we do not assume that function $F$ is regularized empirical risk. We further assume that we are given access to certian oracles -- the $k$th-order oracle corresponds to the access to $\theta \mapsto (F(\theta), F'(\theta), \dots, F^{(k)}(\theta) )$, that is all partial derivatives up to order $k$. All algorithms will call these oracles and thus their computational complexity will depend directly on the complexity of this oracle.
+    
+        \vspace{1em}
+        We will study the following first-order algorithm: pick $\theta_0 \in \mathbb{R}^d$ and for $t \geq 1$, let
+        \begin{equation}
+            \theta_t = \theta_{t-1} - \gamma_t F'(\theta_{t - 1})
+            \label{eq:gradient-descent}
+        \end{equation}
+        for a well (potentially adaptively) chosen step-size sequence $(\gamma_t)_{t \geq 1}$. There are many ways to choose the step-size $\gamma_t$, either constant, either decaying, either through a line search. In practice, using some form of line search is strongly advantageous and is implemented in most applicaiton. In this section, to simplify the algorithms and proofs, we will focus on constant or iteration-dependent step-size.
 
+        Note that, for machine learning problem where the empirical risk is minimized, computing the gradient $F'(\theta_{t-1})$ requires computing all gradients of $\theta \mapsto l(y_i, f_{\theta}(x_i))$ for $i = 1, \dots, n$ and averaging them. In this context, gradient descent on the empirical risk, is often called a “batch” technique (compared with stochastic technique), because all the data points are accessed at every iteration. 
+
+        \subsubsection{Analysis of GD for ordinary least squares} % (fold)
+        \label{ssub:analysis_of_gd_for_ordinary_least_squares}
+        
+            We first start with the simplest example, namely the quadratic convex functions (which is strongly convex), which is just the loss function in ordinary least squares. Let $\Phi \in \mathbb{R}^{n \times d}$ be the design matrix, and $y \in \mathbb{R}^n$ the vector of responses. Least-squares estimation amoutns to finding a minimizer $\theta^{\star}$ of
+
+            \begin{equation*}
+                F(\theta) = \frac{1}{2n} ||\Phi \theta - y||_2^2 = \frac{1}{2n} (y - \Phi \theta)^{\top} (y - \Phi \theta)
+            \end{equation*}
+            The gradient of $F$ is $F'(\theta) = \frac{1}{n} \Phi^{\top}(\Phi \theta - y) = \frac{1}{n} \Phi^{\top} \Phi \theta - \frac{1}{n} \Phi^{\top} y $. Thus, denoting $H = \frac{1}{n} \Phi^{\top} \Phi \in \mathbb{R}^{d \times d}$ the Hessian matrix (with respect to $\theta$), the minimizers $\theta^{\star}$ are characterized by
+            \begin{equation}
+                F'(\theta^{\star}) = 0 \quad \Rightarrow \quad H \theta^{\star} = \frac{1}{n} \Phi^{\top} y
+            \end{equation}
+            Since $\frac{1}{n} \Phi^{\top}y \in \mathbb{R}^d$ is in the range space of $H$, there is always a minimizer, but unless $H$ is invertible, the minimizer is not unique. But all minimizers $\theta^{\star}$ have the same function value $F(\theta^{\star})$, and we have, from a simple Taylor expansion
+            \begin{equation*}
+                \begin{aligned}
+                    F(\theta) - F(\theta^{\star}) &= F'(\theta^{\star})^{\top}(\theta - \theta^{\star}) + \frac{1}{2} (\theta - \theta^{\star})^{\top} H (\theta - \theta^{\star}) \\ 
+                    &= \frac{1}{2} (\theta - \theta^{\star})^{\top} H (\theta - \theta^{\star}) \\
+                \end{aligned}
+            \end{equation*}
+            Suppose $M := \lambda_{\max}(H) $ and $m := \lambda_{\min}(H)$ be the largest and smallest eigenvalues of the Hessian matrix $H$. We denote by $\kappa = M / m \geq 1 $ the condition number.
+
+            \vspace{1em}
+            \noindent
+            \textbf{Closed-form expression}. Gradient descent iterates with fixed step-size $\gamma_t = \gamma$ can be computed in closed form:
+            \begin{equation*}
+                \begin{aligned}
+                    \theta_t = \theta_{t-1} - \gamma F'(\theta_{t-1}) &= \theta_{t-1} - \gamma \left[\frac{1}{n} \Phi^{\top}(\Phi \theta_{t - 1} - y) \right] \\
+                    &= \theta_{t-1} - \gamma H(\theta_{t-1} - \theta^{\star}) \\
+                \end{aligned}
+            \end{equation*}
+            leading to 
+            \begin{equation*}
+                \theta_t - \theta^{\star} = \theta_{t - 1} - \theta^{\star} - \gamma H(\theta_{t - 1} - \theta^{*}) = (I - \gamma H) (\theta_{t - 1} - \theta^{\star})
+            \end{equation*}
+            that is, we have linear recursion, and we can unroll the recursion and write
+            \begin{equation*}
+                \theta_t - \theta^{\star} = (I - \gamma H)^{t} (\theta_0 - \theta^{\star})
+            \end{equation*}
+            We can now look at various measures of performace:
+            \begin{equation*}
+                \begin{aligned}
+                    ||\theta_t - \theta^{\star}||_2^2 &= (\theta_0 - \theta^{\star})^{\top} (I - \gamma H)^{2t} (\theta_0 - \theta^{\star}) \\
+                    F(\theta_t) - F(\theta^{\star}) &= \frac{1}{2} (\theta_0 - \theta^{\star} )^{\top} (I - \gamma H)^{2t} H (\theta_0 - \theta^{\star})
+                \end{aligned}
+            \end{equation*}
+            Note that the second equality holds by applying $H \theta^{\star} = \frac{1}{n} \Phi^{\top} y$.
+
+        % subsubsection analysis_of_gd_for_ordinary_least_squares (end)
+
+        \subsubsection{Analysis of GD for strongly and smooth functions} % (fold)
+        \label{ssub:analysis_of_gd_for_strongly_and_smooth_functions}
+
+            The analysis of optimization algorithms requires assumptions on the objective functions, like the ones introduced in this section. From these assumptions, additional properties are derived (typically inequalities), and then most convergence proofs look for a "Lyapunov function" that goes down along the iterations. More precisely, if $V: \mathbb{R}^d \mapsto \mathbb{R}_{+}$ is such that $V(\theta_t) \leq (1 - \alpha) V(\theta_{t - 1})$, then $V(\theta_t) \leq (1 - \alpha)^t V(\theta_0)$ and we obtain linear convergence rate. The art is then to find the appropriate Lynapunov function.
+
+            \vspace{1em}
+            We first consider an assumption allowing exponential convergence rates.
+            \begin{definition}[Convex function]
+                A differentiable function $F: \mathbb{R}^d \mapsto \mathbb{R}$ is said to be convex if and only if 
+                \begin{equation}
+                    F(\eta) \geq F(\theta) + F'(\theta)^{\top} (\eta - \theta), \quad \forall \ \eta, \theta \in \mathbb{R}^d
+                    \label{eq:convexity}
+                \end{equation}
+                this conclusion holds even for $\eta = \theta^{\star}$.
+            \end{definition}
+
+            \begin{definition}[Strong convexity]
+                A differentiable function $F$ is said $\mu$-strongly convex, with $m > 0$, if and only if
+                \begin{equation}
+                    F(\eta) \geq F(\theta) + F'(\theta)^{\top}(\eta - \theta) + \frac{\mu}{2} ||\eta - \theta||_2^2
+                    \label{eq:strong-convexity}
+                \end{equation}
+                for all $\eta, \theta \in \mathbb{R}^d$. For twice differentiable functions, this is equivalent to $F'' \succeq m I$.
+            \end{definition}
+
+            The function $F$ is strongly-convex if and only if the function $F$ is strictly above its tangent, and the difference is at least quadratic in the distance to the point where the two coincide. This notably allows to define quadratic lower bounds on $F$.
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=.6\linewidth]{Pics/strongly-convex.png}
+                \caption{Strong convexity}
+                \label{fig:strongly-convex}
+            \end{figure}
+
+            \begin{lemma}[Lojasiewics inequality]
+                If $F$ is differentiable and $m$-strongly convex with unique minimizer $\theta^{\star}$, then we have:
+                \begin{equation*}
+                    || F'(\theta) ||_2^2 \geq 2 \mu (F(\theta) - F(\theta^{\star}))
+                \end{equation*}
+                \label{lm:lojasiewics-inequality}
+            \end{lemma}
+
+            \begin{proof}
+                The right-hand side of Eq.(\ref{eq:strong-convexity}) is strongly convex in $\eta$ and minimized with $\eta = \theta - \frac{1}{\mu } F'(\theta)$. Plugging this value into the bound and letting $\eta = \theta^{\star}$, we get
+                \begin{equation*}
+                    F(\theta^{\star}) \geq F(\theta) - \frac{1}{\mu} ||F'(\theta)||_2^2 + \frac{1}{2 \mu} ||F'(\theta)||_2^2 = F(\theta) - \frac{1}{2 \mu} ||F'(\theta)||_2^2
+                \end{equation*}
+                The conclusion follows by rearranging.
+
+            \end{proof}
+
+            In order to obtain exponential convergence rates, strong-convexity is typically associated with smoothness, which we now define.
+
+            \begin{definition}[Smoothness]
+                A differentiable function $F$ is said $L$-smooth if and only if
+                \begin{equation}
+                    |F(\eta) - F(\theta) - F'(\theta)^{\top}(\eta - \theta) | \leq \frac{L}{2} ||\eta - \theta||_2^2 \quad \forall \ \theta, \eta \in \mathbb{R}^d
+                    \label{eq:smoothness}
+                \end{equation}
+                which is equivalent to $F$ having a $L$-Lipschitz-continuous gradient, 
+                \begin{equation*}
+                    ||F'(\theta) - F'(\eta)||_2^2 \leq L^2 ||\theta - \eta||_2^2
+                \end{equation*}
+                and for twice differentiable functions, this is equivalent to $ - LI \preceq F''(\theta) \preceq LI $.
+            \end{definition}
+
+            Note that when $F$ is convex and $L$-smooth, we have a quadratic upper-bound which is tight at any given point (strong convexity implies the corresponding lower bound), i.e.,
+            \begin{equation*}
+                F(\eta) \leq F(\theta) + F'(\theta) + F'(\theta)^{\top}(\eta - \theta) + \frac{L}{2} ||\eta - \theta||_2^2
+            \end{equation*}
+            For machine learning problems with linear predictions and smooth losses (squared or logistic), we have smooth problems. If we use a squared $l_2$-regularizer $\frac{\mu}{2}||\cdot||_2^2$, we get a $\mu$-strongly convex problem. Note that when using regularization, the value of $\mu$ decays with $n$, typically between $1/n$ and $1/\sqrt{n}$, leading to condition numbers $\kappa$ bewtween $\sqrt{n}$ and $n$.
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=.6\linewidth]{Pics/smoothness.png}
+                \caption{$L$-smoothness}
+                \label{fig:smoothness}
+            \end{figure}
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=.6\linewidth]{Pics/condition-number.png}
+                \caption{When a function is both smooth and strongly convex, we denote by $\kappa = L/\mu \geq 1$ its condition number, and the condition number impacts the shapes of the level sets}
+                \label{fig:condition-number}
+            \end{figure}
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=.6\linewidth]{Pics/condition-number-steepest.png}
+                \caption{The performance of gradient descent will depend on this condition number (see the steepest descent, i.e., gradient descent with exact line search): with small condition number (left), we get fast convergence, while for a large condition number (right), we get oscillations}
+                \label{fig:condition-number-steepest}
+            \end{figure}
+
+            In the next theorem, we show that gradient descent converges exponentially for such smooth and strongly-convex problems.
+            
+            \begin{theorem}[Convergence of GD for smooth strongly-convex functions]
+                Assume that $F$ is $L$-smooth and $\mu$-strongly convex. Choosing step-size $\gamma_t = 1/L$, the iterates $(\theta_t)_{t \geq 0}$ of Gradient Descent on $F$ satisfy
+                \begin{equation*}
+                    F(\theta_t) - F(\theta^{\star}) \leq \left(1 - \frac{\mu}{L} \right)^t \cdot (F(\theta_0) - F(\theta^{\star}) ) \leq e^{- t \mu / L} \cdot (F(\theta_0) - F(\theta^{\star} ))
+                \end{equation*}
+            \end{theorem}
+
+            \begin{proof}
+                By the smoothness inequality in Eq.(\ref{eq:smoothness}) applied to $\theta_{t-1}$ and $\theta_{t-1} - F'(\theta_{t-1}) / L$, we have the following descent property, with $\gamma_t = 1/L$,
+                \begin{equation}
+                    \begin{aligned}
+                        F(\theta_t) = F(\theta_t - F'(\theta_{t-1})/L) &\leq F(\theta_{t-1}) + F'(\theta_{t-1})^{\top} (-F'(\theta_{t-1}) / L) + \frac{L}{2} ||- F'(\theta_{t-1}) / L||_2^2 \\
+                        &= F(\theta_{t-1}) - \frac{1}{2L} ||F'(\theta_{t-1})||_2^2 \\
+                    \end{aligned}
+                    \label{eq:iteration-inequality}
+                \end{equation}
+                Adding $-F(\theta^{\star})$ on both sides, we get
+                \begin{equation*}
+                    F(\theta_t) - F(\theta^{\star}) \leq (F(\theta_{t-1}) - F(\theta^{\star})) - \frac{1}{2L} || F'(\theta_{t-1}) ||_2^2
+                \end{equation*}
+                Using Lojasiewicz inequality (Lemma \ref{lm:lojasiewics-inequality}), it follows
+                \begin{equation*}
+                    F(\theta_t) - F(\theta^{\star}) \leq (1 - \mu/L) \cdot (F(\theta_{t-1}) - F(\theta^{\star}) ) \leq e^{- \mu/L} \cdot (F(\theta_{t-1}) - F(\theta^{\star}) )
+                \end{equation*}
+                Recursively applying this inequality leads to the desired result.
+
+            \end{proof}
+
+            We can make the following observations:
+            \begin{itemize}
+                \item As mentioned before, we necessarily have $\mu \leq L$; the ratio $\kappa := L/\mu$ is called the condition number
+
+                \item If we only assume that the function is smooth and convex (not strongly convex), then Gradient Descent with constant step-size $\gamma = 1/L$ also converges when a minimizer exists, but at a slower rate $\mathcal{O}(1/t)$. More details in next section.
+
+                \item Choosing the step-size only requires an upper bound $L$ on the smoothness constant (in case it is over-estimated, the convergence rate only degrades slightly)
+
+            \end{itemize}
+
+        % subsubsection analysis_of_gd_for_strongly_and_smooth_functions (end)
+
+        \subsubsection{Analysis of GD for convex and smooth functions} % (fold)
+        \label{ssub:analysis_of_gd_for_convex_and_smooth_functions}
+
+            In order to obtain the $1/t$ (linear) convergence rate without strong-convexity, we will need an extra property of convex smooth functions, sometimes called "co-coercivity". This is an instance of inequalities that we need to use to circumvent the lack of closed form for iterations.
+
+            \begin{proposition}[co-coercivity]
+                If $F$ is a convex $L$-smooth function on $\mathbb{R}^d$, then for all $\theta, \eta \in \mathbb{R}^d$, we have
+                \begin{equation*}
+                    \frac{1}{L} ||F'(\theta) - F'(\eta)||_2^2 \leq [F'(\theta) - F'(\eta) ]^{\top} (\theta - \eta)
+                \end{equation*}
+                or equivalently, $F(\theta) \geq F(\eta) + F'(\eta)^{\top} (\theta - \eta) + \frac{1}{2L} ||F'(\theta) - F'(\eta)||_2^2 $.
+            \end{proposition}
+
+            \begin{proof}
+                Define $H(\theta) = F(\theta) - F'(\eta)^{\top} \theta$. The function $H: \mathbb{R}^d \mapsto \mathbb{R}$ is convex in $\theta$ with global minimum at $\eta$, and is also $L$-smooth. Now, we can apply the property of $L$-smoothness in Eq.(\ref{eq:smoothness}) and get
+                
+                \begin{equation*}
+                    \begin{aligned}
+                        H(\eta) \leq H(\theta - H'(\theta) / L) &\leq H(\theta) + H'(\theta)^{\top}(- H'(\theta) / L) + \frac{L}{2} ||- H'(\theta) / L||_2^2 \\
+                        &= H(\theta) - \frac{1}{2L} ||H'(\theta)||_2^2
+                    \end{aligned}
+                \end{equation*}
+                This leads to 
+                    $$ F(\eta) - F'(\eta)^{\top} \eta \leq F(\theta) - F'(\eta)^{\top} \theta - \frac{1}{2L} ||F'(\theta) - F'(\eta)||_2^2 $$
+                Rearranging the terms leads to the desired result.
+
+            \end{proof}
+        
+            We can now state the following convergence result for gradient descent with potentially no strong-convexity.
+
+            \begin{theorem}[Convergence of GD for smooth convex functions]
+                Assume that $F$ is $L$-smooth and convex, with a global minimizer $\theta^{\star}$. Choosing step-size $\gamma_t = 1/L$, the iterates $(\theta_t)_{t \geq 0}$ of Gradient Descent on $F$ satisfy
+                \begin{equation*}
+                    F(\theta_t) - F(\theta^{\star}) \leq \frac{L}{2t} ||\theta_0 - \theta^{\star} ||_2^2
+                \end{equation*}
+            \end{theorem}
+
+            \begin{proof}
+                The Lyapunov function that we will choose is
+                \begin{equation}
+                    V_t(\theta_t) = t (F(\theta_t) - F(\theta^{\star})) + \frac{L}{2}||\theta_t - \theta^{\star}||_2^2    
+                \end{equation}
+                and our goal is to show that it decays along iterations. We can split the difference in Lyapunov functions in three terms
+                \begin{equation*}
+                    V_t(\theta_t) - V_{t-1}(\theta_{t-1}) = \underbrace{t F(\theta_t) - t F(\theta_{t-1}) }_{\text{part I}} + \underbrace{ F(\theta_{t-1}) - F(\theta^{\star}) }_{\text{part II}} + \underbrace{ \frac{L}{2} ||\theta_t - \theta^{\star}||_2^2 - \frac{L}{2}||\theta_{t-1} - \theta^{\star}||_2^2 }_{\text{part III}}
+                \end{equation*}
+                We bound these three parts separately:
+                \begin{itemize}
+                    \item From Eq.(\ref{eq:iteration-inequality}), we have
+                        \begin{equation*}
+                            F(\theta_t) - F(\theta_{t-1}) \leq -\frac{1}{2L} ||F'(\theta_{t-1})||_2^2
+                        \end{equation*}
+
+                    \item For a convex function, we have
+                        \begin{equation*}
+                            F(\theta^{\star}) \geq F(\theta_{t-1}) + F'(\theta_{t-1})^{\top} (\theta^{\star} - \theta_{t-1}) \quad \Rightarrow \quad F(\theta_{t-1}) - F(\theta^{\star}) \leq F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta^{\star})
+                        \end{equation*}
+
+                    \item Expanding the difference of square, we have
+                        \begin{equation*}
+                            \begin{aligned}
+                                ||\theta_{t} - \theta^{\star}||_2^2 - ||\theta_{t-1} - \theta^{\star}||_2^2 &= ||\theta_{t-1} - \gamma_t - \theta^{\star} ||_2^2 - - ||\theta_{t-1} - \theta^{\star}||_2^2 \\
+                                &= - 2 \gamma_t F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta^{\star} ) + \gamma_t^2 ||F'(\theta_{t-1})||_2^2
+                            \end{aligned}
+                        \end{equation*}
+                \end{itemize}
+                Hence, with step-size $\gamma_t = 1/L$, we have
+                \begin{equation*}
+                    \begin{aligned}
+                        V_t(\theta_t) - V_{t-1}(\theta_{t-1}) &\leq - \frac{t}{2L} ||F'(\theta_{t-1})||_2^2 + F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta^{\star}) - F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta^{\star}) + \frac{1}{2L} ||F'(\theta_{t-1}) ||_2^2 \\
+                        &= \frac{1 - t}{2L} ||F'(\theta_{t-1})||_2^2 \leq 0
+                    \end{aligned}
+                \end{equation*}
+                which leads to
+                \begin{equation*}
+                    t(F(\theta_t) - F(\theta^{\star}) ) \leq V_t(\theta_t) \leq V_0(\theta_0) = \frac{L}{2} ||\theta_0 - \theta^{\star}||_2^2
+                \end{equation*}
+                and thus $F(\theta_t) - F(\theta^{\star}) \leq \frac{L}{2t} ||\theta_0 - \theta^{\star}||_2^2$.
+
+            \end{proof}
+
+            The proof above is on purpose mysterious: the choice of Lyapunov function seems arbitrary at first, but all inequalities lead to nice cancellations. These proofs are sometimes hard to design. See \cite{bach2021learning} for more interesting details.
+
+        % subsubsection analysis_of_gd_for_convex_and_smooth_functions (end)
+
+        \subsubsection{Beyond Gradient Descent} % (fold)
+        \label{ssub:beyond_gradient_descent}
+
+            While gradient descent is the simplest algorithm with a simple analysis, there are multiple extensions we will here briefly mention (more details see \cite{nesterov2018lectures})
+
+            \begin{itemize}
+                \item \textbf{Nesterov acceleration}. For convex functions, a simple modification of gradient descent allows to obtain better convergence rates. The algorithm is as follows:
+                    \begin{equation*}
+                        \begin{aligned}
+                            \theta_t &= \eta_{t-1} - \frac{1}{L} F'(\eta_{t-1}) \\
+                            \eta_t &= \theta_t + \frac{t - 1}{t + 2} (\theta_t - \theta_{t-1}) \\
+                        \end{aligned}
+                    \end{equation*}
+                    This simple modification leads to the following convergence rate
+                    \begin{equation*}
+                        F(\theta_t) - F(\theta^{\star}) \leq \frac{2L ||\theta_0 - \theta^{\star}||_2^2 }{(t + 1)^2}
+                    \end{equation*}
+                    For strongly convex functions, the algorithm has a similar form as for convex functions, but with all coefficients independent from $t$:
+                    \begin{equation*}
+                        \begin{aligned}
+                            \theta_t &= \eta_{t-1} - \frac{1}{L} F'(\eta_{t-1}) \\
+                            \eta_t &= \theta_t + \frac{1 - \sqrt{\mu/L} }{1 + \sqrt{\mu/L} } (\theta_t - \theta_{t-1}) \\
+                        \end{aligned}
+                    \end{equation*}
+                    and the convergence rate is
+                    \begin{equation*}
+                        F(\theta_t) - F(\theta^{*}) \leq L(1 - \sqrt{\mu / L})^t ||\theta_0 - \theta^{\star}||_2^2
+                    \end{equation*}
+
+                \item \textbf{Newton method}. Given $\theta_{t-1}$, the Newton method minimizes the second-order Tarylor expansion around $\theta_{t-1}$:
+                    \begin{equation*}
+                        F(\theta_t) \approx F(\theta_{t-1}) + F'(\theta_{t-1})^{\top} (\theta - \theta_{t-1}) + \frac{1}{2} (\theta - \theta_{t-1})^{\top} F''(\theta_{t-1})^{\top} (\theta - \theta_{t-1})
+                    \end{equation*}
+                    which leads to the descent algorithm{}
+                    \begin{equation}
+                        \theta_t = \theta_{t-1} - F''(\theta_{t-1})^{-1} F'(\theta_{t-1}) 
+                    \end{equation}
+                    This is an expensive iteration, as the running-time compelxity is $\mathcal{O}(d^3)$ in general to solve the linear system (matrix inverse). It leads to local quadratic rate convergence. See \cite{boyd2004convex} for more details, and for condition for global convergence.
+
+                    Note that for machine learning problems, quadratic convergence may be an overkill compared to the computational complexity of each iteration, since cost functions are averages of $n$ terms and naturally have some uncertainty of order $\mathcal{O}(1/\sqrt{n})$.
+
+                \item \textbf{Proximal gradient descent}. Many optimization problem are said "composite", that is, the objective function $F$ is the sum of a smooth function $G$ and a non-smooth function $H$ (such as norm). It turns out that a simple modification of gradient descent allows to benefit from the fast convergence rates of smooth optimization.
+
+                    For this, we need to first see gradient descent as a proximal method. Indeed, one may see the iteration $\theta_t = \theta_{t-1} - \frac{1}{L} G'(\theta_{t-1})$ as
+                    \begin{equation*}
+                        \theta_t = \argmin_{\theta \in \mathbb{R}^d} \ G(\theta_{t-1}) + G'(\theta_{t-1})^{\top} (\theta - \theta_{t-1}) + \frac{L}{2} ||\theta - \theta_{t-1}||_2^2
+                    \end{equation*}
+                    where, for a $L$-smooth function $G$, the objective function above is an upper-bound of $G(\theta)$, which is tight at $\theta_{t-1}$. While this reformulation does not bring much for gradient descent, we can extend this to the composite problem, and consider the iteration
+                    \begin{equation*}
+                        \theta_t = \argmin_{\theta \in \mathbb{R}^d} \ G(\theta_{t-1}) + G'(\theta_{t-1})^{\top} (\theta - \theta_{t-1}) + \frac{L}{2}||\theta - \theta_{t-1}||_2^2 + H(\theta)
+                    \end{equation*}
+                    where $H$ is left as what it is. The crux is to be able to compute the step above, that is minimize with respect to $\theta$ functions of the form $\frac{L}{2}||\theta - \theta_{t-1}||_2^2 + H(\theta)$. When $H$ is the indicator function of a convex set (which is equal to $0$ inside the set, and $+ \infty$ otherwise), we get \textbf{projected gradient descent}. When $H$ is the $l_1$-norm, that is $H = \lambda ||\cdot||_1$, this can be shown to be soft-thresholding step, as for coordinate $\theta_i = \eta_i / |\eta_i| (|\eta_i| - \lambda/L)^{+}$.
+
+                    It turns out that the convergence rates for G + H are the same as smooth optimization, with potential acceleration (\cite{nesterov2013gradient}).
+
+            \end{itemize}
+        
+        % subsubsection beyond_gradient_descent (end)
+
+    % subsection gradient_descent_on_smooth_problems (end)
+
+    \subsection{Gradient Methods on Non-smooth Problems} % (fold)
+    \label{sub:gradient_methods_on_non_smooth_problems}
+
+        We now relax our assumptions and only require Lipschitz continuity (instead of $L$-smo) in addition to convexity. The rates will be slower, but the extension to stochastic gradients descent is easier.
+
+        \begin{definition}[Lipschitz-continuous function]
+            A function $F: \mathbb{R}^d \mapsto \mathbb{R}$ is said $B$-Lipschitz-continuous if and only if
+            \begin{equation*}
+                |F(\eta) - F(\theta)| \leq B ||\eta - \theta||_2, \quad \forall \ \theta, \eta \in \mathbb{R}^d
+            \end{equation*}
+            If $F$ is differentiable, this is equivalent to the assumption $||F'(\theta)||_2 \leq B, \ \forall \theta \in \mathbb{R}^d$.
+        \end{definition}
+
+        Without additional assumptions, this setting is usually refered to as non-smooth optimization. Now we can apply non-smooth optimization to objective functions which are not differentiable (such as the hinge loss). For convex Lipschitz-continuous objectives, the function is differentiable almost everywhere. In points where it is not, then one can define the set of slopes of lower-bounding tangents as the \textit{subdifferential}, and any element of it as a \textit{subgradient}.
+        The Gradient Descent iteration is then meant as using any subgradient instead of $F'(\theta_{t-1})$, formally,
+        \begin{equation*}
+            \theta_t = \theta_{t-1} - \gamma_t G_t, \quad G_t \in \partial F(\theta_{t-1})
+        \end{equation*}
+        This method is then referred to as the Subgradient Method, and it is not a descent method anymore as the function values may go up once in a while. 
+
+        We can now prove convergence rate of the Subgradient Method, with a decaying step-size, and a slower rate compared with smooth functions Gradient Descent.
+
+        \begin{theorem}[Convergence of the subgradient method]
+            Assume that $F$ is convex, $B$-Lipschitz-continuous, and admits a minimizer $\theta^{\star}$ that satisfies $||\theta^{\star} - \theta_0||_2 \leq D$. By choosing $\gamma_t = \frac{D}{B \sqrt{t}}$ then the iterates $(\theta_t)_{t \geq 0}$ of Subgradient Method on $F$ satisfy
+            \begin{equation*}
+                \min_{0 \leq s \leq t-1} \ F(\theta_s) - F(\theta^{\star}) \leq DB \frac{2 + \log t}{2 \sqrt{t}}
+            \end{equation*}
+        \end{theorem}
+
+        \begin{proof}
+            We look at how $\theta_t$ approaches $\theta^{\star}$, that is, we try to use $||\theta_t - \theta^{\star}||_2^2$ as a Lyapunov function. We have:
+            \begin{equation*}
+                \begin{aligned}
+                    ||\theta_t - \theta^{\star}||_2^2 &= ||\theta_{t-1} - \gamma_t F'(\theta_{t-1}) - \theta^{\star}||_2^2 \\
+                    &= ||\theta_{t-1} - \theta^{\star}||_2^2 - 2 \gamma_t F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta^{\star}) + \gamma_t^2 ||F'(\theta_{t-1]})||_2^2
+                \end{aligned}
+            \end{equation*}
+            Combining this with the convexity inequality $F(\theta_{t-1}) - F(\theta^{\star}) \leq F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta^{\star})$ from Eq.(\ref{eq:convexity}), we have (also using the boundedness of gradients/Lipschiz-continuous)
+            \begin{equation*}
+                ||\theta_t - \theta^{\star}||_2^2 \leq ||\theta_{t-1} - \theta^{\star}||_2^2 - 2 \gamma_t [F(\theta_{t-1}) - F(\theta^{\star}) ] + \gamma_t^2 B^2
+            \end{equation*}
+            and thus, by isolating the distance to optimum in function values:
+            \begin{equation}
+                \gamma_t (F(\theta_{t-1}) - F(\theta^{\star}) ) \leq \frac{1}{2} \left(||\theta_{t-1} - \theta^{\star}||_2^2 - ||\theta_t - \theta^{\star}||_2^2 \right) + \frac{1}{2} \gamma_t^2 B^2
+            \end{equation}
+            It is sufficient to sum these inequalities up to $t$ and drop the term $-||\theta_{t+1} - \theta^{\star}||_2^2$ to get, for any $\theta^{\star} \in \mathbb{R}^d$,
+            \begin{equation*}
+                \frac{1}{\sum_{s=1}^{t} \gamma_s} \sum_{s=1}^{t} \gamma_s (F(\theta_{s-1}) - F(\theta^{\star}) ) \leq \frac{||\theta_0 - \theta^{\star}||_2^2}{2 \sum_{s=1}^{t} \gamma_s} + B^2 \frac{\sum_{s=1}^{t} \gamma_s^2}{2 \sum_{s=1}^{t} \gamma_s}
+            \end{equation*}
+            The left-hand side is trivially larger than $\min_{0 \leq s \leq t-1} (F(\theta_s) - F(\theta^{\star}) ) $, and than $F(\theta_t) - F(\theta^{\star})$ where $\bar{\theta}_t = (\sum_{s=1}^{t} \gamma_s \theta_{s-1}) / (\sum_{s=1}^{t} \gamma_s) $ by Jensen's inequality.
+
+            \vspace{1em}
+            The upper bound goes to zero if $\sum_{s=1}^{t} \gamma_s \rightarrow \infty$ and $\gamma_t \rightarrow 0$. Let us choose $\gamma_s = \tau / \sqrt{s}$ for some $\tau > 0$. By using the series-integral comparisons below, 
+            \begin{equation*}
+                \sum_{s=1}^{t} \frac{1}{\sqrt{s}} \geq \sum_{s=1}^{t} \frac{1}{\sqrt{t} } = \sqrt{t} \quad \text{and} \quad \sum_{s=1}^{t} \frac{1}{s} \leq 1 + \sum_{s=2}^{t} \frac{1}{s} \leq 1 + \int_1^{t} \frac{ds}{s} = 1 + \log t
+            \end{equation*}
+            we get the bound
+            \begin{equation*}
+                \min_{0 \leq s \leq t-1} (F(\theta_s) - F(\theta^{\star}) ) \leq \frac{1}{2 \tau \sqrt{t}} \left(D^2 + \tau^2 B^2 (1 + \log t) \right)
+            \end{equation*}
+            Choosing $\tau = D/B$ leads to the desired results (which is suggested by optimizing the previous bound when $\log t = 0$).
+
+        \end{proof}
+
+        The proof scheme above is very flexible and can be extended in the following directions:
+        \begin{itemize}
+            \item The algorithm applies to \textbf{constrained minimization} over a convex set, by inserting a proection step at each iteration (the proof, which is using the contractivity of orthogonal projections, is essentially the same)
+
+            \item The algorithm applies to \textbf{non-differentiable} convex and Lipschitz objective functions using sub-gradients (any vector satisfying Eq.(\ref{eq:convexity} in place of $F'(\theta_t)$)
+
+            \item The algorithm can be applied to \textbf{non-Euclidean geometries}, where we consider bounds on the iterates or the gradient with different quantities. This can be done using "mirror descent" framework, and for instance can be applied to obtain multiplicative updates
+
+            \item Often the uniformly averaged iterate, $\frac{1}{t} \sum_{s=0}^{t-1} \theta_s$ is used. Convergence rates without $\log t$ factor can be obtained using Abel summation formula
+
+            \item Stochastic gradients method can be used, as presented below (one interpretation is that the subgradient method is so slow that it is robust to noisy gradients)
+
+        \end{itemize}
+        More details see \cite{bach2021learning}.
+
+    % subsection gradient_methods_on_non_smooth_problems (end)
+
+    \subsection{Stochastic Gradient Descent} % (fold)
+    \label{sub:stochastic_gradient_descent}
+
+        For machine learning problems,
+
+        
+    
+    % subsection stochastic_gradient_descent (end)
+
+% section optimization_for_machine_learning (end)
+
+\clearpage
 
 \section{Kernel Methods} % (fold)
 \label{sec:kernel_methods}
@@ -2416,15 +2894,14 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
     % subsection reproducing_kernel_hilbert_space (end)
 
-
     \subsection{Algorithms} % (fold)
     \label{sub:algorithms}
     
     % subsection algorithms (end)
 
-
 % section kernel_methods (end)
 
+\clearpage
 
 \section{Local Averaging Methods} % (fold)
 \label{sec:local_averaging_methods}
@@ -2432,14 +2909,14 @@ This note \textbf{aggregates} the contents from the following books, articles an
     \subsection{Quick Review} % (fold)
     \label{sub:quick_review}
     
-        In empirical risk minmization, our target is to approximate the Bayes predictor by minimizing the expected risk $\mathcal{R}(f) = \mathbb{E}_{P}[l(Y, f(X))]$. However, the joint distribution of real data $P(X, Y)$ remains unknown, so we have to minimize the empirical risk, which assign uniform weight $1/n$ to each $(X_i, Y_i)$ pair, instead of the expected risk, that is
-        \begin{equation}
-            \hat{f}(X) = \argmin_{f(X) \in \mathcal{Y}} \ \hat{\mathcal{R}}(f) = \argmin_{f(X) \in \mathcal{Y}} \ \frac{1}{n} \sum_{i=1}^{n} l(Y_i, f(X_i))
-        \end{equation} 
+        In empirical risk minmization, our target is to approximate the Bayes predictor by minimizing the expected risk $\mathcal{R}(f) = \mathbb{E}_{P}[l(Y, f(X))]$. However, the joint distribution of real data $P(X, Y)$ remains unknown, so we have to minimize the empirical risk, which assign uniform weight $1/n$ to each $(X_i, Y_i)$ pair,
+        \begin{equation*}
+            \hat{f} = \argmin_{f \in \mathcal{F}} \ \hat{\mathcal{R}}(f) = \argmin_{f \in \mathcal{F}} \ \frac{1}{n} \sum_{i=1}^{n} l(Y_i, f(X_i))
+        \end{equation*} 
         In spite of this, the empirical risk is still difficult to optimize as $f$ could be any measurable function. Therefore, in the Section \ref{sec:empirical_risk_minimization}, we constrain our choice in a hypothesis space $\mathcal{F}$ in order to make the optimization problem solvable.
         The two classical cases we consider previously in Section \ref{sec:introduction_to_supervised_learning} are
         \begin{itemize}
-            \item Binary Classification: $\mathcal{Y} = \{-1, +1\}$ (or $\mathcal{Y} = \{0,1\}$) with $0$-$1$ loss $l(y, \hat{y}) = \mathbbm{1}\{y \neq \hat{y} \}$, then the expected risk is $\mathcal{R}(f) = \mathbb{P}(Y \neq f(X))$.
+            \item Binary Classification: $\mathcal{Y} = \{-1, 1\}$ with $0$-$1$ loss $l(y, \hat{y}) = \mathbbm{1}\{y \neq \hat{y} \}$, then the expected risk is $\mathcal{R}(f) = \mathbb{E}[\mathbbm{1}(Y \neq f(X)) ] = \mathbb{P}(Y \neq f(X))$.
 
             \item Regression: $\mathcal{Y} = \mathbb{R}$ with square loss $l(y, \hat{y}) = (y - \hat{y})^2$, and the expected risk $\mathcal{R}(f) = \mathbb{E}[(Y - f(X))^2]$
         \end{itemize}
@@ -2447,75 +2924,97 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
         \begin{proposition}[Bayes Predictor and Bayes Risk]
             The conditional expected risk is minimized at a Bayes predictor $f^*: \mathcal{X} \rightarrow \mathcal{Y}$ satisfying for all $x \in \mathcal{X}$,
-            \begin{equation}
-                f^*(X) \in \argmin_{f(X) \in \mathcal{Y}} \ \mathbb{E}_{Y}\big[ l(Y, f(X)) \mid X\big]
-            \end{equation}
+            \begin{equation*}
+                f^* \in \argmin_{\text{measurable } f} \ \mathbb{E} \big[ l(Y, f(X)) \big]
+            \end{equation*}
             The Bayes risk $\mathcal{R}^*$ is the risk of all Bayes predictors and is equal to
-            \begin{equation}
-                \mathcal{R}^* = \mathbb{E}_{X} \Big[ \inf_{f(X) \in \mathcal{Y}} \mathbb{E}_{Y} \big[l(Y, f(X)) \mid X \big] \Big]
-            \end{equation}
+            \begin{equation*}
+                \mathcal{R}^* = \inf_{\text{measurable } f} \mathbb{E} \big[l(Y, f(X)) \big]
+            \end{equation*}
         \end{proposition} 
+
         Note that the Bayes predictor is not unique, but that all Bayes predictors lead to the same Bayes risk, and that the Bayes risk is usually nonzero (unless the dependence between $X$ and $Y$ is deterministic). Specifially, we have the following special cases:
         \begin{itemize}
-            \item Binary Classification: $\mathcal{Y} = \{0, 1\}$ and $l(y, \hat{y}) = \mathbbm{1}\{y \neq \hat{y}\}$, the Bayes predictor is equal to 
-                $$ f^*(X) \in \argmax_{y \in \{0, 1\}} \ \mathbb{P}(Y = y \mid X) $$
-                This result extends naturally to multi-category classification with the Bayes predictor 
-                $$ f^*(X) \in \argmax_{y \in \{1, \dots, k\}} \ \mathbb{P}(Y = y \mid X) $$
-                Moreover, with the square loss
+            \item Binary Classification: $\mathcal{Y} = \{-1, 1\}$ and $l(y, \hat{y}) = \mathbbm{1}\{y \neq \hat{y}\}$, the Bayes predictor is equal to 
+                    $$ f^*(X) \in \argmax_{y \in \{-1, 1\}} \ \mathbb{P}(Y = y \mid X) = \sign(\eta(X) - 1/2 ) $$
+                where $\eta(X) = \mathbb{P}(Y = 1 \mid X)$。 This result extends naturally to multi-category classification with the Bayes predictor 
+                    $$ f^*(X) \in \argmax_{y \in \{1, \dots, k\}} \ \mathbb{P}(Y = y \mid X) $$
+                Moreover, 
+                \begin{equation}
+                    \mathcal{R}(f) - \mathcal{R}^* = \mathbb{E}\big[ |2 \eta(X) - 1| \cdot \mathbbm{1}(f^*(X) \neq f(X) ) \big]
+                \end{equation}
+                This is due to the fact that 
                 \begin{equation*}
                     \begin{aligned}
-                        \mathcal{R}(f) - \mathcal{R}^* &= \mathbb{E}_{X,Y}[l(Y - f(X))] - \mathbb{E}_{X, Y}[l(Y - f^*(X))] \\
-                        &= \int_{\mathcal{X}} \Big\{\mathbb{E}_Y[\mathbbm{1}(Y \neq f(X)) \mid X = x] - \mathbb{E}_Y[\mathbbm{1}(Y \neq f^*(X)) \mid X = x] \Big\} dP(x) \\
-                        &= \int_{\mathcal{X}} \Big\{\mathbb{E}_Y [\mathbbm{1}(Y \neq f(X)) - \mathbbm{1}(Y \neq f^*(X)) \mid X = x] \Big\} dP(x) \\
-                        &= \int_{\mathcal{X}} \Big\{\mathbb{E}_Y\big[ (\mathbbm{1}(1 \neq f(X)) - \mathbbm{1}(1 \neq f^*(X)) ) \cdot \mathbbm{1}\{Y = 1\} \mid X = x \big] \Big\} dP(x) \\
-                        &+ \int_{\mathcal{X}} \Big\{\mathbb{E}_Y\big[ (\mathbbm{1}(0 \neq f(X)) - \mathbbm{1}(0 \neq f^*(X)) ) \cdot \mathbbm{1}\{Y = 0\} \mid X = x \big] \Big\} dP(x) \\
-                        &= \int_{\mathcal{X}} \Big\{\mathbb{E}_Y\big[ (\mathbbm{1}(1 \neq f(X)) - 0) \cdot \mathbbm{1}\{Y = 1\} \mid X = x \big] \Big\} dP(x) \\
-                        &+ \int_{\mathcal{X}} \Big\{\mathbb{E}_Y\big[ (\mathbbm{1}(0 \neq f(X)) - 0) \cdot \mathbbm{1}\{Y = 0\} \mid X = x \big] \Big\} dP(x) \quad \text{(1)} \\
-                        &= \int_{\mathcal{X}} \Big\{\mathbb{E}_Y \big[ \mathbbm{1}(f^*(X) \neq f(X)) \cdot \mathbbm{1}\{Y = 1\} + \mathbbm{1}(f^*(X) \neq f(X)) \cdot \mathbbm{1}\{Y = 0\} \mid X = x \big] \Big\} dP(x) \quad \text{(2)} \\
-                        &= \int_{\mathcal{X}} \mathbb{E}_Y \big[ \mathbbm{1}(f^*(X) \neq f(X)) \mid X = x \big] dP(x) \\
-                        &= \int_{\mathcal{X}} \mathbbm{1}(f^*(x) \neq f(x)) dP(x) \\
+                        \mathcal{R}(f) - \mathcal{R}^* &= \mathbb{E}\big[ \mathbb{E}[\mathbbm{1}(Y \neq f(X)) - \mathbbm{1}(Y \neq f^*(X) ) \mid X ] \big] \\
+                        &= \mathbb{E}\big[ \mathbb{E}[\mathbbm{1}(1 \neq f(X)) - \mathbbm{1}(1 \neq f^*(X) ) \mid X, Y = 1] \cdot \eta(X) + \mathbb{E}[\mathbbm{1}(-1 \neq f(X)) - \mathbbm{1}(-1 \neq f^*(X) ) \mid X, Y = -1] \cdot (1 - \eta(X)) \big]
                     \end{aligned}
                 \end{equation*}
-                where the equalities (1) and (2) hold by the definition of Bayes predictor $f^*$.
+                For any given $X$, we can look at the two possible cases for the signs of $\eta(x) - 1/2$ and $f(x)$ that lead to different predictions for $f$ and $f^*$
+                \begin{itemize}
+                    \item $\eta(X) > 1/2$ and $f(X) = -1$, $\mathcal{R}(f) - \mathcal{R}^* = \eta(X) - (1 - \eta(X)) = 2\eta(X) - 1 $
+
+                    \item $\eta(X) < 1/2$ and $f(X) = 1$, $\mathcal{R}(f) - \mathcal{R}^* = -\eta(X) + (1 - \eta(X)) = 1 - 2\eta(X) $
+                \end{itemize}
 
             \item Regression: $\mathcal{Y} = \mathbb{R}$ and $l(y, \hat{y}) = (y - \hat{y})^2$, the Bayes predictor is
                 $$ f^*(X) = \mathbb{E}[Y \mid X] $$
                 Moreover, with the square loss, we have
-                \begin{equation*}
+                \begin{equation}
                     \begin{aligned}
                         \mathcal{R}(f) - \mathcal{R}^* &= \mathbb{E}_{X,Y}[l(Y - f(X))] - \mathbb{E}_{X, Y}[l(Y - f^*(X))] \\
                         &= \int_{\mathcal{X}} \Big\{\mathbb{E}_Y[(Y - f(X))^2 \mid X = x] - \mathbb{E}_Y[(Y - f^*(X))^2 \mid X = x] \Big\} dP(x) \\
                         &= \int_{\mathcal{X}} \Big\{\mathbb{E}_Y \big[2Y(f^*(X) - f(X)) + f(X)^2 - f^*(X)^2 \mid X = x \big] \Big\} dP(x) \\
-                        &= \int_{\mathcal{X}} \Big\{ 2(f^*(x) - f(x)) \mathbb{E}_Y[Y \mid X = x] + f^{*}(x)^2 - f(x)^2 \Big\} d P(x) \\
-                        &= \int_{\mathcal{X}} \Big\{ 2f^*(x)^2 - 2f(x)f^*(x) + f(x)^2 - f^*(x)^2 \Big\} d P(x) \\
-                        &= \int_{\mathcal{X}} \big(f(x) - f^*(x) \big)^2 dP(x) \\ 
-                        &= ||f - f^*||_{L_2(P(X))}^2 \\
+                        &= \int_{\mathcal{X}} \Big\{ 2(f^*(x) - f(x)) \mathbb{E}_Y[Y \mid X = x] + f(x)^2 - f^*(x)^2 \Big\} dP(x) \\
+                        &= \int_{\mathcal{X}} \Big\{ 2f^*(x)^2 - 2f(x)f^*(x) + f(x)^2 - f^*(x)^2 \Big\} dP(x) \\
+                        &= \int_{\mathcal{X}} \big(f(x) - f^*(x) \big)^2 dP(x) = ||f - f^*||_{L_2(\mathbb{P})}^2 \\
                     \end{aligned}
-                \end{equation*}
-                Note that in general, such relation does not hold for arbitrary loss function.
+                    \label{eq:expected-excess-risk-regression}
+                \end{equation}
         \end{itemize}
-        Therefore, the goal of supervised machine learning is thus to estimate $f^*$, knowing the training samples $S_n = \{(X_1, Y_1), \dots, (X_n, Y_n) \}$ and the loss $l$, by minimizing the risk or excess risk $\mathcal{R}(f) - \mathcal{R}^*$.
+        Note that, in general, these relations do not hold for arbitrary loss function.
+
+        In a word, empirical risk minimization (ERM) is a method to approximate Bayes predictor $f^*$, knowing the training samples $S_n = \{(X_1, Y_1), \dots, (X_n, Y_n) \}$ and the loss $l$, by minimizing the risk or excess risk $\mathcal{R}(f) - \mathcal{R}^*$.
     
     % subsection quick_review (end)
 
     \subsection{Local Averaging Methods} % (fold)
     \label{sub:local_averaging_methods}
 
-        Local averaging methods provide a different approach by minimizing the conditional expected risk $\mathbb{E}[l(Y, f(X)) \mid X]$ pointwisely, which leads to the Bayes predictor $f^*(X)$. However, the conditional probability $P(Y \mid X)$ is generally unknown. To overcome this obstacles, this time we approximate the $P(Y \mid X)$ by some estimator $\hat{P}(Y \mid X)$, and the optimal predictor could be obtained by
-        \begin{equation}
-            \hat{f}(X) = \argmin_{f(X) \in \mathcal{Y}} \int_{\mathcal{Y}} l(y, f(X)) d\hat{P}(Y = y \mid X) 
-        \end{equation}
-        These are often called “plug-in” estimators. In the usual cases:
+        Local averaging methods provide a different approach by minimizing the conditional expected risk $\mathbb{E}[l(Y, f(X)) \mid X]$ pointwisely, which leads to the Bayes predictor $f^*(X)$. 
+
+        \begin{proposition}[Bayes Predictor and Bayes Risk]
+            The conditional expected risk is minimized at a Bayes predictor $f^*: \mathcal{X} \rightarrow \mathcal{Y}$ satisfying for all $x \in \mathcal{X}$,
+            \begin{equation*}
+                f^*(X) \in \argmin_{f(X) \in \mathcal{Y}} \ \mathbb{E} \big[ l(Y, f(X)) \mid X \big]
+            \end{equation*}
+            The Bayes risk $\mathcal{R}^*$ is the risk of all Bayes predictors and is equal to
+            \begin{equation*}
+                \mathcal{R}^* = \mathbb{E}_X\Big[ \inf_{f(X) \in \mathcal{Y}} \mathbb{E} \big[l(Y, f(X)) \mid X \big] \Big]
+            \end{equation*}
+        \end{proposition}
+
+        However, the conditional probability $\mathbb{P}(Y \mid X)$ is generally unknown. To overcome this obstacles, this time we approximate the $\mathbb{P}(Y \mid X)$ by some estimator $\hat{\mathbb{P}}(Y \mid X)$, and the optimal predictor could be obtained by
+        \begin{equation*}
+            \hat{f}(X) = \argmin_{f(X) \in \mathcal{Y}} \ \hat{\mathbb{E}} \big[ l(Y, f(X)) \mid X\big] = \argmin_{f(X) \in \mathcal{Y}} \int_{\mathcal{Y}} l(y, f(X)) d\hat{P}(Y = y \mid X)  
+        \end{equation*}
+        which are often called "plug-in" estimators. Recall what we done in ERM
+        \begin{equation*}
+            \hat{f} = \argmin_{f \in \mathcal{F}} \hat{\mathcal{R}}(f) = \argmin_{f \in \mathcal{F}} \ \frac{1}{n} \sum_{i=1}^{n} l(Y_i, f(X_i))
+        \end{equation*}
+        In the usual cases, local averaging methods leads to the following prediction functions:
         \begin{itemize}
             \item Classification with $0$-$1$ loss: 
-                $$ \hat{f}(X) \in \argmax_{y \in \{1, \dots, k\}} \ \hat{\mathbb{P}}(Y = y \mid X) $$
+                $$ f^*(X) \in \argmin_{f(X) \in \mathcal{Y}} \hat{\mathbb{E}} \big[\mathbbm{1}(Y \neq f(X) ) \mid X \big] = \argmin_{f(X) \in \mathcal{Y}} \sum_{y=1}^{k} \mathbbm{1}(y \neq f(X)) \cdot \hat{P}(Y = y \mid X) $$
+                which is equivalent to
+                $$ \hat{f}(X) \in \argmax_{y \in \{1, \dots, k\}} \hat{P}(Y = y \mid X) $$
 
             \item Regression with square loss:
-                $$ \min_{f(X) \in \mathcal{Y}} \int_{\mathcal{Y}} (y - f(X))^2 d\hat{P}(Y = y \mid X) $$ 
+                $$ \min_{f(X) \in \mathcal{Y}} \int_{\mathcal{Y}} (y - f(X) )^2 \ d\hat{P}(Y = y \mid X) $$ 
                 The first-order optimal condition yields
-                $$ \int_{\mathcal{Y}} (2\hat{f}(X) - 2y) d\hat{P}(Y = y \mid X) = 0 $$
+                $$ \int_{\mathcal{Y}} (2f(X) - 2y) \ d\hat{P}(Y = y \mid X) = 0 $$
                 which implies
-                $$ \hat{f}(X) = \int_{\mathcal{Y}} y \ d\hat{P}(Y = y \mid X) $$
+                $$ \hat{f}(X) = \int_{\mathcal{Y}} y \ d\hat{P}(Y = y \mid X) = \hat{\mathbb{E}}[Y \mid X] $$
         \end{itemize}
         In this way, we don't need to claim a hypothesis on the form of function $f$, but the tradeoff is we have to estimate the conditional distribution $P(Y \mid X)$ as well as the marginal distribution $P(X)$.
 
@@ -2523,32 +3022,47 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
     % subsection local_averaging_methods (end)
 
-    \subsection{Linear Estimator} % (fold)
-    \label{sub:linear_estimator}
+    \subsection{Linear Estimators} % (fold)
+    \label{sub:linear_estimators}
     
-        In this section, we will consider "linear" estimators (which is linear in data points $Y_i$), where the conditional distribution is of the form
-        \begin{equation}
-            \hat{f}(X) = \hat{P}(Y \mid X) = \sum_{i=1}^{n} \hat{w}_i(X) \cdot \delta_{Y_i}(Y)
-            \label{eq:local-avg-linear-estimator}
-        \end{equation}
+        In this section, we will consider "linear" estimators (which is linear in observations), where the conditional distribution is of the form
+        \begin{equation*}
+            \hat{P}(Y = y \mid X) = \sum_{i=1}^{n} \hat{w}_i(X) \cdot \mathbbm{1}(Y_i = y)
+        \end{equation*}
+        with its derviative
+        \begin{equation*}
+            d\hat{P}(Y = y \mid X) = \sum_{i=1}^{n} \hat{w}_i(X) \cdot \delta_{Y_i}(Y) dy
+        \end{equation*}
         where $\delta_{Y_i}$ is the Dirac probability distribution at $Y_i$, and the weight function $\hat{w}_i: \mathcal{X} \mapsto \mathbb{R}$, $i = 1, \dots, n$ depends on the input data only (for simplicity) and satisfy for all $i \in \{1, \dots, n \}$ and $X \in \mathcal{X}$
-        \begin{equation}
-            \hat{w}_i(X) \geq 0, \quad \text{and} \ \sum_{i=1}^{n} \hat{w}_i(X) = 1 
-        \end{equation}
-        almost surely in $X$. These conditions ensure that for all $x \in \mathcal{X}$, $\hat{P}(Y \mid X)$ is a probability distribution. 
-        For our running assumptions, this leads to the following predictions:
+        \begin{equation*}
+            \hat{w}_i(X) \geq 0 \quad \text{and} \quad \sum_{i=1}^{n} \hat{w}_i(X) = 1 \quad \text{almost surely in } X
+        \end{equation*}
+        These conditions ensure that for all $x \in \mathcal{X}$, $\hat{P}(Y \mid X)$ is a probability distribution. For our running examples, we have:
         \begin{itemize}
-            \item Binary Classification: 
-                $$ \hat{f}(X) \in \argmax_{j \in \{1, \dots, k\}} \sum_{i=1}^{n} \hat{w}_i(X) \cdot \mathbbm{1}_{Y_i = j} $$ 
+            \item Binary Classification with category labels: 
+                \begin{equation*}
+                    \hat{f}(X) \in \argmax_{y \in \{1, \dots, k\}} \ \hat{P}(Y = y \mid X) = \argmax_{y \in \{1, \dots, k\}} \ \sum_{i=1}^{n} \hat{w}_i(X) \cdot \mathbbm{1}(Y_i = y)
+                \end{equation*} 
                 that is, each observation $(X_i, Y_i)$ votes for its label with weight $\hat{w}_i(X)$. 
 
-            \item Regression on $\mathcal{Y} = \mathbb{R}$: 
-                $$ \hat{f}(X) = \sum_{i=1}^{n} \hat{w}_i(X) Y_i $$ 
+            \item Regression on $\mathcal{Y} = \mathbb{R}$:
+                \begin{equation}
+                    \hat{f}(X) = \int_{\mathcal{Y}} y \ d\hat{P}(Y = y \mid X) = \sum_{i=1}^{n} \hat{w}_i(X) \int_{\mathcal{Y}} y \cdot \delta_{Y_i}(y) dy = \sum_{i=1}^{n} \hat{w}_i(X) Y_i
+                    \label{eq:regression-predictor-LAM}
+                \end{equation} 
                 This is why the terminology "linear estimators" is sometimes used, since as function of the response vector in $\mathbb{R}^n$, the estimator is linear.
         \end{itemize}
 
+        \vspace{1em}
         \noindent
-        \textbf{Construction of Weight Functions}. In most cases, for any $i$, the weight function $\hat{w}_i(X)$ is closed to $1$ for training points $X_i$ which are close to $X$ (measure the similarity with $X_i$). We next show three classical ways of building them: (1) partition estimators, (2) Nearest-neighbors, and (3) Nadaraya-Waatson estimator (a.k.a. kernel regression).
+        \textbf{Weight Functions}. In most cases, for any $i$, the weight function $\hat{w}_i(X)$ is closed to $1$ for training points $X_i$ which are close to $X$ (measure the similarity with $X_i$). We next show three classical ways of building them: (1) partition estimators, (2) Nearest-neighbors, and (3) Nadaraya-Waatson estimator (a.k.a. kernel regression).
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=.8\linewidth]{Pics/weight-functions.png}
+            \caption{Weights of linear estimators in $d = 1$ estimation for three types of local averaging estimators. The $n = 8$ weight functions $\hat{w}_i(x)$ are plotted with the observations in black.}
+            \label{fig:weight-functions}
+        \end{figure}
 
         \subsubsection{Partition Estimators} % (fold)
         \label{ssub:partition_estimators}
@@ -2558,14 +3072,14 @@ This note \textbf{aggregates} the contents from the following books, articles an
                 \hat{w}_{i}(X) = \frac{\mathbbm{1}_{X_i \in A(X)}}{\sum_{j=1}^{n} \mathbbm{1}_{X_j \in A(X)}}
                 \label{eq:partition-weight}
             \end{equation}
-            with the convention that if no training data points lies in $A(X)$, then $\hat{w}_i(X)$ is equal to $1/n$ for each $i \in \{1, \dots, n\}$. This implies that each $w_i$ is piecewise constant with respect to the partition, that is, for any non-empty cell $A_j$ (at least one sample falls in $A_j$) and $X \in A_j$, the vectors $w(X) = (w_1(X), \dots, w_n(X))^{\top}$ has components equals to $1/{n_{A_j}}$ for $X_i \in A_j$ and $0$ otherwise. Here $n_{A_j}$ is the number of training samples in the set $A_j$.
+            with the convention that if no training data points $\{X_i\}$ lies in $A(X)$, then $\hat{w}_i(X)$ is equal to $1/n$ for each $i \in \{1, \dots, n\}$. 
 
             \vspace{1em}
             \noindent
-            \textbf{Equivalence with Least-squares Regression}. When applied to regression where the estimator is $\hat{f}(X) = \sum_{i=1}^{n} \hat{w}_i(X) Y_i $, then using a partition estimators can be seen as a least-square estimator with feature vector $\varphi(X) = (\mathbbm{1}_{X \in A_1}, \dots, \mathbbm{1}_{X \in A_J})^{\top} \in \mathbb{R}^J$. Indeed, from trainning data $(X_1, Y_1), \dots, (X_n, Y_n)$, we need to find the weight vector $\hat{\theta}$ through the normal equations
-            $$ \sum_{i=1}^{n} \varphi(X_i) \varphi(X_i)^{\top} \theta = \sum_{i=1}^{n} Y_i \varphi(X_i) $$
+            \textbf{Equivalence with Least-squares Regression}. Consider the case of regression where we use the linear estimator $\hat{f}(X) = \sum_{i=1}^{n} \hat{w}_i(X) Y_i $ with partition weights. This can be seen as a least-square estimator with feature vector $\varphi(X) = (\mathbbm{1}_{X \in A_1}, \dots, \mathbbm{1}_{X \in A_J})^{\top} \in \mathbb{R}^J$ in ERM approach. Indeed, from trainning data $(X_1, Y_1), \dots, (X_n, Y_n)$, we need to find the weight vector $\hat{\theta}$ through the normal equations
+                $$ \sum_{i=1}^{n} \varphi(X_i) \varphi(X_i)^{\top} \theta = \sum_{i=1}^{n} Y_i \varphi(X_i) $$
             It turns out that the matrix $\hat{\Sigma} = \sum_{i=1}^{n} \varphi(X_i) \varphi(X_i)^{\top} $ is diagonal with the $j$th component equals to $n_{A_j}$, the number of data points lying in cell $A_j$. This implies that for a non-empty cell $A_j$, $\theta_j$ is the average of all $Y_i$'s for $X_i$ lying in $A_j$, namely,
-            $$ \theta_j = \frac{1}{n_{A_j}} \sum_{i = 1}^{n} Y_i \cdot \mathbbm{1}_{X_i \in A_j} $$
+                $$ \theta_j = \frac{1}{n_{A_j}} \sum_{i = 1}^{n} Y_i \cdot \mathbbm{1}_{X_i \in A_j} $$
             Thus, for all $X \in A_j$, the prediction is exactly $\theta_j$, just as the weights obtained from Eq.(\ref{eq:partition-weight}). 
             For empty cells, $\theta_j$ is not determined. Among the many OLS estimators, we select the one for which the variance of the vector $\theta$ is smallest, that is $\sum_{j \in J}(\theta_j - \frac{1}{|J|} \sum_{j' \in J} \theta_j' )^2$ is smallest. A short calculation shows that this exactly leads to $\theta_j = \frac{1}{n} \sum_{i=1}^{n} Y_i $ for these empty cells, which correspond to our chosen convention.
 
@@ -2575,17 +3089,17 @@ This note \textbf{aggregates} the contents from the following books, articles an
             \noindent
             \textbf{Choice of Partitions}. These are two standard applications of partition estimators:
             \begin{itemize}
-                \item Fixed partitions.
+                \item Fixed partitions:
 
                     for example, when $\mathcal{X} = [0, 1]^d$, then we choose the bandwidth $h$, with $|J| = h^{-d}$ (if $h=1/5$ and $d = 2$, we have $|J|=25$). Note here that the computation time for ech $X \in \mathcal{X}$ is not necessarily proportional to $|J|$, but to $n$ (by simply considering the bins where the data lie). This estimator is some times called a "regressogram".
 
-                    \begin{figure}[htb]
+                    \begin{figure}[ht]
                         \centering
                         \includegraphics[width=.8\linewidth]{Pics/fixed-partitions.png}
                         \caption{Regressograms in $d=1$ dimension, with three different values of $|J|$. We can see both underfitting, or overfitting in this example. Note that the target function $f^*$ is piecewise affine, and that on the affine parts, the estimator is far from linear, namely, the estimator cannot take advantage of extra-regularity.}
                     \end{figure}
 
-                \item Decision trees.
+                \item Decision trees:
 
                     for data in a hypercube, we can recursively partition it by selecting a variable to split leading to a maximum reduction in errors when defining the partitioning estimate. Note that now the partition depends on the labels (so the analysis below does not apply, unless the partitioning is learned on a different data than the one sued for the estimation).
             \end{itemize}
@@ -2596,13 +3110,13 @@ This note \textbf{aggregates} the contents from the following books, articles an
         \label{ssub:nearest_neighbors}
         
             Given an integer $k \geq 1$, and a distance $d$ on $\mathcal{X}$, for any $X \in \mathcal{X}$, we can order the $n$ samples so that
-            $$ d(X_{i_1(X)}, X) \leq d(X_{i_2(X)}, X) \leq \cdots \leq d(X_{i_n(X)}, X) $$
+                $$ d(X_{i_1(X)}, X) \leq d(X_{i_2(X)}, X) \leq \cdots \leq d(X_{i_n(X)}, X) $$
             where $\{i_1(X), \dots, i_n(X)\} = \{1, \dots, n\}$, and ties are broken randomly. We then define
-            \begin{equation}
-                \hat{w}_i(X) = \frac{1}{k}, \quad \text{if }
-            \end{equation}
-            if $i \in \{i_1(X), \dots, i_k(X) \}$ and $\hat{w}_i(X) = 0$ otherwise.
-            Given a new input $X \in \mathcal{X}$, the nearest neighbor predictor looks at the $k$ nearest points $X_i$ in the data set $\{(X_1, Y_1), \dots, (X_n, Y_n)\}$ and predicts a majority vote among them for classification or simply the averaged response for regression. The number of nearest neighbors $k$ is a hyperparameter which needs to be estimated (typically by cross-validation).
+            \begin{equation*}
+                \hat{w}_i(X) = \frac{1}{k}, \quad \text{if} \ i \in \{i_1(X), \dots, i_k(X) \}
+            \end{equation*}
+            and $\hat{w}_i(X) = 0$ otherwise.
+            Given a new input $X \in \mathcal{X}$, the nearest-neighbors predictor looks at the $k$ nearest points $X_i$ in the data set $\{(X_1, Y_1), \dots, (X_n, Y_n)\}$ and predicts a majority vote among them for classification or simply the averaged response for regression. The number of nearest neighbors $k$ is a hyperparameter which needs to be estimated (typically by cross-validation).
 
             \vspace{1em}
             \noindent
@@ -2620,20 +3134,29 @@ This note \textbf{aggregates} the contents from the following books, articles an
         \label{ssub:nadaraya_watson_estimator_kernel_regression_}
 
             Given a "kernel" function $K: \mathcal{X} \times \mathcal{X} \mapsto \mathbb{R}_{+}$, which is pointwise non-negative, we define
-            \begin{equation}
-                \hat{w}_i(X) = \frac{K(X, X_i)}{\sum_{j=1}^n K(X, X_j)}
-            \end{equation}
-            with the convention that if $K(X, X_j) = 0$ for all $j \in \{1, \dots, n\}$, then $\hat{w}_i(X)$ is equal to $1/n$ for each $i$. In most case where $\mathcal{X} \subset \mathbb{R}^d$, we take
-            $$ K(X, X') = \frac{q(\frac{1}{h}(X - X'))}{h^d} $$
-            for a certain function $q: \mathbb{R}^d \mapsto \mathbb{R}_{+}$ that has large values around $0$, and $h > 0$ a bandwidth parameter to be selected. If we assume that $q$ is integrable with integral equal to one, then $K(\cdot, X')$ is a probability density with mass around $X'$, which gets more concentrated as $h$ goes to zero. See illustration below for the two typiocal windows.
+            \begin{equation*}
+                \hat{w}_i(X) = \frac{K(X_i, X)}{\sum_{j=1}^n K(X_j, X)}
+            \end{equation*}
+            with the convention that if $K(X_j, X) = 0$ for all $j \in \{1, \dots, n\}$, then $\hat{w}_i(X)$ is equal to $1/n$ for each $i$. In most case where $\mathcal{X} \subset \mathbb{R}^d$, we take
+                $$ K(X, X') = \frac{q((X - X')/h)}{h^d} $$
+            for a certain function $q: \mathbb{R}^d \mapsto \mathbb{R}_{+}$ that has large values around $0$, and $h > 0$ a bandwidth parameter to be selected. If we assume that $q$ is integrable with integral equal to one, then $K(\cdot, X')$ is a probability density with mass around $X'$, which gets more concentrated as $h$ goes to zero. See illustration below for the two typical windows.
 
-            \begin{figure}[htb]
+            \begin{figure}[h]
                 \centering
-                \includegraphics[width=.7\linewidth]{Pics/kernels-local-averaging.png}
+                \begin{subfigure}[b]{0.65\textwidth}
+                    \centering
+                    \includegraphics[width=\linewidth]{Pics/kernels-local-averaging.png}
+                    \caption{Two typical kernel windows}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.3\textwidth}
+                     \centering
+                     \includegraphics[width=\linewidth]{Pics/box-kernel.png}
+                     \caption{Box kernel in $d = 2$ dimensions}
+                 \end{subfigure}
             \end{figure}
 
             \begin{itemize}
-                \item Box kernel: $q(X) = \mathbbm{1}_{||X||_2 \leq 1}$
+                \item Box kernel: $q(X) = \mathbbm{1}(||X||_2 \leq 1)$. See above for an illustration in $d = 2$ dimension
 
                 \item Gaussian kernel: $q(X) = e^{-||X||^2/2}$, where we use the fact it is non-negative pointwise (as opposed to positive definitiness).
             \end{itemize}
@@ -2648,76 +3171,355 @@ This note \textbf{aggregates} the contents from the following books, articles an
         
         % subsubsection nadaraya_watson_estimator_kernel_regression_ (end)
         
-    % subsection linear_estimator (end)
+    % subsection linear_estimators (end)
 
-    \subsection{Generic Simplest Consistency Analysis} % (fold)
-    \label{sub:generic_simplest_consistency_analysis}
+    \subsection{Generic Consistency Analysis} % (fold)
+    \label{sub:generic_consistency_analysis}
 
-        We consider for simplicity the regression case. For classification, calibration techniques such as those used in Section \ref{sec:empirical_risk_minimization} can be used.
-        We make the following generic assumptions here:
-        \begin{enumerate}
-            \item Bounded noise: there exists $\sigma \geq 0$ such that $|Y - \mathbb{E}[Y \mid X]|^2 \leq \sigma^2$ almost surely.
+        We consider for simplicity the \textbf{regression} case. For classification, calibration techniques such as those used in Section \ref{sec:convexification_of_the_risk} can be used (with then a square root calibration function on top of the least-squares excess risk), but better rate can be obtained directly (please refer the book \cite{bach2021learning}).
 
-            \item Regular target function: the target function $f^{*}(X) = \mathbb{E}[Y \mid X]$ is B-Lipschitz-continuous with respect to a distance $d$
+        \vspace{1em}
+        Except for the requirement of square-integrable for target function $f(x)$, we make extra generic assumptions here:
+        \begin{enumerate}[1.]
+            \item \textbf{Bounded noise}: there exists $\sigma \geq 0$ such that $|Y - \mathbb{E}[Y \mid X]|^2 \leq \sigma^2$ almost surely.
+
+            \item \textbf{Regular target function}: the target function $f^{*}(x) = \mathbb{E}[Y \mid X = x]$ is B-Lipschitz-continuous with respect to a distance $d$.
         \end{enumerate}
-        We have, with the target function $f^*(X) = \mathbb{E}[Y \mid X]$, at a test point $X \in \mathcal{X}$ and using that the weights $w_i(X)$ sum to one:
+        Recall the target function $f^*(x) = \mathbb{E}[Y \mid X = x]$ and the predictor $\hat{f}(x) = \sum_{i=1}^{n} \hat{w}_i(x) \cdot Y_i$ in Eq.(\ref{eq:regression-predictor-LAM}) at a test point $x \in \mathcal{X}$. Using that the summation of weights $w_i(X)$ is one, we have:
+        \begin{equation*}
+            \begin{aligned}
+                \hat{f}(x) - f^*(x) &= \sum_{i=1}^{n} \hat{w}_i(x) \cdot Y_i - \mathbb{E}[Y \mid X = x] \\
+                &= \sum_{i=1}^{n} \hat{w}_i(x) \cdot (Y_i - \mathbb{E}[Y_i \mid X_i]) + \sum_{i=1}^{n} \hat{w}_i(x) \cdot (\mathbb{E}[Y_i \mid X_i] - \mathbb{E}[Y \mid X = x]) \\
+                &= \underbrace{\sum_{i=1}^{n} \hat{w}_i(x) \cdot (Y_i - \mathbb{E}[Y_i \mid X_i])}_{\text{part I}} + \underbrace{\sum_{i=1}^{n} \hat{w}_i(x) \cdot \left(f^{*}(X_i) - f^{*}(x) \right)}_{\text{part II}} \\ 
+            \end{aligned}
+        \end{equation*}
+        Conditioning on $X_1, \dots, X_n$ and because we have assumed the weight functions do not depend on the labels $\{Y_i\}$, the first term (part I) has zero expectation (with respect to sample $S_n$)
+        \begin{equation*}
+            \begin{aligned}
+                \mathbb{E}_{S_n}\Big[\text{part I} \mid X_1, \dots, X_n \Big] &= \hat{w}_i(x) \cdot \mathbb{E}\big[Y_i - \mathbb{E}[Y \mid X_i] \mid X_i \big] \\  
+                &= \hat{w}_i(x) \cdot \big(\mathbb{E}[Y_i \mid X_i] - \mathbb{E}[Y_i \mid X_i] \big) = 0
+            \end{aligned}
+        \end{equation*}
+        while the second term (part II) is deterministic and the variance is therefore zero
+            $$ \var_{S_n}\Big(\text{part II} \mid X_1, \dots, X_n \Big) = 0 $$
+        We thus have, using the independencies of samples $(X_i, Y_i). i = 1, \dots, n$ and weights $w_i(x)$ sum to one:
+        \begin{equation*}
+            \begin{aligned}
+                \mathbb{E}_{S_n}\left[\left(\hat{f}(x) - f^{*}(x) \right)^2 \mid X_1, \dots, X_n \right] &= \left(\mathbb{E}_{S_n} \left[\hat{f}(x) - f^*(x) \mid X_1, \dots, X_n \right] \right)^2 + \var_{S_n} \left(\hat{f}(x) - f^*(x) \mid X_1, \dots, X_n \right) \\
+                &= \left(\mathbb{E}_{S_n}\Big[\text{part II} \mid X_1, \dots, X_n \Big] \right)^2 + \var_{S_n} \Big(\text{part I} \mid X_1, \dots, X_n \Big) \\
+                &= \underbrace{\left(\sum_{i=1}^{n} \hat{w}_i(x) \cdot \big(f^*(X_i) - f^*(x) \big) \right)^2}_{\text{bias}} + \underbrace{\sum_{i=1}^{n} \hat{w}_i(x)^2 \cdot \mathbb{E}_{S_n} \Big[\big(Y_i - \mathbb{E}[Y_i \mid X_i] \big)^2 \mid X_i \Big]}_{\text{variance}} \\
+            \end{aligned}
+        \end{equation*}
+        with a "bias" term which is zero if $f^*$ is constant over $\mathcal{X}$, and a "variance" term which is zero, when $Y$ is a deterministic function of $X$. We can further bound these as
         \begin{equation}
             \begin{aligned}
-                \hat{f}(X) - f^*(X) &= \sum_{i=1}^{n} \hat{w}_i(X) Y_i - \mathbb{E}[Y \mid X] \\
-                &= \sum_{i=1}^{n} \hat{w}_i(X) \cdot (Y_i - \mathbb{E}[Y_i \mid X_i]) + \sum_{i=1}^{n} \hat{w}_i(X) \cdot (\mathbb{E}[Y_i \mid X_i] - \mathbb{E}[Y \mid X]) \\
-                &= \sum_{i=1}^{n} \hat{w}_i(X) \cdot (Y_i - \mathbb{E}[Y_i \mid X_i]) + \sum_{i=1}^{n} \hat{w}_i(X) \cdot \left(f^{*}(X_i) - f^{*}(X) \right) \\ 
+                \mathbb{E}_{S_n}\left[\left(\hat{f}(x) - f^*(x) \right)^2 \mid X_1, \dots, X_n \right] &\leq \left( \sum_{i=1}^{n} \hat{w}_i(x) \cdot \Big|f^*(x_i) - f^*(x) \Big| \right)^2 + \sigma^2 \sum_{i=1}^{n} \hat{w}_i(x)^2 \quad (\text{Assumption 1}) \\
+                &\leq \left(\sum_{i=1}^{n} \hat{w}_i(x) \cdot B \cdot d(X_i, x) \right)^2 + \sigma^2 \sum_{i=1}^{n} \hat{w}_i(x)^2 \quad (\text{Assumption 2}) \\
+                &\leq B^2 \sum_{i=1}^{n} \hat{w}_i(x) \cdot d(X_i, x)^2 + \sigma^2 \sum_{i=1}^{n} \hat{w}_i(x)^2 \quad (\text{Jensen's inequality}) \\
             \end{aligned}
+            \label{eq:empirical-excess-risk-decomposition}
         \end{equation}
-        Given $X_1, \dots, X_n$ and because we have assumed the weight functions do not depend on the labels, the left term has zero expectation by the iterated law of expectation
-        \begin{equation*}
-            \begin{aligned}
-                \mathbb{E}\Big[\hat{w}_i(X) \cdot \big(Y_i - \mathbb{E}[Y_i \mid X_i] \big) \Big] &= \mathbb{E}\Big[\mathbb{E}\big[\hat{w}_i(X) \cdot (Y_i - \mathbb{E}[Y_i \mid X_i]) \mid X_i \big] \Big] \\
-                &= \mathbb{E} \Big[\hat{w}_i(X) \cdot \mathbb{E}\big[Y_i - \mathbb{E}[Y \mid X_i] \mid X_i \big] \Big] \\  
-                &= \mathbb{E} \Big[\hat{w}_i(X) \cdot \big(\mathbb{E}[Y_i \mid X_i] - \mathbb{E}[Y \mid X] \big) \Big] = 0
-            \end{aligned}
-        \end{equation*}
-        while the right term involving $f^*(X)$ is deterministic (the variance is therefore zero).
-        We thus have, using the independence of all $(X_i, Y_i)$, $i = 1, \dots, n$, and for $X$ fixed:
-        \begin{equation*}
-            \begin{aligned}
-                \mathbb{E}\Big[\big(\hat{f}(X) - f^{*}(X) \big)^2 \mid X_1, \dots, X_n \Big] &= \mathbb{E}[\hat{f}(X) - f^*(X) \mid X_1, \dots, X_n]^2 + \var(\hat{f}(X) - f^*(X) \mid X_1, \dots, X_n) \\
-                &= \big(\mathbb{E}[\hat{f}(X) \mid X_1, \dots, X_n] - f^*(X) \big)^2 + \var(\hat{f}(X) \mid X_1, \dots, X_n) + 0 \\
-                &= \left(\sum_{i=1}^{n} \hat{w}_i(X) \cdot \mathbb{E}[Y_i \mid X_i] - f^*(X) \right)^2 + \var \left(\sum_{i=1}^{n} \hat{w}_i(X) \cdot Y_i \mid X_1 \dots, X_n \right) \\
-                &= \left(\sum_{i=1}^{n} \hat{w}_i(X) \cdot f^*(X_i) - f^*(X) \right)^2 + \sum_{i=1}^{n} \hat{w}_i(X)^2 \cdot \var(Y_i \mid X_i) \\
-                &= \left(\sum_{i=1}^{n} \hat{w}_i(X) \cdot \big(f^*(X_i) - f^*(X) \big) \right)^2 + \sum_{i=1}^{n} \hat{w}_i(X)^2 \cdot \mathbb{E}\Big[\big(Y_i - \mathbb{E}[Y_i \mid X_i] \big)^2 \mid X_i \Big] \\
-                &= \qquad \text{bias} \qquad + \qquad \text{variance} \\
-            \end{aligned}
-        \end{equation*}
-        with a "bias" term which is zero if $f^*$ is constant, and a "variance" term which is zero, when $Y$ is a deterministic function of $X$. We can further bound these as
-        \begin{equation*}
-            \begin{aligned}
-                \mathbb{E}\Big[\big(\hat{f}(X) - f^*(X) \big)^2 \mid X_1, \dots, X_n \Big] &\leq \left( \sum_{i=1}^{n} \hat{w}_i(X) \cdot \big|f^*(X_i) - f^*(X) \big| \right)^2 + \sigma^2 \sum_{i=1}^{n} \hat{w}_i(X) \quad (\text{Assumption 1}) \\
-                &\leq \left(\sum_{i=1}^{n} \hat{w}_i(X) \cdot B \cdot d(X_i, X) \right)^2 + \sigma^2 \sum_{i=1}^{n} \hat{w}_i(X)^2 \quad (\text{Assumption 2}) \\
-                &\leq B^2 \sum_{i=1}^{n} \hat{w}_i(X) \cdot d(X_i, X)^2 + \sigma^2 \sum_{i=1}^{n} \hat{w}_i(X)^2 \quad (\text{Jensen's inequality}) \\
-            \end{aligned}
-        \end{equation*}
-        We then have for the expected excess risk
+        According to Eq.(\ref{eq:expected-excess-risk-regression}), the expected excess risk for regression case is:
         \begin{equation}
-            \int_{\mathcal{X}} \mathbb{E}\Big[\big(\hat{f}(X) - f^*(X) \big)^2 \Big] d P(X) \leq B^2 \int_{\mathcal{X}} \mathbb{E}\left[\sum_{i=1}^{n} \hat{w}_i(X) d(X_i, X)^2 \right] dP(X) + \sigma^2 \sum_{i=1}^{n} \int_{\mathcal{X}} \mathbb{E}\left[\hat{w}_i(X)^2 \right] dP(X)
+            \begin{aligned}
+                \mathcal{R}(\hat{f}) - \mathcal{R}^* &= \mathbb{E} \left[l(Y, \hat{f}(x)) - l(Y, f^*(x)) \right] \\
+                &= \int_{\mathcal{X}} \mathbb{E}_{S_n}\Big[\big(\hat{f}(x) - f^*(x) \big)^2 \mid X = x \Big] d P(x) \\ 
+                &\leq \underbrace{B^2 \int_{\mathcal{X}} \mathbb{E}_{S_n} \left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] d P(x)}_{\text{bias term}} + \underbrace{\sigma^2 \int_{\mathcal{X}} \mathbb{E}_{S_n} \left[\sum_{i=1}^{n} \hat{w}_i(x)^2 \right] dP(x)}_{\text{variance term}}
+            \end{aligned}
+            \label{eq:expected-excess-risk-decomosition}
         \end{equation}
-        \textbf{Warning}: the expectation is with respect to the training data. The expectation with respect to the testing point $X$ is kept as an integral to avoid confusions.
-
+        Notice that the expectation is with respect to the training data $S_n$, where the expectation with respect to the testing point $X$ is kept as an integral to avoid confusions.
         This upper bound can be divided into:
         \begin{itemize}
-            \item A variance term $\sigma^2 \sum_{i=1}^{n} \int_{\mathcal{X}} \mathbb{E}\left[\hat{w}_i(X)^2 \right] dP(X)$, that depends on the noise on top of the optimal predictions. Since the weights sum to one, we can write $\sum_{i=1}^{n} \mathbb{E}[\hat{W}_i(X)^2] = \sum_{i=1}^{n} \mathbb{E}[(\hat{w}_i(X) - 1/n)^2] + 2/n - 1/n^2$, that is, up to vanishing constant, the variance term measures the deviation ot the uniform weights.
+            \item A bias term $B^2 \int_{\mathcal{X}} \mathbb{E}\left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] d P(x)$, which depends on the regularity of the target function.
 
-            \item A bias term $B^2 \int_{\mathcal{X}} \mathbb{E}\left[\sum_{i=1}^{n} \hat{w}_i(X) d(X_i, X)^2 \right] dP(X)$, which depends on the regularity of the target function.
+            \item A variance term $\sigma^2 \sum_{i=1}^{n} \int_{\mathcal{X}} \mathbb{E}\left[\hat{w}_i(x)^2 \right] d P(x)$, that depends on the noise on top of the optimal predictions. Since the weights sum to one, we can write 
+            $$ \sum_{i=1}^{n} \mathbb{E}[\hat{w}_i(x)^2] = \sum_{i=1}^{n} \mathbb{E}[(\hat{w}_i(x) - 1/n)^2] + 2/n - 1/n^2 $$
+            Hence, up to vanishing constant, the variance term measures the deviation t0 the uniform weights.
         \end{itemize}
-        Both variance and bias have to go to zero when $n$ grows, and this corresponds to two simple quantities on the weights. 
-        \begin{itemize}
-            \item For the variance, the worst case scenario is that $\hat{w}_i(X)^2 \approx \hat{w}_i(X)$, that is, weights are putting all the mass in to a single label (different for different testing sample), thus leading to overfitting.
+        Both variance and bias have to go to zero when $n$ grows, and this corresponds to two simple quantities on the weights. For the variance, the worst case scenario is that $\hat{w}_i(X)^2 \approx \hat{w}_i(X)$, that is, weights are putting all the mass in to a single label (different for different testing sample), thus leading to overfitting. For the bias, the worst case scenario is that weights are uniform (the distance $d(X_i, X)$ are different, may lead to underfitting).
 
-            \item For the bias, the worst case scenario is that weights are uniform (leading to underfitting).
-        \end{itemize}
+        \subsubsection{Fixed Partition} % (fold)
+        \label{ssub:fixed_partition}
+
+            \begin{proposition}[Convergence rate for partition estimates]
+                Assume bounded noise (A1) and a Lipschitz-continuous target function (A2), and a partition $\mathcal{X} = \bigcup_{j \in J} A_j$; then for the partitioning estimate $\hat{f}$, we have
+                \begin{equation}
+                    \int_{\mathcal{X}} \mathbb{E}_{S_n}\left[\left(\hat{f}(x) - f^*(x) \right)^2 \right] d P(x) \leq \left(8 \sigma^2 + \frac{B^2}{2} \text{diam}(\mathcal{X})^2 \right) \frac{|J|}{n} + B^2 \max_{j \in J} \text{diam}(A_j)^2 
+                \end{equation}
+                where the diameter of set $\mathcal{X}$ is defined as $ \text{diam}(\mathcal{X}) = \sup\{d(x, x') \mid x, x' \in \mathcal{X} \} $.
+            \end{proposition}
+            There is a tradeoff between bias and variance, and we need to balance the terms (up to constants) $\max_{j \in J} \text{diam}(A_j)^2$ and $|J|/n$. 
+            Consider the case of unit-cube $[0, 1]^d$, with $|J| = h^{-d}$ cubes of length $h$, we have $|J|/n \approx 1/(n h^d)$ and $\max_{j \in J} \text{diam}(A_j)^2 \approx h^2$, which are equal when $h \approx n^{-1/(2 + d)}$, leads to a rate proportional to $n^{-2/(2 + d)}$.
+            
+            While optimal, this is a very slow rate, and a typical example of the curse of dimensionality. For this rate to be small, $n$ has to be exponentially large in dimension. This is unavoidable with so little regularity (only bounded first-order derivatives). In Section \ref{sec:kernel_methods}, we show how to leverage smoothness to get significantly improved bounds. In Section \ref{sec:sparse_methods}, we will leverage dependence on a small number of variables.
+
+            \begin{proof}
+                We consider an element $A_j$ of the partition with at least one observation in it (a non-empty cell). Then for the test point $x \in A_j$ and $i$ among the indices of training points lying in $A_j$, we have 
+                    $$ \hat{w}_i(x) = 1 / n_{A_j} $$ 
+                where $n_{A_j} \in \{1, \dots, n \}$ is the number of data points lying in $A_j$.
+                \begin{itemize}
+                    \item \textbf{Variance}. From Eq.(\ref{eq:expected-excess-risk-decomosition}), the variance term is bounded from above by $\sigma^2$ times
+                        $$ \sum_{i=1}^{n} \hat{w}_i(x)^2 = n_{A_j} \frac{1}{n_{A_j}^2} = \frac{1}{n_{A_j}} $$
+                        If $A_j$ contains no input observations, then all weights are equal to $1/n$ and this sum is equal to $n \times (1/n^2) = 1/n$ for all $X \in A_j$. Thus we get
+                        \begin{equation}
+                            \begin{aligned}
+                                \int_{\mathcal{X}} \mathbb{E}_{S_n}\left[\sum_{i=1}^{n} \hat{w}_i(x)^2 \right] \ d P(x) &= \int_{\mathcal{X}} \sum_{j \in J} \mathbbm{1}(x \in A_j) \cdot \mathbb{E}_{S_n} \left[\frac{1}{n_{A_j}} \mathbbm{1}(n_{A_j} > 0) + \frac{1}{n} \mathbbm{1}(n_{A_j} = 0) \right] d P(x) \\
+                                &= \sum_{j \in J} \mathbb{P}(A_j) \cdot \mathbb{E}_{S_n} \left[\frac{1}{n_{A_j}} \mathbbm{1}(n_{A_j} > 0) + \frac{1}{n} \mathbbm{1}(n_{A_j} = 0) \right] \\
+                            \end{aligned}
+                        \end{equation}
+                        Intuitively, by the law of large numbers, $n_{A_j} / n$ tends to $\mathbb{P}(A_j)$, so the variance term is expected to be of the order $\sigma^2 \sum_{j \in J} \mathbb{P}(A_j) \frac{1}{n \mathbb{P}(A_j)} = \sigma^2 \frac{|J|}{n}$, which is to be expected as this is essentially equivalent to the least-squares regression with features $(\mathbbm{1}(X \in A_j) )_{j \in J}$.
+
+                        More formally, we have $\mathbb{P}(n_{A_j} = 0) = (1 - \mathbb{P}(A_j))^n$. Using Bernstein's inequality for the random variable $\mathbbm{1}(X \in A_j)$, which have mean and variance upper-bounded by $\mathbb{P}(A_j)$ (namely, $\mu, \sigma^2 \leq \mathbb{P}(A_j)$), we have
+                        \begin{equation*}
+                            \begin{aligned}
+                                \mathbb{P}\left(\frac{n_{A_j}}{n} \leq \frac{\mathbb{P}(A_j)}{2} \right) &= \mathbb{P}\left(\frac{n_{A_j}}{n} - \mathbb{P}(A_j) \leq -\frac{\mathbb{P}(A_j)}{2} \right) \\
+                                &\leq \mathbb{P}\left(\left|\frac{1}{n} \sum_{i=1}^{n} \mathbbm{1}(X_i \in A_j) - \mathbb{E}[\mathbbm{1}(X \in A_j)] \right| \geq \frac{\mathbb{P}(A_j)}{2} \right) \\
+                                &\leq \exp\left(- \frac{n \mathbb{P}(A_j)^2/4 }{2 \mathbb{P}(A_j) + 2(\mathbb{P}(A_j)/2)/3 )} \right) \\ 
+                                &\leq \exp\left(- \frac{n \mathbb{P}(A_j)}{10} \right) \leq \frac{5}{n \mathbb{P}(A_j)}
+                            \end{aligned}
+                        \end{equation*}
+                        where the last inequality holds by knowing the fact that $e^{-x} \leq 1/(2x)$ when $x > 0$. Such result leads to the bound
+                        \begin{equation*}
+                            \begin{aligned}
+                                &\sum_{j \in J} \mathbb{P}(A_j) \cdot \mathbb{E}_{S_n} \left[\frac{1}{n_{A_j}} \mathbbm{1}(n_{A_j} > 0) + \frac{1}{n} \mathbbm{1}(n_{A_j} = 0) \right] \\ 
+                                &\quad = \sum_{j \in J} \mathbb{P}(A_j) \cdot \mathbb{E}_{S_n} \left[\frac{1}{n_{A_j}} \mathbbm{1}(n_{A_j} > 0) \cdot \left( \mathbbm{1}\left(n_{A_j} \leq \frac{n \mathbb{P}(A_j) }{2} \right) + \left(n_{A_j} > \frac{n \mathbb{P}(A_j) }{2} \right) \right) + \frac{1}{n} \mathbbm{1}(n_{A_j} = 0) \right] \\ 
+                                &\quad \leq \sum_{j \in J} \mathbb{P}(A_j) \cdot \left[{\color{blue} \mathbb{P} \left(\frac{n_{A_j}}{n} \leq \frac{\mathbb{P}(A_j)}{2} \right) + \frac{2}{n \mathbb{P}(A_j)} } + \frac{1}{n} \mathbb{P}(n_{A_j} = 0) \right] \\
+                                &\quad \leq \sum_{j \in J} \mathbb{P}(A_j) \cdot \left[\frac{5}{n \mathbb{P}(A_j)} + \frac{2}{n \mathbb{P}(A_j)} + \frac{1}{n \mathbb{P}(A_j)} \right] \leq \frac{8 |J|}{n} \\
+                            \end{aligned}
+                        \end{equation*}
+
+                    \item \textbf{Bias}. We have, for $X \in A_j$ and a non-empty cell $A_j$,
+                        \begin{equation*}
+                            \sum_{i=1}^{n} \hat{w}_i(X) d(X_i, X)^2 \leq \text{diam}(A_j)^2 
+                        \end{equation*}
+                        and $\sum_{i=1}^{n} \hat{w}_i d(X_i, X)^2 = \frac{1}{n} \sum_{i=1}^{n} d(X_i, X)^2 \leq \text{diam}(\mathcal{X})^2 $ from empty-cells. Thus, separating the cases $n_{A_j} = 0$ and $n_{A_j} > 0$:
+                        \begin{equation*}
+                            \begin{aligned}
+                                \int_{\mathcal{X}} \mathbb{E}_{S_n}\left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] dP(x) &= \int_{\mathcal{X}} \sum_{j \in J} \mathbbm{1}(x \in A_j) \cdot \mathbb{E}_{S_n}\left[\sum_{i=1}^n \hat{w}_i(x) d(X_i, x)^2 \right] dP(x) \\
+                                &\leq \int_{\mathcal{X}} \sum_{j \in J} \mathbbm{1}(x \in A_j) \cdot \mathbb{E}_{S_n} \Big[\text{diam}(A_j)^2 \cdot \mathbbm{1}(n_{A_j} > 0) + \text{diam}(\mathcal{X})^2 \cdot \mathbbm{1}(n_{A_j} = 0) \Big] dP(x) \\
+                                &= \sum_{j = 1}^{J} \mathbb{P}(A_j) \cdot \Big[\text{diam}(A_j)^2 \cdot \mathbb{P}(n_{A_j} > 0) + \text{diam}(\mathcal{X})^2 \cdot \mathbb{P}(n_{A_j} = 0) \Big] \\
+                                &\leq \sum_{j = 1}^{J} \mathbb{P}(A_j) \cdot \Big[\text{diam}(A_j)^2 + \text{diam}(\mathcal{X})^2 \cdot \big(1 - \mathbb{P}(A_j) \big)^n \Big] \\
+                                &\leq \sum_{j = 1}^{J} \mathbb{P}(A_j) \cdot \Big[\text{diam}(A_j)^2 + \text{diam}(\mathcal{X})^2 \cdot \frac{1}{2n \mathbb{P}(A_j)} \Big] \qquad (1) \\
+                                &= \sum_{j \in J} \mathbb{P}(A_j) \cdot \text{diam}(A_j)^2 + \frac{|J|}{2n} \cdot \text{diam}(\mathcal{X})^2 \\
+                                &\leq \max_{j \in J} \text{diam}(A_j)^2 + \frac{|J|}{2n} \cdot \text{diam}(\mathcal{X})^2
+                            \end{aligned}
+                        \end{equation*}
+                        The inequality $(1)$ holds because of the fact that $(1 - x)^n \leq 1/(2n x)$ for $x \in (0, 1]$.
+                \end{itemize}
+                Combining the upper-bounds of variance and bias term together leads to the desire results.
+
+            \end{proof}
+
+        % subsubsection fixed_partition (end)
+
+        \subsubsection{K-nearest Neighbors} % (fold)
+        \label{ssub:k_nearest_neighbors}
+
+            In this case, we immediately have $\sum_{i=1}^{n} \hat{w}_i(x)^2 = 1/k$, so the variance term in Eq.(\ref{eq:expected-excess-risk-decomosition}) will go down as soon as $k$ tends to infinity. For the bias term, the needed term $\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2$ is equal to the average squared distances between test point $X$ and its $k$-nearest neighbors with training samples $\{X_1, \dots, X_n\}$, and this is less than the expected distance to the $k$-nearest neighbor, for which the two following lemmas give an estimate for the $l_{\infty}$-distance, and thus for all distances by equivalence of norms on $\mathbb{R}^d$.
+
+            \begin{lemma}[Distance to nearest neighbor]
+                Consider a probability distribution with compact support in $\mathcal{X} \subset \mathbb{R}^d$. Consider $n + 1$ points $X_1, \dots, X_n, X_{n+1}$ sampled i.i.d. from $\mathcal{X}$. Then the \textbf{expected} squared $l_{\infty}$-distance between $X_{n+1}$ and its first-nearest-neighbor is less than 
+                $$ 4 \frac{\text{diam}(\mathcal{X})^2}{n^{2/d}} $$ 
+                for $d \geq 2$, and less than $\frac{2}{n}\text{diam}(\mathcal{X})^2$ for $d = 1$.
+            \end{lemma}
+
+            \begin{proof}
+                By symmetry, we aim at computing the value $\frac{1}{n+1} \sum_{i=1}^{n+1} \mathbb{E}[||X_i - X_{(i)}||_{\infty}^{2}]$, where $X_{(i)}$ is a nearest neighbor of $X_i$ among the other $n$ points. Denote $R_i = ||X_i - X_{(i)}||_{\infty} $, then the sets $B_i = \{X \in \mathbb{R}^d \mid ||X - X_i||_{\infty} < R_i/2 \}$ are disjoint.
+
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=.4\linewidth]{Pics/distance-to-nearest-neighbors.png}
+                    \caption{Distance to nearest neighbors}
+                \end{figure}
+
+                Moreover, their union has diameter less than $\text{diam}(\mathcal{X}) + \text{diam}(\mathcal{X}) = 2 \text{diam}(\mathcal{X})$. Thus by comparing volumes, we have: $\sum_{i=1}^{n+1} R_i^d \leq (2 \text{diam}(\mathcal{X}) )^d$. Therefore, by Jensen's inequality, for $d \geq 2$,
+                \begin{equation*}
+                    \left(\frac{1}{n + 1} \sum_{i=1}^{n + 1} R_i^2 \right)^{d/2} \leq \frac{1}{n + 1} \sum_{i=1}^{n+1} (R_i)^d \leq \frac{2^d \text{diam}(\mathcal{X})^d }{n + 1}
+                \end{equation*}
+                leading to the desired result. For $d = 1$, we simply have
+                \begin{equation*}
+                    \left(\frac{1}{n + 1} \sum_{i=1}^{n+1} R_i^2 \right) \leq \text{diam}(\mathcal{X}) \left(\frac{1}{n + 1} \sum_{i=1}^{n} R_i \right) \leq \frac{2}{n + 1} \text{diam}(\mathcal{X})^2 
+                \end{equation*}
+
+            \end{proof}
         
-    % subsection generic_simplest_consistency_analysis (end)
+            \begin{lemma}[Distance to $k$-nearest neighbor]
+                Let $k \geq 1$. Consider a probability distribution with compact support in $\mathcal{X} \subset \mathbb{R}^d$. Consider $n + 1$ points $X_1, \dots, X_n, X_{n+1}$ sampled i.i.d. from $\mathcal{X}$. Then the expected squared $l_{\infty}$-distance between $X_{n+1}$ and its $k$-nearest neighbor is less than $$ 8 \text{diam}(\mathcal{X})^2 \left(\frac{2k}{n} \right)^{2/d} $$
+                for $d \geq 2$, and less than $\text{diam}(\mathcal{X})^2 \frac{2k}{n}$ for $d = 1$.
+            \end{lemma}
+
+            \begin{proof}
+                Without loss of generality, we assume $2k \leq n$ (otherwise, the bound is trivial).
+
+                see textbook
+
+            \end{proof}
+
+            \begin{proposition}[Convergence rate for $k$-nearest neighbors]
+                Assume bounded noise (A1) and a $B$-Lipchitz-continuous target function $(A2)$. Then for the $k$-nearest neighbor estimate $\hat{f}$ with the $l_{\infty}$-norm, we have, for $d \geq 2$
+                \begin{equation}
+                    \int_{\mathcal{X}} \mathbb{E}_{S_n} \left[(\hat{f}(x) - f^*(x))^2 \right] dP(x) \leq \frac{\sigma^2}{k} + 8 B^2 \text{diam}(\mathcal{X})^2 \left(\frac{2k}{n} \right)^{2/d}
+                \end{equation}
+            \end{proposition}
+
+            Balancing the two terms above is obtained with $k \approx n^{2/(2 + d)}$, and we obtain the same result as for the other local averaging schemes.
+
+        % subsubsection k_nearest_neighbors (end)
+        
+        \subsubsection{Kernel Regression} % (fold)
+        \label{ssub:kernel_regression}
+        
+            In this section, we assume that $\mathcal{X} = \mathbb{R}^d$, and for simplicity, we assume that marginal distribution $P(x)$ has a density $p(x)$ with respect to the Lebesgue measure. We also assume that 
+                $$ K(X, X') = q_h(X - X') = \frac{q((X - X')/h)}{h^d} $$ 
+            for a probability desntiy $q: \mathbb{R}^d \mapsto \mathbb{R}_{+}$. The function $q_h$ is also a density, which is the density of $hZ$ when random variable $Z$ has density $q(Z)$ (it is thus gets more concentrated around $0$ as $h$ tends to zero). With these notations, the weights can be written as
+                $$ \hat{w}_i(x) = \frac{K(X_i, x)}{\sum_{j=1}^n K(X_j, x)} = \frac{q_h(x - X_i)}{\sum_{j=1}^{n} q_h(x - X_j)} $$
+
+            \noindent
+            \textbf{Smoothing by convolution}. When performing kernel smoothing, quantities like $\frac{1}{n} \sum_{i=1}^{n} q_h(x - X_i) g(X_i)$ naturally appear. When the number $n$ of observations goes to infinity, by the law of large numbers, it tends to almost surely to 
+                $$ \int_{\mathbb{R}^d} q_h(X - z) g(z) p(z) dz $$
+            which is exactly the convolution between the function $q_h$ and the function $x \mapsto p(x) g(x)$, which we can denote $q_h * (pg) (x)$. The function $q_h$ is a probability density that is putting all most its weights at range of values which are of order $h$, e.g., for kernels like the Gaussian kernel or the box kernel. Thus convolution will smooth the function $pg$ by averaging values which are at range $h$. Thus, when $h$ goes to zero, it converges to the function $pg$ itself (note that for this limit to hold, we need to make sure the factors in $n$ and $h^d$ are present). See an example below for $g = 1$.
+
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=.5\textwidth]{Pics/smoothing-convolution.png}
+            \end{figure}
+
+            We can now look at the generalization bound from Eq.(\ref{eq:expected-excess-risk-decomosition}) and see how it applies to kernel regression. We now consider the $l_2$-distance for simplicity, and consider the variance and bias term separately, first with an asymptotic result and then a formal result.
+
+            \vspace{1em}
+            \noindent
+            \textbf{Variance term}. We have, for a fixed test point $x \in \mathcal{X}$:
+                $$ n \sum_{i=1}^{n} \hat{w}_i(x)^2 = \frac{\frac{1}{n} \sum_{i=1}^{n} q_h(x - X_i)^2}{\left(\frac{1}{n} \sum_{i=1}^{n} q_h(x - X_i) \right)^2} $$
+            Using the law of large numbers and the smoothing reasoning above, this summation $n \sum_{i=1}^{n} \hat{w}_i(x)^2$ is converging almost surely to the mean
+                $$ \frac{\int_{\mathbb{R}^d} q_h(x - z)^2 p(z) dz}{\left(\int_{\mathbb{R}^d} q_h(x - z) p(z) dz \right)^2} = \frac{q_h^2 * p(x)}{\left(q_h * p(x) \right)^2 } $$
+            When $h$ tends to zero, then the denominator above $(q_h * p(x))^2$ tends to $p(x)^2$ because the bandwidth of the smoothing goes to zero ($q_h \rightarrow \delta(x)$). The numerator above corresponds to the smoothing of $p$ by the density $x \mapsto \frac{q_h(x)^2}{\int_{\mathbb{R}^d} q_h(u)^2 du}$ (where $\int_{\mathbb{R}^d} q_h(u)^2 du$ here is just a normalize constant), and is thus asymptotically equivalent to 
+                $$ q_h^2 * p(x) \rightarrow p(x) \int_{\mathbb{R}^d} q_h(u)^2 du = p(x) h^{-d} \int_{\mathbb{R}^d} q(u)^2 du $$
+             where $q_h(X - X') = \frac{q((X - X')/h)}{h^d}$. Overall, when $n$ tends to infinity, and $h$ tends to zero, we get:
+                $$ \sum_{i=1}^{n} \hat{w}_i(x)^2 \sim \frac{1}{n h^d} \frac{1}{p(x)} \int_{\mathbb{R}^d} q(u)^2 du $$
+            and thus
+                $$ \int_{\mathcal{X}} \left[\sum_{i=1}^{n} \hat{w}_i(x)^2 \right] p(x) dx \sim \frac{1}{n h^d} \text{vol}(\text{supp}(P) ) \int_{\mathcal{R}^d} q(u)^2 du $$
+
+            \vspace{1em}
+            \noindent
+            \textbf{Bias term}. With the same intuitive reasoning, we get, when $n$ tends to infinity:
+                $$ \sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \rightarrow \frac{\int_{\mathcal{R}^d} q_h(x - z) ||x - z||_2^2 p(z) dz}{\int_{\mathbb{R}^d} q_h(x - z) p(z) dz } $$
+            The denominator has the same shape for the variance term and tends to $p(x)$ when $h$ tends to zero. With the change of variable $u = \frac{1}{h}(x - z)$, the numerator is equal to
+                $$ \int_{\mathbb{R}^d} q_h(x - z) ||x - z||_2^2 p(z) dz = h^2 \int_{\mathbb{R}^d} q(u) ||u||_2^2 p(x - hu) du $$
+            which is equivalent to $h^2 p(x) \int_{\mathbb{R}^d} q(u) ||u||_2^2 du$ when $h$ tends to zero. Overall, when $n$ tends to infinity, and $h$ tends to zero, we get:
+                $$ \int_{\mathcal{X}} \left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] p(x) dx \sim h^2 \int_{\mathbb{R}^d} q(u) ||u||_2^2 du $$
+
+            \vspace{1em}
+            \noindent
+            \textbf{Overall result}. Combining the results from variance and bias terms, we get an \textit{asymptotic bound} of Eq.(\ref{eq:expected-excess-risk-decomosition}) proportional to (up to constants depending on $q$):
+                $$ \frac{\sigma^2}{n h^d} + B^2 h^2 $$
+            leading to the same upper-bound as for partitioning estimates, by setting $h \approx n^{- 1 / (d + 2)}$.
+
+            We can make the informal reasoning above more formal using concentration inequalities, leading to non-asymptotic bounds of the same nature (simply more complicated), that make explicit the joint dependence on $n$ and $h$. 
+
+            \begin{proposition}[Convergence rate for Nadaraya-Watson estimation]
+                Assume bounded noise (A1) and a Lipschitz-continuous target function (A2), and a function $q: \mathbb{R}^d \mapsto \mathbb{R}$ such that $\int_{\mathbb{R}^d} q(z) dz = 1 $, and $||q||_{\infty} = \sup_{z \in \mathbb{R}^d} q(z) $ is finite. We also assume that $p(x) \in [p_{\min}, p_{\max}]$ for all $x \in \mathcal{X}$. Then for the Nadaraya-Watson estimate $\hat{f}$, we have:
+                \begin{equation}
+                    \mathcal{R}(\hat{f}) - \mathbb{R}^* = \int_{\mathcal{X}} \mathbb{E}_{S_n}\left[(\hat{f}(X) - f^*(X)) \mid X = x \right] dP(x) \leq \frac{4 ||q||_{\infty}}{p_{\min}} \cdot \frac{2 \sigma^2 + B \text{diam}(\mathcal{X})^2 }{n h^d} + 2 h^2 \cdot \frac{p_{\max}}{p_{\min}} \int_{\mathcal{R}^d} q(u) ||u||_2^2 du
+                \end{equation}
+            \end{proposition}
+
+            Before giving the proof, we note that the optimal bandwidth parameter is indeed proportional to $h \approx n^{-1/(d + 2)}$, with an overall excess risk proportional to $n^{-2 / (d + 2)}$.
+
+            \begin{proof}
+                In order to deal with the denominator in the definition of the weights, we can firstly use Bernstein's inequality, applied to the random variables $q_h(X - X_i)$ which is almost surely in $[0, h^{-d} ||q||_{\infty}]$, to bound
+                    \begin{equation*}
+                        \mathbb{P}\left(\frac{1}{n} \sum_{i=1}^{n} q_h(X - X_i) \leq \mathbb{E}_Z[q_h(X - Z) - \varepsilon ] \right) \leq \exp \left(- \frac{n \varepsilon^2}{2 \mathbb{E}_Z[q_h^2(X - Z)]} + 2 ||q||_{\infty} h^{-d} \varepsilon / 3 \right)
+                    \end{equation*}
+                We get .....
+            \end{proof}
+
+        % subsubsection kernel_regression (end)
+
+    % subsection generic_consistency_analysis (end)
+
+    \subsection{Universal Consistency} % (fold)
+    \label{sub:universal_consistency}
+
+        In the previous discussion, we have required the following conditions on the weights:
+        \begin{itemize}
+            \item $\int_{\mathcal{X}} \mathbb{E}_{S_n} \left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] d P(x) \rightarrow 0$ when $n$ tends to infinity, to ensure that the bias goes to zero.
+
+            \item $\int_{\mathcal{X}} \mathbb{E}_{S_n} \left[\sum_{i=1}^{n} \hat{w}_i(x)^2 \right] dP(x) \rightarrow 0$ when $n$ tends to infinity, to ensure that the variance goes to zero.
+        \end{itemize}
+        These were enough to show consistency when the target function is Lipschitz-continuous in $\mathbb{R}^d$ as seen in Eq.(\ref{eq:expected-excess-risk-decomosition}). These also led to a precise rate of convergence (which turned out to be optimal).
+
+        In order to show universal consistency for any square-intergrable functions, we need an extra (technical) assumption, which was first outlined in Stone's theorem, namely that there exists $c > 0$ such that for any non-negative integrable function $h: \mathcal{X} \mapsto \mathbb{R}$, 
+        \begin{equation}
+            \int_{\mathcal{X}} \sum_{i=1}^{n} \mathbb{E}_{S_n} \left[\hat{w}_i(x) h(X_i) \right] dP(x) \leq c \cdot \int_{\mathcal{X}} h(x) dP(x)
+            \label{eq:technical-assumption-LAM}
+        \end{equation}
+        Again, we only take the expectation with respect to the training data, while we use the integral notation to take the expectation with respect to the training distribution $P$.
+
+        In the following contents, $h$ will be the \textbf{squared deviation (distance) between two functions}. Then for any $\varepsilon > 0$, and for any $f^* \in L_2(P(x))$, we can find a function $g$ which is $B(\varepsilon)$-Lipschitz-continuous and such that $||f^* - g||_{L_2(P(x))} \leq \varepsilon$, that is because the set of Lipschitz-continuous functions is dense in $L_2(P(x))$ (\cite{ambrosio2013density}). Then for a given $X \in \mathcal{X}$, we have
+        \begin{equation*}
+            \begin{aligned}
+                &\mathbb{E}_{S_n} \left(\sum_{i=1}^{n} \hat{w}_i(x) [f^*(X_i) - f^*(X)] \right)^2 \\ 
+                &\leq \mathbb{E} \left(\sum_{i=1}^{n} \hat{w}_i(x) \Big[\big|f^*(X_i) - g(X_i)\big| + \big|g(X_i) - g(x) \big| + \big|g(x) - f^*(X) \big| \Big] \right)^2 \\
+                &\leq 3\mathbb{E}\left(\sum_{i=1}^{n}\hat{w}_i(x) \big|f^*(X_i) - g(X_i) \big| \right)^2 + 3\mathbb{E}\left(\sum_{i=1}^{n}\hat{w}_i(x) \big|g(X_i) - g(x) \big| \right)^2 + 3\mathbb{E}\left(\sum_{i=1}^{n}\hat{w}_i(x) \big|g(x) - f^*(x) \big| \right)^2 \quad (1) \\
+                &\leq 3\mathbb{E}\left(\sum_{i=1}^{n}\hat{w}_i(x) \big|f^*(X_i) - g(X_i) \big| \right)^2 + 3\mathbb{E}\left(\sum_{i=1}^{n}\hat{w}_i(x) B(\varepsilon) d(X_i, x) \right)^2 + 3 \mathbb{E}\big|g(x) - f^*(x) \big|^2 \quad (2) \\
+                &\leq 3\mathbb{E}\left(\sum_{i=1}^{n}\hat{w}_i(x) \big|f^*(X_i) - g(X_i) \big| \right)^2 + 3 B(\varepsilon)^2 \cdot \mathbb{E}\left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] + 3 \mathbb{E} \big|g(x) - f^*(x) \big|^2 \quad (3) \\
+                &\leq 3c \cdot \mathbb{E}\big|f^*(x) - g(x) \big|^2 + 3 B(\varepsilon)^2 \cdot \mathbb{E}\left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] + 3 \mathbb{E} \big|g(x) - f^*(x) \big|^2 \\
+            \end{aligned}
+        \end{equation*}
+        The inequality $(1)$ is obtained using that $(a + b + c)^2 \leq 3a^2 + 3b^2 + 3c^2$, inequality $(2)$ is due to the fact that weights summing to one and function $g$ is Lipschitz-continuous, while inequality $(3)$ applys the Jensen's inequality to the second term and the last inequality is a direct result of Eq.(\ref{eq:technical-assumption-LAM}).
+        We can now integrate with respect to $X = x$ and utilize the assumption that $||f^* - g ||_{L_2(P(x))} \leq \varepsilon $ to get
+        \begin{equation*}
+            \int_{\mathcal{X}} \mathbb{E}_{S_n}\left(\sum_{i=1}^{n} \hat{w}_i(x) [f^*(X_i) - f^*(x) ] \right)^2 dP(x) \leq 3(c + 1) \varepsilon^2 + 3 B(\varepsilon)^2 \int_{\mathcal{X}} \mathbb{E}_{S_n} \left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] dP(x)
+        \end{equation*}
+        
+        \vspace{1em}
+        \noindent
+        \textbf{Proving universal consistency}. We can then substitue the upper-bound of bias term into the first inequality of Eq.(\ref{eq:empirical-excess-risk-decomposition}), which is
+        \begin{equation}
+            \begin{aligned}
+                \int_{\mathcal{X}} \mathbb{E}_{S_n} (\hat{f}(x) - f^*(x))^2 dP(x) &\leq \int_{\mathcal{X}} \mathbb{E}_{S_n} \left(\sum_{i=1}^{n} \hat{w}_i(x) \cdot \Big|f^*(X_i) - f^*(X) \Big| \right)^2 dP(x) + \sigma^2 \int_{\mathcal{X}} \mathbb{E}_{S_n}\left[\sum_{i={}1}^{n} \hat{w}_i(x)^2 \right] dP(x) \\
+                &\leq 3(c + 1) \varepsilon^2 + 3 B(\varepsilon)^2 \int_{\mathcal{X}} \mathbb{E}_{S_n} \left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] dP(x) + \sigma^2 \int_{\mathcal{X}} \mathbb{E}_{S_n}\left[\sum_{i=1}^{n} \hat{w}_i(x)^2 \right] dP(x) \\
+            \end{aligned}
+        \end{equation}
+        which is similar to the bound in Eq.(\ref{eq:expected-excess-risk-decomosition}). Next we can use the same tools for consistency as for Eq.(\ref{eq:expected-excess-risk-decomosition}).
+
+        In order to prove universal consistency, we fix a certain $\varepsilon$, from which we obtain some $B(\varepsilon)$. For such a $B(\varepsilon)$, we know how to obtain an overall term 
+            $$ 3 B(\varepsilon)^2 \int_{\mathcal{X}} \mathbb{E}_{S_n} \left[\sum_{i=1}^{n} \hat{w}_i(x) d(X_i, x)^2 \right] dP(x) + \sigma^2 \int_{\mathcal{X}} \mathbb{E}_{S_n}\left[\sum_{i=1}^{n} \hat{w}_i(x)^2 \right] dP(x) $$
+        for a well chosen hyperparameter and number of observations $n$ as previous section. Thus, if the extra condition in Eq.(\ref{eq:technical-assumption-LAM}) is satisfied, these three methods are universally consistent. We can now look at the cases
+        \begin{itemize}
+            \item Partitioning: Let $c = 2$ in Eq.(\ref{eq:technical-assumption-LAM}) and we get universal consistency. This is because
+                \begin{equation*}
+                    \begin{aligned}
+                        \sum_{i=1}^{n} \mathbb{E}_{S_n}[\hat{w}_i(x) f(X_i)] &= \sum_{j \in J} \sum_{i=1}^{n} \mathbb{E}_{S_n}\left[\hat{w}_i(x) \mathbbm{1}_{x \in A_j} f(X_i) \right] \\
+                        &= \sum_{j \in J} \mathbb{E}_{S_n}\Big[\mathbbm{1}_{x \in A_j} \Big(\mathbbm{1}_{n_{A_j} > 0} \cdot \frac{1}{n_{A_j}} \sum_{i \in A_j} f(X_i) + \mathbbm{1}_{n_{A_j} = 0} \cdot \frac{1}{n} \sum_{i=1}^{n} f(X_i) \Big) \Big] \\
+                        &\leq \sum_{j \in J} \mathbb{E}_{S_n} \Big[\mathbbm{1}_{x \in A_j} \Big( \mathbb{E}[f(Z) \mid Z \in A_j] + \frac{1}{n} \sum_{i=1}^{n} f(X_i) \Big) \Big] \quad (X_i, i = 1, \dots, n \ \text{i.i.d}) \\
+                        &= 2 \sum_{j \in J} \mathbbm{1}_{x \in A_j} \mathbb{E}_{S_n}[f(X)] = 2 \mathbb{E}_{S_n}[f(X)] 
+                    \end{aligned}
+                \end{equation*}
+
+            \item Kernel regression: it can be shown using the same type of techiniques outlined for oonsistency for Lipschitz-continuous functions
+
+            \item $k$-nearest neighbor: the condition in Eq.(\ref{eq:technical-assumption-LAM}) is not easy to show, and is often referred to as Stone’s lemma.
+        \end{itemize}
+    
+    % subsection universal_consistency (end)
 
 % section local_averaging_methods (end)
+
+\clearpage
+
+\section{Sparse Methods} % (fold)
+\label{sec:sparse_methods}
+
+% section sparse_methods (end)
+
+\clearpage
+
+\section{Neural Networks} % (fold)
+\label{sec:neural_networks}
+
+% section neural_networks (end)
 
 
 \clearpage
@@ -2792,10 +3594,10 @@ This note \textbf{aggregates} the contents from the following books, articles an
         \label{sub:equivalence_of_norms}
 
             Suppose that $||\cdot||_a$ and $||\cdot||_b$ are norms on $\mathbb{R}^n$. A basic result of analysis is that there exist positive constants $\alpha$ and $\beta$ such that, for all $x \in \mathbb{R}$,
-            $$ \alpha ||x||_a \leq ||x||_b \leq \beta ||x||_a $$
+                $$ \alpha ||x||_a \leq ||x||_b \leq \beta ||x||_a $$
             This means that the norms are equivalent, i.e., they define the same set of open subsets, the same set of covergent sequences, and so on. 
             Using convex analysis, we can give a more specific result: if $||\cdot||$ is any norm on $\mathbb{R}^n$, then there exists a quadratic norm $||\cdot||_P$ for which
-            $$ ||x||_P \leq ||x|| \leq \sqrt{n}||x||_P $$
+                $$ ||x||_P \leq ||x|| \leq \sqrt{n}||x||_P $$
             holds for all $x$. In other words, any norm on $\mathbb{R}^n$ can be uniformly approximated, within a factor of $\sqrt{n}$, by a $P$-quadratic norm.
             \textit{We conclude that any norms on all finite-dimensional vector space are equivalent, but on infinite-dimensional vector spaces, the result need not hold}.
 
@@ -2843,7 +3645,6 @@ This note \textbf{aggregates} the contents from the following books, articles an
         % subsection operator_norms (end)
 
     % section norms (end)
-
     
     \section{Probability Theory} % (fold)
     \label{sec:probability_theory}
@@ -3117,6 +3918,13 @@ This note \textbf{aggregates} the contents from the following books, articles an
                 Adding these two together yields $\var(X)$.
             \end{proof}
             
+            \begin{corollary}[Law of Total Covariance]
+                For random variable $X$, $Y$ and $Z$, 
+                \begin{equation}
+                    \cov(X, Y) = \mathbb{E}\big[ \cov(X, Y \mid Z) \big] + \cov \big( \mathbb{E}[X \mid Z], \mathbb{E}[Y \mid Z] \big)
+                \end{equation}
+            \end{corollary}
+
         % subsection expectations (end)
 
         \subsection{Convergences} % (fold)
@@ -3416,7 +4224,6 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
     % section probability_theory (end)
 
-
     \section{Concentration of Measure} % (fold)
     \label{sec:concentration_of_measure}
 
@@ -3436,16 +4243,17 @@ This note \textbf{aggregates} the contents from the following books, articles an
                     \mathbb{E}[X] = \int_{0}^{\infty} x p(x) dx \geq \int_{t}^{\infty} x p(x) dx
                     \geq t \int_{t}^{\infty} = t \mathbb{P}(X \geq t)
                 \end{equation*}
+                Similarily, we can apply the same calculation and get
+                \begin{equation*}
+                    \mathbb{E}\left[(X - \mu)^k \right] \geq t^k \mathbb{P}\left( (X - \mu)^k \geq t^k \right) = t^k \mathbb{P}(|X - \mu| \geq t)
+                \end{equation*}        
+                that is to say
+                \begin{equation}
+                    \mathbb{P}(|X - \mu| \geq t) \leq \frac{\mathbb{E}\left[(X - \mu)^k \right] }{t^k} 
+                    \label{eq:Markov-higher-moment}    
+                \end{equation}
+
             \end{proof}
-            Similarily, we can apply the same calculation and get
-            \begin{equation*}
-                \mathbb{E}\left[(X - \mu)^k \right] \geq t^k \mathbb{P}\left( (X - \mu)^k \geq t^k \right) = t^k \mathbb{P}(|X - \mu| \geq t)
-            \end{equation*}        
-            that is to say
-            \begin{equation}
-                \mathbb{P}(|X - \mu| \geq t) \leq \frac{\mathbb{E}\left[(X - \mu)^k \right] }{t^k} 
-                \label{eq:Markov-higher-moment}    
-            \end{equation}
         
         % subsubsection markov_inequality (end)
         
@@ -3502,11 +4310,8 @@ This note \textbf{aggregates} the contents from the following books, articles an
             %     \caption{Comparison of Chernoff and Chebyshev}
             % \end{figure}
 
-            \vspace{1em}
             \noindent
-            \textbf{Bounded Random Variables}.
-
-            We are going to consider the case of bounded random variables and derive the so called Hoeffding's bound for them. As we know, the bounded random variables are the special case of sub-Gaussian variables.
+            \textbf{Bounded Random Variables}. We are going to consider the case of bounded random variables and derive the so called Hoeffding's bound for them. As we know, the bounded random variables are the special case of sub-Gaussian variables.
 
             \begin{lemma}[MGF of Rademacher Variables]
                 The Rademacher variable is the random variable $X \in \{+1, -1\}$ with equally probability. The MGF of Rademacher variable satifies
@@ -3568,9 +4373,8 @@ This note \textbf{aggregates} the contents from the following books, articles an
                         \mathbb{E}_{X,X'}\left[e^{t(X - X') } \right] &= \mathbb{E}_{X,X'} \left[\mathbb{E}_{\varepsilon}[ e^{\varepsilon t (X - X') } ] \right] \leq \mathbb{E}_{X,X'}\left[e^{t^2 (X - X')^2/2} \right] \leq e^{t^2 (b-a)^2 / 2}
                     \end{aligned}
                 \end{equation*}
-                with the notice that $X$ is bounded and $(X - X')$ is at most $(b-a)$.        
+                with the notice that $X$ is bounded and $(X - X')$ is at most $(b-a)$. In fact, this in turn yields the simple version of Hoeffding's bound.  
             \end{proof}
-            This in turn yields the simple version of Hoeffding's bound.
                 
             \vspace{1em}
             \noindent
@@ -3742,7 +4546,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
             \begin{theorem}[Berstein's Inequality]
                 Suppose we have $X_1, \dots, X_n$ which were i.i.d from a distribution with mean $\mu$, bounded suppport $[a, b]$, with variance $\mathbb{E}(X - \mu)^2 = \sigma^2$, then
                 \begin{equation}
-                    \mathbb{P}\left(\left| \frac{1}{n} \sum_{k=1}^{n} X_k - \mu \right| \geq t \right) \leq 2 \exp \left(- \frac{n t^2}{2\sigma^2 + 2(b - a)t } \right)
+                    \mathbb{P}\left(\left| \frac{1}{n} \sum_{k=1}^{n} X_k - \mu \right| \geq t \right) \leq 2 \exp \left(- \frac{n t^2}{2\sigma^2 + 2(b - a)t/3 } \right)
                     \label{eq:Bernstein}
                 \end{equation}
             \end{theorem}
@@ -3771,12 +4575,16 @@ This note \textbf{aggregates} the contents from the following books, articles an
                         &\leq \inf_s \ e^{-st} \prod_{i=1}^{n} \exp \left(\frac{\sigma^2}{c^2}\left( e^{\frac{sc}{n} } - 1 - \frac{sc}{n} \right) \right) \\
                         &= \inf_s \ \exp\left(-st + \frac{\sigma^2}{c^2} \left(n e^{\frac{sc}{n}} - n - sc \right) \right) \\ 
                         &= \exp \left(\frac{nt}{c} - \frac{nt}{c} \ln\left(1 + \frac{tc}{\sigma^2} \right) - \frac{n \sigma^2}{c^2} \ln \left(1 + \frac{tc}{\sigma^2} \right) \right) , \qquad s = \frac{n}{c} \ln \left(1 + \frac{tc}{\sigma^2} \right) \\
-                        &= \exp \left(-\frac{n \sigma^2}{c^2} \Big( (1 + \alpha) \ln(1 + \alpha) - \alpha \Big) \right), \qquad \alpha = \frac{tc}{\sigma^2} \leq \frac{t(b - a)}{\sigma^2 } \\
+                        &= \exp \left(-\frac{n \sigma^2}{c^2} \Big( (1 + \alpha) \ln(1 + \alpha) - \alpha \Big) \right), \qquad \alpha = \frac{tc}{\sigma^2} = \frac{t(b - a)}{\sigma^2 } \\
                     \end{aligned}
                 \end{equation*}
                 With the knowing that 
-                $$ (1 + \alpha) \ln(1 + \alpha) \geq \frac{\alpha^2}{2 + 2 \alpha / 3} $$
-                we can get what we desired.
+                $$ (1 + \alpha) \ln(1 + \alpha) - \alpha \geq \frac{\alpha^2}{2 + 2 \alpha / 3} $$
+                we have
+                \begin{equation*}
+                    \mathbb{P}\left(|\bar{X}_n - \mu| \geq t \right) \leq \exp\left(- \frac{n t^2}{2 \sigma^2 + 2(b - a)t/3} \right)
+                \end{equation*}
+
             \end{proof}
 
         % subsection bernstein_s_inequality (end)
@@ -3848,7 +4656,6 @@ This note \textbf{aggregates} the contents from the following books, articles an
         % subsection expectation_of_the_maximum (end)
 
     % section concentration_of_measure (end)
-
 
     \section{Concentration for Matrices} % (fold)
     \label{sec:concentration_for_matrices}

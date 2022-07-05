@@ -2356,13 +2356,24 @@
     <bcf:citekey order="9">sridharan2008fast</bcf:citekey>
     <bcf:citekey order="10">mohri2018foundations</bcf:citekey>
     <bcf:citekey order="11">bach2021learning</bcf:citekey>
-    <bcf:citekey order="12">bach2021learning</bcf:citekey>
-    <bcf:citekey order="13">mohri2018foundations</bcf:citekey>
-    <bcf:citekey order="14">shalev2014understanding</bcf:citekey>
-    <bcf:citekey order="15">tropp2012user</bcf:citekey>
-    <bcf:citekey order="16">wainwright2019high</bcf:citekey>
-    <bcf:citekey order="17">bartlett2006convexity</bcf:citekey>
-    <bcf:citekey order="18">sridharan2008fast</bcf:citekey>
+    <bcf:citekey order="12">nesterov2018lectures</bcf:citekey>
+    <bcf:citekey order="13">boyd2004convex</bcf:citekey>
+    <bcf:citekey order="14">nesterov2013gradient</bcf:citekey>
+    <bcf:citekey order="15">bach2021learning</bcf:citekey>
+    <bcf:citekey order="16">bach2021learning</bcf:citekey>
+    <bcf:citekey order="17">bach2021learning</bcf:citekey>
+    <bcf:citekey order="18">ambrosio2013density</bcf:citekey>
+    <bcf:citekey order="19">bach2021learning</bcf:citekey>
+    <bcf:citekey order="20">mohri2018foundations</bcf:citekey>
+    <bcf:citekey order="21">shalev2014understanding</bcf:citekey>
+    <bcf:citekey order="22">tropp2012user</bcf:citekey>
+    <bcf:citekey order="23">wainwright2019high</bcf:citekey>
+    <bcf:citekey order="24">bartlett2006convexity</bcf:citekey>
+    <bcf:citekey order="25">sridharan2008fast</bcf:citekey>
+    <bcf:citekey order="26">nesterov2018lectures</bcf:citekey>
+    <bcf:citekey order="27">boyd2004convex</bcf:citekey>
+    <bcf:citekey order="28">nesterov2013gradient</bcf:citekey>
+    <bcf:citekey order="29">ambrosio2013density</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

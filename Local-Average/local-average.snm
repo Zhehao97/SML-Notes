@@ -1,0 +1,12 @@
+\beamer@slide {sec:quick_review}{3}
+\beamer@slide {eq:expected-excess-risk-regression}{6}
+\beamer@slide {sec:local_averaging_methods}{8}
+\beamer@slide {sec:linear_estimators}{13}
+\beamer@slide {eq:regression-predictor-LAM}{14}
+\beamer@slide {fig:weight-functions}{15}
+\beamer@slide {eq:partition-weight}{16}
+\beamer@slide {sec:generic_consistency_analysis}{26}
+\beamer@slide {eq:empirical-excess-risk-decomposition}{29}
+\beamer@slide {eq:expected-excess-risk-decomosition}{31}
+\beamer@slide {sec:universal_consistency_analysis}{55}
+\beamer@slide {eq:technical-assumption-LAM}{55}

@@ -19,6 +19,47 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{ambrosio2013density}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=75c4bcbdd44f3d81980ee1e743ebfd0f}{%
+           family={Ambrosio},
+           familyi={A\bibinitperiod},
+           given={Luigi},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=139b12cad429d4671b5443bd26e4cce6}{%
+           family={Gigli},
+           familyi={G\bibinitperiod},
+           given={Nicola},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d9b6eaad8ff003b7a52715955b3cd2e0}{%
+           family={Savaré},
+           familyi={S\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d26d9e0f494cbb519cf26a3ccb38f899}
+      \strng{fullhash}{d26d9e0f494cbb519cf26a3ccb38f899}
+      \strng{bibnamehash}{d26d9e0f494cbb519cf26a3ccb38f899}
+      \strng{authorbibnamehash}{d26d9e0f494cbb519cf26a3ccb38f899}
+      \strng{authornamehash}{d26d9e0f494cbb519cf26a3ccb38f899}
+      \strng{authorfullhash}{d26d9e0f494cbb519cf26a3ccb38f899}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Matemática Iberoamericana}
+      \field{number}{3}
+      \field{title}{Density of Lipschitz functions and equivalence of weak gradients in metric measure spaces}
+      \field{volume}{29}
+      \field{year}{2013}
+      \field{pages}{969\bibrangedash 996}
+      \range{pages}{28}
+    \endentry
     \entry{bach2021learning}{misc}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=93da2819ab01d8a5e7bae39ce6f17c1f}{%
@@ -90,6 +131,45 @@
       \field{pages}{138\bibrangedash 156}
       \range{pages}{19}
     \endentry
+    \entry{boyd2004convex}{book}{}
+      \name{author}{3}{}{%
+        {{un=1,uniquepart=given,hash=ec94d94cc487dd71939a90cbeaaf47d0}{%
+           family={Boyd},
+           familyi={B\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=1}}%
+        {{un=1,uniquepart=given,hash=5cd9791a43b8812be4e3f9d64521947a}{%
+           family={Boyd},
+           familyi={B\bibinitperiod},
+           given={Stephen\bibnamedelima P},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=2608d599a0bc2a784c301329a8da5f7b}{%
+           family={Vandenberghe},
+           familyi={V\bibinitperiod},
+           given={Lieven},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge university press}%
+      }
+      \strng{namehash}{05850626a24be2c3eec3e81c3a8a9563}
+      \strng{fullhash}{05850626a24be2c3eec3e81c3a8a9563}
+      \strng{bibnamehash}{05850626a24be2c3eec3e81c3a8a9563}
+      \strng{authorbibnamehash}{05850626a24be2c3eec3e81c3a8a9563}
+      \strng{authornamehash}{05850626a24be2c3eec3e81c3a8a9563}
+      \strng{authorfullhash}{05850626a24be2c3eec3e81c3a8a9563}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Convex optimization}
+      \field{year}{2004}
+    \endentry
     \entry{mohri2018foundations}{book}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=8298c87c77cd46a5b2b7e799ba087945}{%
@@ -127,6 +207,68 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Foundations of machine learning}
+      \field{year}{2018}
+    \endentry
+    \entry{nesterov2013gradient}{article}{}
+      \name{author}{1}{}{%
+        {{un=2,uniquepart=given,hash=acfacef8b6f3eefa3db0c10546612bf1}{%
+           family={Nesterov},
+           familyi={N\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod},
+           givenun=2}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{acfacef8b6f3eefa3db0c10546612bf1}
+      \strng{fullhash}{acfacef8b6f3eefa3db0c10546612bf1}
+      \strng{bibnamehash}{acfacef8b6f3eefa3db0c10546612bf1}
+      \strng{authorbibnamehash}{acfacef8b6f3eefa3db0c10546612bf1}
+      \strng{authornamehash}{acfacef8b6f3eefa3db0c10546612bf1}
+      \strng{authorfullhash}{acfacef8b6f3eefa3db0c10546612bf1}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical programming}
+      \field{number}{1}
+      \field{title}{Gradient methods for minimizing composite functions}
+      \field{volume}{140}
+      \field{year}{2013}
+      \field{pages}{125\bibrangedash 161}
+      \range{pages}{37}
+    \endentry
+    \entry{nesterov2018lectures}{book}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=2,uniquepart=given,hash=8a41b35fe7b3d1725cb95bd7eec40b01}{%
+           family={Nesterov},
+           familyi={N\bibinitperiod},
+           given={Yurii},
+           giveni={Y\bibinitperiod},
+           givenun=2}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b2298b2878c5f04f8f0c1d4799a1e23d}
+      \strng{fullhash}{b2298b2878c5f04f8f0c1d4799a1e23d}
+      \strng{bibnamehash}{b2298b2878c5f04f8f0c1d4799a1e23d}
+      \strng{authorbibnamehash}{b2298b2878c5f04f8f0c1d4799a1e23d}
+      \strng{authornamehash}{b2298b2878c5f04f8f0c1d4799a1e23d}
+      \strng{authorfullhash}{b2298b2878c5f04f8f0c1d4799a1e23d}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lectures on convex optimization}
+      \field{volume}{137}
       \field{year}{2018}
     \endentry
     \entry{shalev2014understanding}{book}{}
