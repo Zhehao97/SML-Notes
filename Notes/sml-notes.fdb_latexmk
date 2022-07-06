@@ -1,15 +1,15 @@
 # Fdb version 3
-["biber sml-notes"] 1656952190 "sml-notes.bcf" "sml-notes.bbl" "sml-notes" 1656952471
+["biber sml-notes"] 1657030794 "sml-notes.bcf" "sml-notes.bbl" "sml-notes" 1657079230
   "sml-bib.bib" 1656873836 2494 e267546151ed7557b5c1d33f8aa5f538 ""
-  "sml-notes.bcf" 1656952466 108797 88b299f5572c8245392ec1f013c3c2f2 "xelatex"
+  "sml-notes.bcf" 1657079225 108797 88b299f5572c8245392ec1f013c3c2f2 "xelatex"
   (generated)
   "sml-notes.bbl"
   "sml-notes.blg"
-["xdvipdfmx"] 1656952466 "sml-notes.xdv" "sml-notes.pdf" "sml-notes" 1656952471
-  "sml-notes.xdv" 1656952466 1971960 06196ae7362836067ed751364fb21bc3 "xelatex"
+["xdvipdfmx"] 1657079225 "sml-notes.xdv" "sml-notes.pdf" "sml-notes" 1657079230
+  "sml-notes.xdv" 1657079225 2041648 83d831e6d299241db5c35136dfbe6361 "xelatex"
   (generated)
   "sml-notes.pdf"
-["xelatex"] 1656952463 "sml-notes.tex" "sml-notes.xdv" "sml-notes" 1656952471
+["xelatex"] 1657079221 "sml-notes.tex" "sml-notes.xdv" "sml-notes" 1657079230
   "Pics/SVM-feature-space.jpg" 1653934845 110127 c6a547609adee1ea5987e43283cf20c1 ""
   "Pics/SVM-hyperplane.png" 1653934845 85115 dfd4953e3c0a7f8a8cbbaa3991a2dda9 ""
   "Pics/XOR-classification.png" 1653934846 89014 29c352e066162c5803070aa99030f08d ""
@@ -168,12 +168,12 @@
   "c:/texlive/2022/texmf-dist/web2c/texmf.cnf" 1651897661 40171 cdab547de63d26590bebb3baff566530 ""
   "c:/texlive/2022/texmf-var/web2c/xetex/xelatex.fmt" 1651899569 5419770 45afd15327dd754df420b1b17352fac2 ""
   "c:/texlive/2022/texmf.cnf" 1651899404 713 e69b156964470283e0530f5060668171 ""
-  "sml-notes.aux" 1656952466 43974 d7a6a29298c5a659fa9d96389c6d0fb2 "xelatex"
-  "sml-notes.bbl" 1656952194 16469 1dbec5ea3121c1c5673aa66688d127df "biber sml-notes"
-  "sml-notes.out" 1656952466 21542 29e4a374489d26ddd0e06376bfaa428b "xelatex"
-  "sml-notes.run.xml" 1656952466 2378 017024d56d205ba85008e71ec6200964 "xelatex"
-  "sml-notes.tex" 1656952455 407151 a55e6a413c8ba0d3f1b11dc1d152983b ""
-  "sml-notes.toc" 1656952466 10605 aecfd75a582e2590fe20857b81754cc0 "xelatex"
+  "sml-notes.aux" 1657079225 45030 227ac94908455de1d05f3377100c819a "xelatex"
+  "sml-notes.bbl" 1657030796 16469 1dbec5ea3121c1c5673aa66688d127df "biber sml-notes"
+  "sml-notes.out" 1657079225 21982 57e59c7290918a395eae3bb2322091d1 "xelatex"
+  "sml-notes.run.xml" 1657079225 2378 017024d56d205ba85008e71ec6200964 "xelatex"
+  "sml-notes.tex" 1657079214 420349 8e4798cffbd80e2abb1c3ddf5d2f99f3 ""
+  "sml-notes.toc" 1657079225 10836 88fc66b226cf3d1f4fc5777341b83b30 "xelatex"
   (generated)
   "sml-notes.aux"
   "sml-notes.bcf"

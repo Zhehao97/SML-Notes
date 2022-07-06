@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.5.7)  5 JUL 2022 00:34
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.5.7)  6 JUL 2022 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,8 +688,9 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 \c@definition=\count433
 \c@proposition=\count434
 \c@theorem=\count435
-\@quotelevel=\count436
-\@quotereset=\count437
+\c@lemma=\count436
+\@quotelevel=\count437
+\@quotereset=\count438
 
 (./sml-notes.aux)
 \openout1 = `sml-notes.aux'.
@@ -742,7 +743,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (c:/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count438
+\c@section@level=\count439
 )
 LaTeX Info: Redefining \ref on input line 51.
 LaTeX Info: Redefining \pageref on input line 51.
@@ -823,11 +824,11 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (./sml-notes.toc
 [1
 
-] [2])
+] [2] [3])
 \tf@toc=\write5
 \openout5 = `sml-notes.toc'.
 
- [3] [4]
+ [4]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 88.
 
  (c:/texlive/2022/texmf-dist/tex/latex/bbm-macros/ubbm.fd
@@ -873,7 +874,7 @@ File: Pics/approximation-error.png Graphic file (type bmp)
  [24
 
 ] [25]
-Overfull \hbox (34.22537pt too wide) in paragraph at lines 961--964
+Overfull \hbox (34.22537pt too wide) in paragraph at lines 962--965
 \TU/lmr/m/n/10 where the random variables $\OML/cmm/m/it/10 z[] \OT1/cmr/m/n/10
  = (\OML/cmm/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )$ \TU/lmr/m/n/10 are independent 
 and identically distributed, and $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr
@@ -882,12 +883,12 @@ OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[]\OT1/cmr/m/n/10 ))$\TU/lmr/m/n/10 .
  []
 
 [26]
-Overfull \hbox (28.02902pt too wide) detected at line 1041
+Overfull \hbox (28.02902pt too wide) detected at line 1042
 [][]
  []
 
 [27] [28]
-Overfull \hbox (11.5558pt too wide) detected at line 1112
+Overfull \hbox (11.5558pt too wide) detected at line 1117
 [][]
  []
 
@@ -901,7 +902,7 @@ File: Pics/covering-number-2.png Graphic file (type bmp)
 ] [33] [34] [35
 
 ]
-Overfull \hbox (7.30234pt too wide) in paragraph at lines 1363--1364
+Overfull \hbox (7.30234pt too wide) in paragraph at lines 1368--1369
 []\TU/lmr/m/n/10 Let $\OML/cmm/m/it/10 h[]$ \TU/lmr/m/n/10 denote the vector of
  values taken by function $\OML/cmm/m/it/10 h$ \TU/lmr/m/n/10 over the sample $
 \OML/cmm/m/it/10 S$\TU/lmr/m/n/10 , namely, $\OML/cmm/m/it/10 h[] \OT1/cmr/m/n/
@@ -911,44 +912,44 @@ OML/cmm/m/it/10 ; [] ; h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Z[]\OT1/cmr/m/n/10 ))
  []
 
 [36]
-Overfull \hbox (2.14479pt too wide) detected at line 1437
+Overfull \hbox (2.14479pt too wide) detected at line 1442
 [][]
  []
 
 [37]
-Overfull \hbox (23.81148pt too wide) detected at line 1465
+Overfull \hbox (23.81148pt too wide) detected at line 1470
 [][]
  []
 
 [38]
-Overfull \hbox (1.09604pt too wide) detected at line 1490
+Overfull \hbox (1.09604pt too wide) detected at line 1495
 [][]
  []
 
 [39]
-Overfull \hbox (38.675pt too wide) detected at line 1545
+Overfull \hbox (38.675pt too wide) detected at line 1553
 [][]
  []
 
-[40] [41] [42] [43] [44
+[40] [41] [42] [43] [44] [45
 
-] [45]
+] [46]
 Missing character: There is no ： (U+FF1A) in font [lmroman10-regular]:mapping=t
 ex-text;!
-[46]
+[47]
 File: Pics/sine-function.png Graphic file (type bmp)
 <Pics/sine-function.png>
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[47] [48] [49] [50] [51
+[48] [49] [50] [51] [52
 
 ]
 File: Pics/covering-packing.png Graphic file (type bmp)
 <Pics/covering-packing.png>
- [52] [53] [54] [55] [56] [57]
-Overfull \hbox (7.22198pt too wide) in paragraph at lines 2241--2243
+ [53] [54] [55] [56] [57] [58]
+Overfull \hbox (7.22198pt too wide) in paragraph at lines 2260--2262
 \TU/lmr/m/n/10 given access to certian oracles – the $\OML/cmm/m/it/10 k$\TU/lm
 r/m/n/10 th-order oracle corresponds to the access to $\OML/cmm/m/it/10 ^^R \OM
 S/cmsy/m/n/10 7! \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m
@@ -957,16 +958,16 @@ S/cmsy/m/n/10 7! \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m
 it/10 ^^R\OT1/cmr/m/n/10 ))$\TU/lmr/m/n/10 ,
  []
 
-[58
+[59
 
-] [59]
+] [60]
 File: Pics/strongly-convex.png Graphic file (type bmp)
 <Pics/strongly-convex.png>
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[60]
+[61]
 File: Pics/smoothness.png Graphic file (type bmp)
 <Pics/smoothness.png>
 
@@ -983,10 +984,14 @@ File: Pics/condition-number-steepest.png Graphic file (type bmp)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[61] [62] [63] [64] [65] [66] [67] [68]
+[62] [63] [64] [65] [66] [67] [68] [69] [70]
+Missing character: There is no θ (U+03B8) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no − ("2212) in font cmr10!
+[71]
 File: Pics/XOR-classification.png Graphic file (type bmp)
 <Pics/XOR-classification.png>
- [69
+ [72
 
 ]
 File: Pics/SVM-hyperplane.png Graphic file (type bmp)
@@ -997,57 +1002,57 @@ File: Pics/SVM-feature-space.jpg Graphic file (type bmp)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[70] [71] [72] [73] [74]
+[73] [74] [75] [76] [77]
 Missing character: There is no 。 (U+3002) in font [lmroman10-regular]:mapping=t
 ex-text;!
 
-Overfull \hbox (123.66159pt too wide) detected at line 2950
+Overfull \hbox (123.66159pt too wide) detected at line 3084
 [][]
  []
 
-[75
+[78
 
 ]
-Overfull \hbox (9.40834pt too wide) in paragraph at lines 2982--2983
+Overfull \hbox (9.40834pt too wide) in paragraph at lines 3116--3117
 \TU/lmr/m/n/10 Local averaging methods provide a different approach by minimizi
 ng the conditional expected risk $\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it
 /10 l\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Y; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\
 OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 j
  []
 
-[76] [77]
+[79] [80]
 File: Pics/weight-functions.png Graphic file (type bmp)
 <Pics/weight-functions.png>
- [78]
+ [81]
 File: Pics/fixed-partitions.png Graphic file (type bmp)
 <Pics/fixed-partitions.png>
- [79]
+ [82]
 File: Pics/k-nearest-neighbors.png Graphic file (type bmp)
 <Pics/k-nearest-neighbors.png>
 File: Pics/kernels-local-averaging.png Graphic file (type bmp)
 <Pics/kernels-local-averaging.png>
 File: Pics/box-kernel.png Graphic file (type bmp)
 <Pics/box-kernel.png>
- [80]
+ [83]
 File: Pics/nadaraya-watson-kernel-regression.png Graphic file (type bmp)
 <Pics/nadaraya-watson-kernel-regression.png>
- [81]
-Overfull \hbox (30.6622pt too wide) detected at line 3210
+ [84]
+Overfull \hbox (30.6622pt too wide) detected at line 3344
 [][]
  []
 
-[82] [83] [84]
-Overfull \hbox (66.70895pt too wide) detected at line 3305
+[85] [86] [87]
+Overfull \hbox (66.70895pt too wide) detected at line 3439
 [][]
  []
 
 File: Pics/distance-to-nearest-neighbors.png Graphic file (type bmp)
 <Pics/distance-to-nearest-neighbors.png>
-[85] [86]
+[88] [89]
 File: Pics/smoothing-convolution.png Graphic file (type bmp)
 <Pics/smoothing-convolution.png>
- [87]
-Overfull \hbox (11.07202pt too wide) detected at line 3422
+ [90]
+Overfull \hbox (11.07202pt too wide) detected at line 3556
 [][]\OMS/cmsy/m/n/10 R\OT1/cmr/m/n/10 ([]) \OMS/cmsy/m/n/10 ^^@ \U/msb/m/n/10 R
 [] \OT1/cmr/m/n/10 = [][] \U/msb/m/n/10 E[] [] \OML/cmm/m/it/10 dP\OT1/cmr/m/n/
 10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T [] ^^A [] \OT1/cmr
@@ -1056,45 +1061,45 @@ Overfull \hbox (11.07202pt too wide) detected at line 3422
 /m/it/10 u\OMS/cmsy/m/n/10 jj[]\OML/cmm/m/it/10 du
  []
 
-[88]
-Overfull \hbox (10.67715pt too wide) detected at line 3467
+[91]
+Overfull \hbox (10.67715pt too wide) detected at line 3601
 [][]
  []
 
-[89]
-Overfull \hbox (51.2351pt too wide) detected at line 3482
+[92]
+Overfull \hbox (51.2351pt too wide) detected at line 3616
 [][][][]
  []
 
-[90] [91] [92
+[93] [94] [95
 
-] [93
+] [96
 
-] [94
+] [97
 
-] [95
+] [98
 
-] [96] [97] [98] [99] [100] [101] [102] [103]
-[104] [105] [106] [107] [108] [109] [110] [111] [112] [113] [114]
-Overfull \hbox (40.00021pt too wide) detected at line 4647
+] [99] [100] [101] [102] [103] [104] [105] [106]
+[107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117]
+Overfull \hbox (40.00021pt too wide) detected at line 4781
 [][]
  []
 
-[115] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126]
-[127] [128] (./sml-notes.aux)
+[118] [119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129]
+[130] [131] (./sml-notes.aux)
 Package rerunfilecheck Info: File `sml-notes.out' has not changed.
-(rerunfilecheck)             Checksum: 29E4A374489D26DDD0E06376BFAA428B;21542.
+(rerunfilecheck)             Checksum: 57E59C7290918A395EAE3BB2322091D1;21982.
 Package logreq Info: Writing requests to 'sml-notes.run.xml'.
 \openout1 = `sml-notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20201 strings out of 476179
- 360517 string characters out of 5813073
- 1113140 words of memory out of 5000000
- 40644 multiletter control sequences out of 15000+600000
+ 20213 strings out of 476179
+ 360824 string characters out of 5813073
+ 1114013 words of memory out of 5000000
+ 40656 multiletter control sequences out of 15000+600000
  480973 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,19n,68p,1154b,4700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on sml-notes.xdv (128 pages, 1971960 bytes).
+Output written on sml-notes.xdv (131 pages, 2041648 bytes).

@@ -30,7 +30,7 @@
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{lemma}{Lemma}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -946,6 +946,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
         \end{equation}
         The inequality in the third row holds because we assume $\hat{f}$ is the minimizer of empirical risk, so we have $\hat{\mathcal{R}}(\hat{f}) - \hat{\mathcal{R}} \leq 0 $. When $\hat{f}$ is not the global minimizer of $\hat{\mathcal{R}}$ but simply satisfies $\hat{\mathcal{R}}(\hat{f}) \leq \inf_{f \in \mathcal{F}} \hat{\mathcal{R}}(f) + \varepsilon$, then the \textit{optimization error} $\varepsilon$ has to be added to the bound above
 
+        \vspace{1em}
         In general, there are two ways to bound the supremum of empirical process $\sup_{f \in \mathcal{F}} \left|\hat{\mathcal{R}}(f) - \mathcal{R}(f) \right|$. 
         \begin{itemize}
             \item Directly bound $\sup_{f \in \mathcal{F}} |\hat{\mathcal{R}}(f) - \mathcal{R}(f)|$ with high probability (note that $\hat{\mathcal{R}}(f)$ here is a random variable, so we can bound it with high probability)
@@ -1081,7 +1082,11 @@ This note \textbf{aggregates} the contents from the following books, articles an
             \textbf{Direct Bounding Approach}.
             Using the upper-bound $2 \sup_{f \in \mathcal{F}} |\hat{\mathcal{R}}(f) - \mathcal{R}(f)| $ on the estimation error, we have the union bound:
             \begin{equation*}
-                \mathbb{P} \left(\mathcal{R}(\hat{f}) - \inf_{f \in \mathcal{F}} \mathcal{R}(f) \geq t \right) \leq \mathbb{P} \left(2 \sup_{f \in \mathcal{F}} |\hat{\mathcal{R}}(f) - \mathcal{R}(f) | \geq t \right) \leq \sum_{f \in \mathcal{F}} \mathbb{P} \left(2 \left|\hat{\mathcal{R}}(f) - \mathcal{R}(f) \right| \geq t \right)    
+                \begin{aligned}
+                    \mathbb{P} \left(\mathcal{R}(\hat{f}) - \inf_{f \in \mathcal{F}} \mathcal{R}(f) \geq t \right) &\leq \mathbb{P} \left(2 \sup_{f \in \mathcal{F}} |\hat{\mathcal{R}}(f) - \mathcal{R}(f) | \geq t \right) \\
+                    &= \mathbb{P} \left(2 \bigcup_{f \in \mathcal{F}} |\hat{\mathcal{R}}(f) - \mathcal{R}(f) | \geq t \right) \\
+                    &\leq \sum_{f \in \mathcal{F}} \mathbb{P} \left(2 \left|\hat{\mathcal{R}}(f) - \mathcal{R}(f) \right| \geq t \right) \\
+                \end{aligned}   
             \end{equation*}
             We have, for $f \in \mathcal{F}$ fixed, $\hat{\mathcal{R}}(f) = \frac{1}{n}\sum_{i=1}^{n} l(Y_i, f(X_i) ) $ and we can apply Hoeffding's inequality to bound each $\mathbb{P} \left(2 |\hat{\mathcal{R}}(f) - \mathcal{R}(f)| \geq t \right)$, leading to
             \begin{equation*}
@@ -1130,7 +1135,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
                  \mathbb{E}\left[\sup_{f \in \mathcal{F}} |\hat{\mathcal{R}}(f) - \mathcal{R}(f) | \right] \leq l_{\infty} \sqrt{\frac{2 \log |\mathcal{F}|}{n}}
             \end{equation*} 
 
-            Finaly, plugging the above result into the equation \ref{eq:expected-unifrom-deviation}, we have with probabability $1 - \delta$
+            Finaly, plugging the above result into the Eq.(\ref{eq:expected-unifrom-deviation}), we have with probabability $1 - \delta$
             \begin{equation}
                 \mathcal{R}(\hat{f}) - \inf_{f \in \mathcal{F}} \mathcal{R}(f) \leq 2 \sup_{f \in \mathcal{F}} \left\{\hat{\mathcal{R}}(f) - \mathcal{R}(f) \right\} \leq 2 l_{\infty} \left( \sqrt{\frac{2 \log(1/\delta)}{n}} + \sqrt{\frac{2 \log |\mathcal{F}|}{n}} \right)
             \end{equation}
@@ -1165,7 +1170,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
                     &\leq 2 G \varepsilon + \sup_{i \in \{1, \dots, m(\varepsilon)\}} |\hat{\mathcal{R}}(f_i) - \mathcal{R}(f_i) | \\
                 \end{aligned}
             \end{equation*}
-            Using bounds \ref{eq:finite-expectation-bounds} on the expectation of the maximum (bounded random variables are sub-Gaussian), we have
+            Using bounds Eq.(\ref{eq:finite-expectation-bounds}) on the expectation of the maximum (bounded random variables are sub-Gaussian), we have
             \begin{equation}
                 \begin{aligned}
                     \mathbb{E}\left[\sup_{f \in \mathcal{F}} \left|\hat{\mathcal{R}}(f) - \mathcal{R}(f) \right| \right] &\leq 2 G \varepsilon + \mathbb{E}\left[\sup_{i \in \{1, \dots, m(\varepsilon) \} } \left|\hat{\mathcal{R}}(f_i) - \mathcal{R}(f_i) \right| \right] \\ 
@@ -1310,7 +1315,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
 \section{Rademacher Complexity} % (fold)
 \label{sec:rademacher_complexity}
 
-    In Section \ref{sec:pac_learn_and_uniform_convergence} we have shown that uniform convergence is a sufficient condition for learnability. In this section, we study the Rademacher complexity, which measures the rate of uniform convergence. We will provide generailization bounds based on this measure. To begin with, let's recall the definition of an $\varepsilon$-representative sample.
+    In Section \ref{sec:pac_learn_and_uniform_convergence} we have shown that uniform convergence is a sufficient condition for learnability. In this section, we study the Rademacher complexity, which measures the rate of uniform convergence. We will provide both \textbf{uniform deviation bounds} and \textbf{generailization bounds} based on this measure under distinct consideration. To begin with, let's recall the definition of an $\varepsilon$-representative sample.
 
     \subsection{Motivation for Rademacher Complexity} % (fold)
     \label{sub:motivation_for_rademacher_complexity}
@@ -1506,10 +1511,10 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
         A useful fact is that both empirical Rademacher complexity and expected Rademacher complexity are translation invariant.
 
-        \begin{proposition}[Translation Invariant]
+        \begin{lemma}[Translation Invariant]
             Let $\mathcal{H}$ be a family of functions mapping $\mathcal{Z} \mapsto \mathbb{R}$ and define $\mathcal{H}' = \{h'(Z) = h(Z) + c_0 \mid h \in \mathcal{H} \}$ for some $c_0 \in \mathbb{R}$. Then we have 
             $$ \hat{R}_{S_n}(\mathcal{H}) = \hat{R}_{S_n}(\mathcal{H}') \quad \text{and} \quad R_{n}(\mathcal{H}) = R_{n}(\mathcal{H}') $$
-        \end{proposition}
+        \end{lemma}
 
         \begin{proof}[Hint]
             The property of Rademacher random variables.
@@ -1517,126 +1522,130 @@ This note \textbf{aggregates} the contents from the following books, articles an
     
     % subsection rademacher_complexity (end)
 
-    \subsection{Lipschitz-continuous Losses} % (fold)
-    \label{sub:lipschitz_continuous_losses}
+    \subsection{Uniform Deviation Bounds for Linear Regression} % (fold)
+    \label{sub:uniform_deviation_bounds_for_linear_regression}
+    
+        \subsubsection{Lipschitz-continuous Losses} % (fold)
+        \label{ssub:lipschitz_continuous_losses}
 
-        A particularly appealing property in our context is the following property, sometimes called the “contraction principle”.
+            A particularly appealing property in our context is the following property, sometimes called the “contraction principle”.
 
-        \begin{remark}
-            For a compact intevral, 
-            continuously differentiable $\subseteq$ Lipschitz continuous $\subseteq$ absolutely continuous $\subseteq$ bounded variation $\subseteq$ differentiable almost everywhere
-        \end{remark}
+            \begin{remark}
+                For a compact intevral, 
+                continuously differentiable $\subseteq$ Lipschitz continuous $\subseteq$ absolutely continuous $\subseteq$ bounded variation $\subseteq$ differentiable almost everywhere
+            \end{remark}
 
-        \begin{proposition}[Contraction Principle - Lipschitz-continuous Functions]
-            Given any functions $b$, $a_i : \Theta \mapsto \mathbb{R}$ (no assumption on $\Theta$) and $\varphi_i: \mathbb{R} \mapsto \mathbb{R}$ any $1$-Lipschitz-functions, for $i = 1, \dots, n$, we have, for $\sigma \in \mathbb{R}^n$ a vector of independent Rademacher random variables,
+            \begin{proposition}[Contraction Principle - Lipschitz-continuous Functions]
+                Given any functions $b$, $a_i : \Theta \mapsto \mathbb{R}$ (no assumption on $\Theta$) and $\varphi_i: \mathbb{R} \mapsto \mathbb{R}$ any $1$-Lipschitz-functions, for $i = 1, \dots, n$, we have, for $\sigma \in \mathbb{R}^n$ a vector of independent Rademacher random variables,
+                \begin{equation}
+                    \mathbb{E}_{\sigma}\left[\sup_{\theta \in \Theta} \ b(\theta) + \sum_{i=1}^{n} \sigma_i \varphi_i(a_i(\theta) ) \right] \leq \mathbb{E}_{\sigma}\left[\sup_{\theta \in \Theta} \ b(\theta) + \sum_{i=1}^{n} \sigma_i a_i(\theta) \right]
+                \end{equation}
+            \end{proposition}
+
+            \begin{proof}
+                We consider a proof by induction on $n$. The case $n = 0$ is trivial, and we show how to go from $n \geq 0$ to $n + 1$. We thus consider $\mathbb{E}_{\sigma_1, \dots, \sigma_{n+1}} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n+1} \sigma_i \varphi_i(a_i(\theta) ) \right]$ and compute the expectation with respect to $\sigma_{n+1}$ explicitly, by considering the two potential values with probability $1/2$,
+                \begin{equation*}
+                    \begin{aligned}
+                        &\mathbb{E}_{\sigma_1, \dots, \sigma_{n+1}} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n+1} \sigma_i \varphi_i(a_i(\theta) ) \right] \\
+                        = & \frac{1}{2} \mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n} \sigma_i \varphi_i(a_i(\theta) ) + \varphi_{n+1}(a_{n+1}(\theta) ) \right] + \frac{1}{2} \mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n} \sigma_i \varphi_i(a_i(\theta) ) - \varphi_{n+1}(a_{n+1}(\theta) ) \right] \\
+                        = & \mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{\varphi_{n+1}(a_{n+1}(\theta) ) - \varphi_{n+1}(a_{n+1}(\theta') ) }{2} \right] \\
+                    \end{aligned}
+                \end{equation*}
+                By taking the supremum over $(\theta, \theta')$ and $(\theta', \theta)$ and using Lipschitz-continuity, we get
+                \begin{equation*}
+                    \begin{aligned}
+                        & \mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{\varphi_{n+1}(a_{n+1}(\theta) ) - \varphi_{n+1}(a_{n+1}(\theta') ) }{2} \right] \\
+                        = &\mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{ \big| \varphi_{n+1}(a_{n+1}(\theta) ) - \varphi_{n+1}(a_{n+1}(\theta') ) \big| }{2} \right] \\
+                        \leq &\mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{ \big| a_{n+1}(\theta)  - a_{n+1}(\theta') \big| }{2} \right] \\
+                        = &\mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{a_{n+1}(\theta)  - a_{n+1}(\theta') }{2} \right] \\
+                    \end{aligned}
+                \end{equation*}
+                The first and last equalities hold becasue of the fact that $\sup_{\theta, \theta' \in \Theta} a_{n+1}(\theta) - a_{n+1}(\theta') $ at least equal to zero.
+                Now, we can redo the exact same sequence of equalities with $\varphi_{n+1}$ being the identity, to obtain that the last expression above is equal to
+                \begin{equation*}
+                    \begin{aligned}
+                        &\mathbb{E}_{\sigma_1, \dots, \sigma_{n}} \mathbb{E}_{\sigma_{n+1}} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n} \sigma_i \varphi_i(a_i(\theta) ) + \sigma_{n+1} a_{n+1}(\theta) \right] \\
+                        \leq &\mathbb{E}_{\sigma_1, \dots, \sigma_{n}} \mathbb{E}_{\sigma_{n+1}} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n} \sigma_i a_i(\theta) + \sigma_{n+1} a_{n+1}(\theta) \right] \quad \text{by the induction hypothesis}
+                    \end{aligned}
+                \end{equation*}
+                which leads to the desired result.
+
+            \end{proof}
+
+            We can apply the contraction principle above to supervised learning situations where $u_i \mapsto l(y_i, u_i)$ is $G$-Lipschitz-continuous for all $i$ almost surely (possible for regression or when using a convex surrogate for binary classification), leading to
             \begin{equation}
-                \mathbb{E}_{\sigma}\left[\sup_{\theta \in \Theta} \ b(\theta) + \sum_{i=1}^{n} \sigma_i \varphi_i(a_i(\theta) ) \right] \leq \mathbb{E}_{\sigma}\left[\sup_{\theta \in \Theta} \ b(\theta) + \sum_{i=1}^{n} \sigma_i a_i(\theta) \right]
+                \mathbb{E}_{\sigma} \left[\sup_{f \in \mathcal{F}} \frac{1}{n} \sum_{i=1}^{n} \sigma_i l(Y_i, f(X_i) ) \mid S_n \right] \leq G \cdot \mathbb{E}_{\sigma} \left[\sup_{f \in \mathcal{F}} \frac{1}{n} \sum_{i=1}^{n} \sigma_i f(X_i) \mid S_n \right] 
+            \end{equation} 
+            by the contraction principle, which leads to
+            \begin{equation}
+                \frac{1}{2} \mathbb{E}\left[\sup_{h \in \mathcal{H}} \left(\frac{1}{n} \sum_{i=1}^{n} \sum_{i=1}^{n} h(Z_i) - \mathbb{E}[h(Z)] \right) \right] \leq R_n(\mathcal{H}) \leq G \cdot R_n(\mathcal{F})
+                \label{eq:Rademacher-complexity-of-hypothesis-class}
             \end{equation}
-        \end{proposition}
+            Thus, the Rademacher complexity of the class of prediction functions $R_n(\mathcal{F})$ controls the expectation of empirical process.
+        
+        % subsubsection lipschitz_continuous_losses (end)
 
-        \begin{proof}
-            We consider a proof by induction on $n$. The case $n = 0$ is trivial, and we show how to go from $n \geq 0$ to $n + 1$. We thus consider $\mathbb{E}_{\sigma_1, \dots, \sigma_{n+1}} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n+1} \sigma_i \varphi_i(a_i(\theta) ) \right]$ and compute the expectation with respect to $\sigma_{n+1}$ explicitly, by considering the two potential values with probability $1/2$,
+        \subsubsection{Ball-constrained Linear Predictions} % (fold)
+        \label{ssub:ball_constrained_linear_predictions}
+
+            We now assume that $\mathcal{F} = \{f_{\theta}(X) = \theta^{\top} \varphi(X) \mid \Omega(\theta) \leq D \}$ where $\Omega$ is norm on $\mathbb{R}^d$. We denote by $\Phi \in \mathbb{R}^{n \times d}$ the design matrix, that is,
             \begin{equation*}
+                \Phi = 
+                \begin{bmatrix}
+                    \varphi_{1}(X_1) & \varphi_{2}(X_1) & \cdots & \varphi_d(X_1) \\
+                    \varphi_{1}(X_2) & \varphi_{2}(X_2) & \cdots & \varphi_d(X_2) \\
+                    \vdots & \vdots  &  & \vdots \\
+                    \varphi_{1}(X_n) & \varphi_{2}(X_n) & \cdots & \varphi_d(X_n) \\
+                \end{bmatrix}
+            \end{equation*}
+            We have
+            \begin{equation}
+                \mathcal{R}_n(\mathcal{F}) = \mathbb{E}\left[\sup_{\Omega(\theta) \leq D} \left(\frac{1}{n} \sum_{i=1}^{n} \sigma_i \theta^{\top} \varphi(X_i) \right) \right] = \mathbb{E}\left[\sup_{\Omega(\theta) \leq D}\left(\frac{1}{n} \sigma^{\top} \Phi \theta \right) \right] = \frac{D}{n} \mathbb{E}\Big[\Omega^*(\Phi^{\top} \sigma) \Big]
+            \end{equation}
+            where $\Omega^*(u) = \sup \{u^{\top} \theta \mid \Omega(\theta) \leq 1 \}$ is the dual norm of $\Omega$.  
+            \begin{itemize}
+                \item when $\Omega$ is the $l_p$-norm with $p \in [1, \infty]$, then $\Omega^*$ is the $l_q$-norm, with conjugate realtion $\frac{1}{p} + \frac{1}{q} = 1$
+
+                \item $||\cdot||_1^{*} = ||\cdot||_{\infty}$ and $||\cdot ||_{\infty}^{*} = ||\cdot ||_1$ and $||\cdot||_2^{*} = ||\cdot||_2$.
+            \end{itemize}
+            Thus, computing Rademacher complexities is equivalent to computing expectation of norms. When $\Omega = ||\cdot||_2$, we get:
+            \begin{equation}
                 \begin{aligned}
-                    &\mathbb{E}_{\sigma_1, \dots, \sigma_{n+1}} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n+1} \sigma_i \varphi_i(a_i(\theta) ) \right] \\
-                    = & \frac{1}{2} \mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n} \sigma_i \varphi_i(a_i(\theta) ) + \varphi_{n+1}(a_{n+1}(\theta) ) \right] + \frac{1}{2} \mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n} \sigma_i \varphi_i(a_i(\theta) ) - \varphi_{n+1}(a_{n+1}(\theta) ) \right] \\
-                    = & \mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{\varphi_{n+1}(a_{n+1}(\theta) ) - \varphi_{n+1}(a_{n+1}(\theta') ) }{2} \right] \\
+                    \mathcal{R}_n(\mathcal{F}) &= \frac{D}{n} \mathbb{E}\big[||\Phi^{\top} \sigma||_2 \big] \\
+                    &\leq \frac{D}{n} \sqrt{\mathbb{E}[||\Phi^{\top} \sigma||_2^2 ] } \quad (\text{Jensens' inequality apply on } f(x) = x^2) \\
+                    &= \frac{D}{n} \sqrt{\mathbb{E}[\tr(\Phi^{\top} \sigma \sigma^{\top} \Phi )] } \quad (\text{holds for any vector}) \\
+                    &= \frac{D}{n} \sqrt{\mathbb{E}[\tr(\Phi^{\top} \Phi)] } \quad (\text{using that IID such that } \mathbb{E}[\sigma \sigma^{\top}] = I) \\
+                    &= \frac{D}{n} \sqrt{\sum_{i=1}^{n} \mathbb{E}[\varphi(X_i)^{\top} \varphi(X_i) ] } = \frac{D}{n} \sqrt{\sum_{i=1}^{n} \mathbb{E}||\varphi(X_i)||_2^{2} } = \frac{D}{\sqrt{n}} \sqrt{\mathbb{E}||\varphi(X)||_2^2} \\
                 \end{aligned}
-            \end{equation*}
-            By taking the supremum over $(\theta, \theta')$ and $(\theta', \theta)$ and using Lipschitz-continuity, we get
-            \begin{equation*}
-                \begin{aligned}
-                    & \mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{\varphi_{n+1}(a_{n+1}(\theta) ) - \varphi_{n+1}(a_{n+1}(\theta') ) }{2} \right] \\
-                    = &\mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{ \big| \varphi_{n+1}(a_{n+1}(\theta) ) - \varphi_{n+1}(a_{n+1}(\theta') ) \big| }{2} \right] \\
-                    \leq &\mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{ \big| a_{n+1}(\theta)  - a_{n+1}(\theta') \big| }{2} \right] \\
-                    = &\mathbb{E}_{\sigma_1, \dots, \sigma_n} \left[\sup_{\theta, \theta' \in \Theta} \frac{b(\theta) + b(\theta')}{2} + \sum_{i=1}^{n} \sigma_i \frac{\varphi_i(a_i(\theta)) + \varphi_i(a_i(\theta')) }{2} + \frac{a_{n+1}(\theta)  - a_{n+1}(\theta') }{2} \right] \\
-                \end{aligned}
-            \end{equation*}
-            The first and last equalities hold becasue of the fact that $\sup_{\theta, \theta' \in \Theta} a_{n+1}(\theta) - a_{n+1}(\theta') $ at least equal to zero.
-            Now, we can redo the exact same sequence of equalities with $\varphi_{n+1}$ being the identity, to obtain that the last expression above is equal to
-            \begin{equation*}
-                \begin{aligned}
-                    &\mathbb{E}_{\sigma_1, \dots, \sigma_{n}} \mathbb{E}_{\sigma_{n+1}} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n} \sigma_i \varphi_i(a_i(\theta) ) + \sigma_{n+1} a_{n+1}(\theta) \right] \\
-                    \leq &\mathbb{E}_{\sigma_1, \dots, \sigma_{n}} \mathbb{E}_{\sigma_{n+1}} \left[\sup_{\theta \in \Theta} b(\theta) + \sum_{i=1}^{n} \sigma_i a_i(\theta) + \sigma_{n+1} a_{n+1}(\theta) \right] \quad \text{by the induction hypothesis}
-                \end{aligned}
-            \end{equation*}
-            which leads to the desired result.
+                \label{eq:Rademacher-complexity-of-function-class}
+            \end{equation}
+            We thus obtain a \textit{dimension-independent} Rademacher complexity that we can use in the summary below.
 
-        \end{proof}
+            \begin{example}
+                Upper-bound the Rademacher complexity for $\Omega = ||\cdot||_1$.
+            \end{example}
+        
+        % subsubsection ball_constrained_linear_predictions (end)
 
-        We can apply the contraction principle above to supervised learning situations where $u_i \mapsto l(y_i, u_i)$ is $G$-Lipschitz-continuous for all $i$ almost surely (possible for regression or when using a convex surrogate for binary classification), leading to
-        \begin{equation}
-            \mathbb{E}_{\sigma} \left[\sup_{f \in \mathcal{F}} \frac{1}{n} \sum_{i=1}^{n} \sigma_i l(Y_i, f(X_i) ) \mid S_n \right] \leq G \cdot \mathbb{E}_{\sigma} \left[\sup_{f \in \mathcal{F}} \frac{1}{n} \sum_{i=1}^{n} \sigma_i f(X_i) \mid S_n \right] 
-        \end{equation} 
-        by the contraction principle, which leads to
-        \begin{equation}
-            \frac{1}{2} \mathbb{E}\left[\sup_{h \in \mathcal{H}} \left(\frac{1}{n} \sum_{i=1}^{n} \sum_{i=1}^{n} h(Z_i) - \mathbb{E}[h(Z)] \right) \right] \leq R_n(\mathcal{H}) \leq G \cdot R_n(\mathcal{F})
-            \label{eq:Rademacher-complexity-of-hypothesis-class}
-        \end{equation}
-        Thus, the Rademacher complexity of the class of prediction functions $R_n(\mathcal{F})$ controls the expectation of empirical process.
-    
-    % subsection lipschitz_continuous_losses (end)
+        \subsubsection{Putting Things Together} % (fold)
+        \label{ssub:putting_things_together}
 
-    \subsection{Ball-constrained Linear Predictions} % (fold)
-    \label{sub:ball_constrained_linear_predictions}
+            With all the elements above (section \ref{ssub:lipschitz_continuous_losses} and \ref{ssub:ball_constrained_linear_predictions}), we can now propose the following general result (where no convexity of the loss function is assumed).
 
-        We now assume that $\mathcal{F} = \{f_{\theta}(X) = \theta^{\top} \varphi(X) \mid \Omega(\theta) \leq D \}$ where $\Omega$ is norm on $\mathbb{R}^d$. We denote by $\Phi \in \mathbb{R}^{n \times d}$ the design matrix, that is,
-        \begin{equation*}
-            \Phi = 
-            \begin{bmatrix}
-                \varphi_{1}(X_1) & \varphi_{2}(X_1) & \cdots & \varphi_d(X_1) \\
-                \varphi_{1}(X_2) & \varphi_{2}(X_2) & \cdots & \varphi_d(X_2) \\
-                \vdots & \vdots  &  & \vdots \\
-                \varphi_{1}(X_n) & \varphi_{2}(X_n) & \cdots & \varphi_d(X_n) \\
-            \end{bmatrix}
-        \end{equation*}
-        We have
-        \begin{equation}
-            \mathcal{R}_n(\mathcal{F}) = \mathbb{E}\left[\sup_{\Omega(\theta) \leq D} \left(\frac{1}{n} \sum_{i=1}^{n} \sigma_i \theta^{\top} \varphi(X_i) \right) \right] = \mathbb{E}\left[\sup_{\Omega(\theta) \leq D}\left(\frac{1}{n} \sigma^{\top} \Phi \theta \right) \right] = \frac{D}{n} \mathbb{E}\Big[\Omega^*(\Phi^{\top} \sigma) \Big]
-        \end{equation}
-        where $\Omega^*(u) = \sup \{u^{\top} \theta \mid \Omega(\theta) \leq 1 \}$ is the dual norm of $\Omega$.  
-        \begin{itemize}
-            \item when $\Omega$ is the $l_p$-norm with $p \in [1, \infty]$, then $\Omega^*$ is the $l_q$-norm, with conjugate realtion $\frac{1}{p} + \frac{1}{q} = 1$
+            \begin{proposition}[Estimation Error]
+                Assume a $G$-Lipschitz-continuous loss function, linear prediction functions with $\mathcal{F} = \{f_{\theta}(X) = \theta^{\top} \varphi(X) \mid ||\theta||_2 \leq D \}$, where $\mathbb{E}||\varphi(X)||_{2}^{2} \leq R^2$. Let $\hat{f} = f_{\hat{\theta}} \in \mathcal{F}$ be the minimizer of the empirical risk, then:
+                \begin{equation*}
+                    \mathcal{R}(f_{\hat{\theta}}) - \inf_{||\theta||_2 \leq D} \ \mathcal{R}(f_{\theta}) \leq \frac{2GRD}{\sqrt{n} }
+                \end{equation*}
+                It is essential to know that $f_{\hat{\theta}}$ here is a random variable.
+            \end{proposition}
 
-            \item $||\cdot||_1^{*} = ||\cdot||_{\infty}$ and $||\cdot ||_{\infty}^{*} = ||\cdot ||_1$ and $||\cdot||_2^{*} = ||\cdot||_2$.
-        \end{itemize}
-        Thus, computing Rademacher complexities is equivalent to computing expectation of norms. When $\Omega = ||\cdot||_2$, we get:
-        \begin{equation}
-            \begin{aligned}
-                \mathcal{R}_n(\mathcal{F}) &= \frac{D}{n} \mathbb{E}\big[||\Phi^{\top} \sigma||_2 \big] \\
-                &\leq \frac{D}{n} \sqrt{\mathbb{E}[||\Phi^{\top} \sigma||_2^2 ] } \quad (\text{Jensens' inequality apply on } f(x) = x^2) \\
-                &= \frac{D}{n} \sqrt{\mathbb{E}[\tr(\Phi^{\top} \sigma \sigma^{\top} \Phi )] } \quad (\text{holds for any vector}) \\
-                &= \frac{D}{n} \sqrt{\mathbb{E}[\tr(\Phi^{\top} \Phi)] } \quad (\text{using that IID such that } \mathbb{E}[\sigma \sigma^{\top}] = I) \\
-                &= \frac{D}{n} \sqrt{\sum_{i=1}^{n} \mathbb{E}[\varphi(X_i)^{\top} \varphi(X_i) ] } = \frac{D}{n} \sqrt{\sum_{i=1}^{n} \mathbb{E}||\varphi(X_i)||_2^{2} } = \frac{D}{\sqrt{n}} \sqrt{\mathbb{E}||\varphi(X)||_2^2} \\
-            \end{aligned}
-            \label{eq:Rademacher-complexity-of-function-class}
-        \end{equation}
-        We thus obtain a \textit{dimension-independent} Rademacher complexity that we can use in the summary below.
+            \begin{proof}
+                Using Proposition \ref{thm:symmetrization-Rademacher-complexity}, equation \ref{eq:Rademacher-complexity-of-hypothesis-class} and \ref{eq:Rademacher-complexity-of-function-class}, we get the desire result.
+                Note that this is an uniform deviation bound, which limit the difference between a model's expected risk and its empirical risk uniformly for all models in a hypothesis space.
+            \end{proof}
 
-        \begin{example}
-            Upper-bound the Rademacher complexity for $\Omega = ||\cdot||_1$.
-        \end{example}
-    
-    % subsection ball_constrained_linear_predictions (end)
-
-    \subsection{Putting Things Together (Linear Predictions)} % (fold)
-    \label{sub:putting_things_together_}
-
-        With all the elements above (section \ref{sub:lipschitz_continuous_losses} and \ref{sub:ball_constrained_linear_predictions}), we can now propose the following general result (where no convexity of the loss function is assumed).
-
-        \begin{proposition}[Estimation Error]
-            Assume a $G$-Lipschitz-continuous loss function, linear prediction functions with $\mathcal{F} = \{f_{\theta}(X) = \theta^{\top} \varphi(X) \mid ||\theta||_2 \leq D \}$, where $\mathbb{E}||\varphi(X)||_{2}^{2} \leq R^2$. Let $\hat{f} = f_{\hat{\theta}} \in \mathcal{F}$ be the minimizer of the empirical risk, then:
-            \begin{equation*}
-                \mathbb{E}\big[\mathcal{R}(f_{\hat{\theta}}) \big] - \inf_{||\theta||_2 \leq D} \ \mathcal{R}(f_{\theta}) \leq \frac{2GRD}{\sqrt{n} }
-            \end{equation*}
-            It is essential to know that $f_{\hat{\theta}}$ here is a random variable.
-        \end{proposition}
-
-        \begin{proof}
-            Using Proposition \ref{thm:symmetrization-Rademacher-complexity}, equation \ref{eq:Rademacher-complexity-of-hypothesis-class} and \ref{eq:Rademacher-complexity-of-function-class}, we get the desire result.
-        \end{proof}
-
-        \begin{proposition}[Approximation Error]
+            \vspace{1em}
             If we assume that there exists a minimizer $\theta_{*}$ of $\mathcal{R}(f_{\theta})$ over $\mathbb{R}^d$, the approximation error is upper-bounded by
             \begin{equation*}
                 \begin{aligned}
@@ -1645,48 +1654,58 @@ This note \textbf{aggregates} the contents from the following books, articles an
                     &\leq G \inf_{||\theta||_2 \leq D} ||\theta - \theta_{*}||_2 \cdot \mathbb{E}[||\varphi(X)||_2^2] \leq GR \inf_{||\theta||_2 \leq D} ||\theta - \theta_{*}||_2
                 \end{aligned}
             \end{equation*}
-        \end{proposition}
-        This leads to empirical risk minimization error is uppber-bounded by
-        \begin{equation}
-            \mathbb{E}[\mathcal{R}(f_{\hat{\theta}}) ] - \mathcal{R}(f_{\theta_*}) \leq GR \inf_{||\theta||_2 \leq D} ||\theta - \theta_{*}||_2 + \frac{2GRD}{\sqrt{n}} = GR(||\theta_{*}||_2 - D)^{+} + \frac{2GRD}{\sqrt{n} }
-        \end{equation}
-        We see that for $D = ||\theta_{*}||_2$, we obtain the bound $\frac{2GR||\theta_*||_2}{\sqrt{n}}$, but this setting requires to know $||\theta_{*}||_2$ which is not possible in practice. 
-        \begin{itemize}
-            \item if $D$ is too large, the estimation error gets larger, leading to overfitting;
 
-            \item while if $D$ is too small, the approximation error can quickly kick in (with a value that does not go to zero when $n$ tends to infinity), leading to underfitting.
-        \end{itemize}
-    
-    % subsection putting_things_together_ (end)
+            This leads to empirical risk minimization error is uppber-bounded by
+            \begin{equation}
+                \begin{aligned}
+                    \mathcal{R}(\hat{f}) - \mathcal{R}^{*} = \mathcal{R}(f_{\hat{\theta}}) - \mathcal{R}(f_{\theta_*}) &\leq GR \inf_{||\theta||_2 \leq D} ||\theta - \theta_{*}||_2 + \frac{2GRD}{\sqrt{n}} \\ 
+                    &= GR(||\theta_{*}||_2 - D)^{+} + \frac{2GRD}{\sqrt{n} } \\
+                \end{aligned}
+            \end{equation}
+            We can see that if we let $D = ||\theta_{*}||_2$, we obtain the bound $\frac{2GR||\theta_*||_2}{\sqrt{n}}$, but this setting requires to know $||\theta_{*}||_2$ which is not possible in practice. 
+            \begin{itemize}
+                \item if $D$ is too large, the estimation error gets larger, leading to overfitting;
 
-    \subsection{From Constrained to Regularized Estimation} % (fold)
-    \label{sub:from_constrained_to_regularized_estimation}
-
-        In practice, it is preferable to penalize by the norm $\Omega(\theta) = ||\theta||_2$ instead of constraining (the main reasons being that the hyperparameter is easier to find and the optimization is easier).
-
-        For simplicity, we only consider the $l_2$-norm here. We now denote $\hat{\theta}_{\lambda}$ the minimizer of 
-        \begin{equation}
-            \hat{\mathcal{R}}(f_{\theta}) + \frac{\lambda}{2} ||\theta||_2^2
-            \label{eq:regularized-empirical-risk}
-        \end{equation}
-        If the loss is always positive, then
-        $$ \frac{\lambda}{2} ||\hat{\theta}_{\lambda}||_2^2 \leq \hat{\mathcal{R}}(f_{\hat{\theta}_{\lambda}}) + \frac{\lambda}{2} ||\hat{\theta}_{\lambda}||_2^2 \leq \hat{\mathcal{R}}(f_0) $$
-        leading to a bound $||\hat{\theta}_{\lambda}||_2 = \mathcal{O}(1 / \sqrt{\lambda} )$. Thus, with $D = \mathcal{O}(1 / \sqrt{\lambda})$ in the bound above, this lead to a deviation of $\mathcal{O}(1 / \sqrt{\lambda n})$, which is not optimal.
+                \item while if $D$ is too small, the approximation error can quickly kick in (with a value that does not go to zero when $n$ tends to infinity), leading to underfitting.
+            \end{itemize}
         
-        We now cite \cite{sridharan2008fast} without proof an interesting stronger result using the strong convexity of the squared $l_2$-norm.
+        % subsubsection putting_things_together (end)
 
-        \begin{proposition}[Fast Rates for Regularized Objectives]
-            Assume a $G$-Lipschitz-continuous \textbf{convex} loss function, linear prediction functions with $\mathcal{F} = \{f_{\theta}(X) = \theta^{\top} \varphi(X) \mid ||\theta||_2 \leq D \}$, where $\mathbb{E}||\varphi(X)||_2^2 \leq R^2$. Let $\hat{\theta}_{\lambda} \in \mathbb{R}^d$ be the minimizer of the regularized empirical risk in equation \ref{eq:regularized-empirical-risk}, then
+        \subsubsection{From Constrained to Regularized Estimation} % (fold)
+        \label{ssub:from_constrained_to_regularized_estimation}
+
+            In practice, it is preferable to penalize by the norm $\Omega(\theta) = ||\theta||_2$ instead of constraining (the main reasons being that the hyperparameter is easier to find and the optimization is easier).
+            For simplicity, we only consider the $l_2$-norm here. We now denote $\hat{\theta}_{\lambda}$ the minimizer of 
+            \begin{equation}
+                \hat{\mathcal{R}}(f_{\theta}) + \frac{\lambda}{2} ||\theta||_2^2
+                \label{eq:regularized-empirical-risk}
+            \end{equation}
+            If the loss is always positive, then
+            $$ \frac{\lambda}{2} ||\hat{\theta}_{\lambda}||_2^2 \leq \hat{\mathcal{R}}(f_{\hat{\theta}_{\lambda}}) + \frac{\lambda}{2} ||\hat{\theta}_{\lambda}||_2^2 \leq \hat{\mathcal{R}}(f_0) $$
+            leading to a bound $||\hat{\theta}_{\lambda}||_2 = \mathcal{O}(1 / \sqrt{\lambda} )$. Thus, with $D = \mathcal{O}(1 / \sqrt{\lambda})$ in the bound above, this lead to a deviation of $\mathcal{O}(1 / \sqrt{\lambda n})$, which is not optimal.
+            
+            \vspace{1em}
+            We now cite \cite{sridharan2008fast} without proof an interesting stronger result using the strong convexity of the squared $l_2$-norm.
+
+            \begin{proposition}[Fast Rates for Regularized Objectives]
+                Assume a $G$-Lipschitz-continuous convex loss function, linear prediction functions with $\mathcal{F} = \{f_{\theta}(X) = \theta^{\top} \varphi(X) \mid ||\theta||_2 \leq D \}$, where $\mathbb{E}||\varphi(X)||_2^2 \leq R^2$. Let $\hat{\theta}_{\lambda} \in \mathbb{R}^d$ be the minimizer of the regularized empirical risk in equation \ref{eq:regularized-empirical-risk}, then we have a uniform deviation bound:
+                \begin{equation*}
+                    \mathcal{R}(f_{\hat{\theta}_{\lambda}}) \leq \inf_{\theta \in \mathbb{R}^d} \left\{\mathcal{R}(f_{\theta}) + \frac{\lambda}{2} ||\theta||_2^2 \right\} + \frac{32 G^2 R^2}{\lambda n}     
+                \end{equation*} 
+            \end{proposition}
+            Note that we obtain a "fast rate" in $\mathcal{O}(R^2 / (\lambda n) )$, which has a better dependence in $n$, but depends on $\lambda$, which can be very small in practice. One classical choice of $\lambda$ if $\lambda \propto GR / (\sqrt{n} ||\theta_{*}||) $, leading to the slow rate
             \begin{equation*}
-                \mathbb{E}[\mathcal{R}(f_{\hat{\theta}_{\lambda}})] \leq \inf_{\theta \in \mathbb{R}^d} \left\{\mathcal{R}(f_{\theta}) + \frac{\lambda}{2} ||\theta||_2^2 \right\} + \frac{32 G^2 R^2}{\lambda n}     
-            \end{equation*} 
-        \end{proposition}
-        Note that we obtain a "fast rate" in $\mathcal{O}(R^2 / (\lambda n) )$, which has a better dependence in $n$, but depends on $\lambda$, which can be very small in practice. One classical choice of $\lambda$ if $\lambda \propto GR / (\sqrt{n} ||\theta_{*}||) $, leading to the slow rate
-        \begin{equation*}
-            \mathbb{E}[\mathcal{R}(f_{\theta_*} )] \leq \mathcal{R}(f_{\theta_*}) + \mathcal{O}\left(\frac{GR}{\sqrt{n}} ||\theta_*||_2 \right)
-        \end{equation*}
+                \mathbb{E}[\mathcal{R}(f_{\theta_*} )] \leq \mathcal{R}(f_{\theta_*}) + \mathcal{O}\left(\frac{GR}{\sqrt{n}} ||\theta_*||_2 \right)
+            \end{equation*}
+        
+        % subsubsection from_constrained_to_regularized_estimation (end)
+
+    % subsection uniform_deviation_bounds_for_linear_regression (end)
+
+    \subsection{Generalization Bounds for SVM} % (fold)
+    \label{sub:generalization_bounds_for_svm}
     
-    % subsection from_constrained_to_regularized_estimation (end)
+    % subsection generalization_bounds_for_svm (end)
 
 % section rademacher_complexity (end)
 
@@ -2228,7 +2247,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
         \end{equation*}
         It is thus sufficient to reach an optimization accuracy of the order of the estimation error (usually of the order $\mathcal{O}(1/\sqrt{n})$ or $\mathcal{O}(1/ \sqrt{n})$). 
 
-        In the following content, we use the notation $\theta^{*}$ for the minimizer of the expected risk and the notation $\theta^{\star}$ (not $\hat{\theta}$) for the minimizer of the empirical (potentially regularized) risk.
+        In the following content, we use the notation $\theta^{*}$ for the minimizer of the expected risk and the notation $\theta_{\star}$ (not $\hat{\theta}$) for the minimizer of the empirical (potentially regularized) risk.
     
     % subsection optimization_in_machine_learning (end)
 
@@ -2254,20 +2273,20 @@ This note \textbf{aggregates} the contents from the following books, articles an
         \subsubsection{Analysis of GD for ordinary least squares} % (fold)
         \label{ssub:analysis_of_gd_for_ordinary_least_squares}
         
-            We first start with the simplest example, namely the quadratic convex functions (which is strongly convex), which is just the loss function in ordinary least squares. Let $\Phi \in \mathbb{R}^{n \times d}$ be the design matrix, and $y \in \mathbb{R}^n$ the vector of responses. Least-squares estimation amoutns to finding a minimizer $\theta^{\star}$ of
+            We first start with the simplest example, namely the quadratic convex functions (which is strongly convex), which is just the loss function in ordinary least squares. Let $\Phi \in \mathbb{R}^{n \times d}$ be the design matrix, and $y \in \mathbb{R}^n$ the vector of responses. Least-squares estimation amoutns to finding a minimizer $\theta_{\star}$ of
 
             \begin{equation*}
                 F(\theta) = \frac{1}{2n} ||\Phi \theta - y||_2^2 = \frac{1}{2n} (y - \Phi \theta)^{\top} (y - \Phi \theta)
             \end{equation*}
-            The gradient of $F$ is $F'(\theta) = \frac{1}{n} \Phi^{\top}(\Phi \theta - y) = \frac{1}{n} \Phi^{\top} \Phi \theta - \frac{1}{n} \Phi^{\top} y $. Thus, denoting $H = \frac{1}{n} \Phi^{\top} \Phi \in \mathbb{R}^{d \times d}$ the Hessian matrix (with respect to $\theta$), the minimizers $\theta^{\star}$ are characterized by
+            The gradient of $F$ is $F'(\theta) = \frac{1}{n} \Phi^{\top}(\Phi \theta - y) = \frac{1}{n} \Phi^{\top} \Phi \theta - \frac{1}{n} \Phi^{\top} y $. Thus, denoting $H = \frac{1}{n} \Phi^{\top} \Phi \in \mathbb{R}^{d \times d}$ the Hessian matrix (with respect to $\theta$), the minimizers $\theta_{\star}$ are characterized by
             \begin{equation}
-                F'(\theta^{\star}) = 0 \quad \Rightarrow \quad H \theta^{\star} = \frac{1}{n} \Phi^{\top} y
+                F'(\theta_{\star}) = 0 \quad \Rightarrow \quad H \theta_{\star} = \frac{1}{n} \Phi^{\top} y
             \end{equation}
-            Since $\frac{1}{n} \Phi^{\top}y \in \mathbb{R}^d$ is in the range space of $H$, there is always a minimizer, but unless $H$ is invertible, the minimizer is not unique. But all minimizers $\theta^{\star}$ have the same function value $F(\theta^{\star})$, and we have, from a simple Taylor expansion
+            Since $\frac{1}{n} \Phi^{\top}y \in \mathbb{R}^d$ is in the range space of $H$, there is always a minimizer, but unless $H$ is invertible, the minimizer is not unique. But all minimizers $\theta_{\star}$ have the same function value $F(\theta_{\star})$, and we have, from a simple Taylor expansion
             \begin{equation*}
                 \begin{aligned}
-                    F(\theta) - F(\theta^{\star}) &= F'(\theta^{\star})^{\top}(\theta - \theta^{\star}) + \frac{1}{2} (\theta - \theta^{\star})^{\top} H (\theta - \theta^{\star}) \\ 
-                    &= \frac{1}{2} (\theta - \theta^{\star})^{\top} H (\theta - \theta^{\star}) \\
+                    F(\theta) - F(\theta_{\star}) &= F'(\theta_{\star})^{\top}(\theta - \theta_{\star}) + \frac{1}{2} (\theta - \theta_{\star})^{\top} H (\theta - \theta_{\star}) \\ 
+                    &= \frac{1}{2} (\theta - \theta_{\star})^{\top} H (\theta - \theta_{\star}) \\
                 \end{aligned}
             \end{equation*}
             Suppose $M := \lambda_{\max}(H) $ and $m := \lambda_{\min}(H)$ be the largest and smallest eigenvalues of the Hessian matrix $H$. We denote by $\kappa = M / m \geq 1 $ the condition number.
@@ -2278,25 +2297,25 @@ This note \textbf{aggregates} the contents from the following books, articles an
             \begin{equation*}
                 \begin{aligned}
                     \theta_t = \theta_{t-1} - \gamma F'(\theta_{t-1}) &= \theta_{t-1} - \gamma \left[\frac{1}{n} \Phi^{\top}(\Phi \theta_{t - 1} - y) \right] \\
-                    &= \theta_{t-1} - \gamma H(\theta_{t-1} - \theta^{\star}) \\
+                    &= \theta_{t-1} - \gamma H(\theta_{t-1} - \theta_{\star}) \\
                 \end{aligned}
             \end{equation*}
             leading to 
             \begin{equation*}
-                \theta_t - \theta^{\star} = \theta_{t - 1} - \theta^{\star} - \gamma H(\theta_{t - 1} - \theta^{*}) = (I - \gamma H) (\theta_{t - 1} - \theta^{\star})
+                \theta_t - \theta_{\star} = \theta_{t - 1} - \theta_{\star} - \gamma H(\theta_{t - 1} - \theta^{*}) = (I - \gamma H) (\theta_{t - 1} - \theta_{\star})
             \end{equation*}
             that is, we have linear recursion, and we can unroll the recursion and write
             \begin{equation*}
-                \theta_t - \theta^{\star} = (I - \gamma H)^{t} (\theta_0 - \theta^{\star})
+                \theta_t - \theta_{\star} = (I - \gamma H)^{t} (\theta_0 - \theta_{\star})
             \end{equation*}
             We can now look at various measures of performace:
             \begin{equation*}
                 \begin{aligned}
-                    ||\theta_t - \theta^{\star}||_2^2 &= (\theta_0 - \theta^{\star})^{\top} (I - \gamma H)^{2t} (\theta_0 - \theta^{\star}) \\
-                    F(\theta_t) - F(\theta^{\star}) &= \frac{1}{2} (\theta_0 - \theta^{\star} )^{\top} (I - \gamma H)^{2t} H (\theta_0 - \theta^{\star})
+                    ||\theta_t - \theta_{\star}||_2^2 &= (\theta_0 - \theta_{\star})^{\top} (I - \gamma H)^{2t} (\theta_0 - \theta_{\star}) \\
+                    F(\theta_t) - F(\theta_{\star}) &= \frac{1}{2} (\theta_0 - \theta_{\star} )^{\top} (I - \gamma H)^{2t} H (\theta_0 - \theta_{\star})
                 \end{aligned}
             \end{equation*}
-            Note that the second equality holds by applying $H \theta^{\star} = \frac{1}{n} \Phi^{\top} y$.
+            Note that the second equality holds by applying $H \theta_{\star} = \frac{1}{n} \Phi^{\top} y$.
 
         % subsubsection analysis_of_gd_for_ordinary_least_squares (end)
 
@@ -2313,7 +2332,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
                     F(\eta) \geq F(\theta) + F'(\theta)^{\top} (\eta - \theta), \quad \forall \ \eta, \theta \in \mathbb{R}^d
                     \label{eq:convexity}
                 \end{equation}
-                this conclusion holds even for $\eta = \theta^{\star}$.
+                this conclusion holds even for $\eta = \theta_{\star}$.
             \end{definition}
 
             \begin{definition}[Strong convexity]
@@ -2335,17 +2354,17 @@ This note \textbf{aggregates} the contents from the following books, articles an
             \end{figure}
 
             \begin{lemma}[Lojasiewics inequality]
-                If $F$ is differentiable and $m$-strongly convex with unique minimizer $\theta^{\star}$, then we have:
+                If $F$ is differentiable and $m$-strongly convex with unique minimizer $\theta_{\star}$, then we have:
                 \begin{equation*}
-                    || F'(\theta) ||_2^2 \geq 2 \mu (F(\theta) - F(\theta^{\star}))
+                    || F'(\theta) ||_2^2 \geq 2 \mu (F(\theta) - F(\theta_{\star}))
                 \end{equation*}
                 \label{lm:lojasiewics-inequality}
             \end{lemma}
 
             \begin{proof}
-                The right-hand side of Eq.(\ref{eq:strong-convexity}) is strongly convex in $\eta$ and minimized with $\eta = \theta - \frac{1}{\mu } F'(\theta)$. Plugging this value into the bound and letting $\eta = \theta^{\star}$, we get
+                The right-hand side of Eq.(\ref{eq:strong-convexity}) is strongly convex in $\eta$ and minimized with $\eta = \theta - \frac{1}{\mu } F'(\theta)$. Plugging this value into the bound and letting $\eta = \theta_{\star}$, we get
                 \begin{equation*}
-                    F(\theta^{\star}) \geq F(\theta) - \frac{1}{\mu} ||F'(\theta)||_2^2 + \frac{1}{2 \mu} ||F'(\theta)||_2^2 = F(\theta) - \frac{1}{2 \mu} ||F'(\theta)||_2^2
+                    F(\theta_{\star}) \geq F(\theta) - \frac{1}{\mu} ||F'(\theta)||_2^2 + \frac{1}{2 \mu} ||F'(\theta)||_2^2 = F(\theta) - \frac{1}{2 \mu} ||F'(\theta)||_2^2
                 \end{equation*}
                 The conclusion follows by rearranging.
 
@@ -2398,7 +2417,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
             \begin{theorem}[Convergence of GD for smooth strongly-convex functions]
                 Assume that $F$ is $L$-smooth and $\mu$-strongly convex. Choosing step-size $\gamma_t = 1/L$, the iterates $(\theta_t)_{t \geq 0}$ of Gradient Descent on $F$ satisfy
                 \begin{equation*}
-                    F(\theta_t) - F(\theta^{\star}) \leq \left(1 - \frac{\mu}{L} \right)^t \cdot (F(\theta_0) - F(\theta^{\star}) ) \leq e^{- t \mu / L} \cdot (F(\theta_0) - F(\theta^{\star} ))
+                    F(\theta_t) - F(\theta_{\star}) \leq \left(1 - \frac{\mu}{L} \right)^t \cdot (F(\theta_0) - F(\theta_{\star}) ) \leq e^{- t \mu / L} \cdot (F(\theta_0) - F(\theta_{\star} ))
                 \end{equation*}
             \end{theorem}
 
@@ -2411,13 +2430,13 @@ This note \textbf{aggregates} the contents from the following books, articles an
                     \end{aligned}
                     \label{eq:iteration-inequality}
                 \end{equation}
-                Adding $-F(\theta^{\star})$ on both sides, we get
+                Adding $-F(\theta_{\star})$ on both sides, we get
                 \begin{equation*}
-                    F(\theta_t) - F(\theta^{\star}) \leq (F(\theta_{t-1}) - F(\theta^{\star})) - \frac{1}{2L} || F'(\theta_{t-1}) ||_2^2
+                    F(\theta_t) - F(\theta_{\star}) \leq (F(\theta_{t-1}) - F(\theta_{\star})) - \frac{1}{2L} || F'(\theta_{t-1}) ||_2^2
                 \end{equation*}
                 Using Lojasiewicz inequality (Lemma \ref{lm:lojasiewics-inequality}), it follows
                 \begin{equation*}
-                    F(\theta_t) - F(\theta^{\star}) \leq (1 - \mu/L) \cdot (F(\theta_{t-1}) - F(\theta^{\star}) ) \leq e^{- \mu/L} \cdot (F(\theta_{t-1}) - F(\theta^{\star}) )
+                    F(\theta_t) - F(\theta_{\star}) \leq (1 - \mu/L) \cdot (F(\theta_{t-1}) - F(\theta_{\star}) ) \leq e^{- \mu/L} \cdot (F(\theta_{t-1}) - F(\theta_{\star}) )
                 \end{equation*}
                 Recursively applying this inequality leads to the desired result.
 
@@ -2466,20 +2485,20 @@ This note \textbf{aggregates} the contents from the following books, articles an
             We can now state the following convergence result for gradient descent with potentially no strong-convexity.
 
             \begin{theorem}[Convergence of GD for smooth convex functions]
-                Assume that $F$ is $L$-smooth and convex, with a global minimizer $\theta^{\star}$. Choosing step-size $\gamma_t = 1/L$, the iterates $(\theta_t)_{t \geq 0}$ of Gradient Descent on $F$ satisfy
+                Assume that $F$ is $L$-smooth and convex, with a global minimizer $\theta_{\star}$. Choosing step-size $\gamma_t = 1/L$, the iterates $(\theta_t)_{t \geq 0}$ of Gradient Descent on $F$ satisfy
                 \begin{equation*}
-                    F(\theta_t) - F(\theta^{\star}) \leq \frac{L}{2t} ||\theta_0 - \theta^{\star} ||_2^2
+                    F(\theta_t) - F(\theta_{\star}) \leq \frac{L}{2t} ||\theta_0 - \theta_{\star} ||_2^2
                 \end{equation*}
             \end{theorem}
 
             \begin{proof}
                 The Lyapunov function that we will choose is
                 \begin{equation}
-                    V_t(\theta_t) = t (F(\theta_t) - F(\theta^{\star})) + \frac{L}{2}||\theta_t - \theta^{\star}||_2^2    
+                    V_t(\theta_t) = t (F(\theta_t) - F(\theta_{\star})) + \frac{L}{2}||\theta_t - \theta_{\star}||_2^2    
                 \end{equation}
                 and our goal is to show that it decays along iterations. We can split the difference in Lyapunov functions in three terms
                 \begin{equation*}
-                    V_t(\theta_t) - V_{t-1}(\theta_{t-1}) = \underbrace{t F(\theta_t) - t F(\theta_{t-1}) }_{\text{part I}} + \underbrace{ F(\theta_{t-1}) - F(\theta^{\star}) }_{\text{part II}} + \underbrace{ \frac{L}{2} ||\theta_t - \theta^{\star}||_2^2 - \frac{L}{2}||\theta_{t-1} - \theta^{\star}||_2^2 }_{\text{part III}}
+                    V_t(\theta_t) - V_{t-1}(\theta_{t-1}) = \underbrace{t F(\theta_t) - t F(\theta_{t-1}) }_{\text{part I}} + \underbrace{ F(\theta_{t-1}) - F(\theta_{\star}) }_{\text{part II}} + \underbrace{ \frac{L}{2} ||\theta_t - \theta_{\star}||_2^2 - \frac{L}{2}||\theta_{t-1} - \theta_{\star}||_2^2 }_{\text{part III}}
                 \end{equation*}
                 We bound these three parts separately:
                 \begin{itemize}
@@ -2490,29 +2509,29 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
                     \item For a convex function, we have
                         \begin{equation*}
-                            F(\theta^{\star}) \geq F(\theta_{t-1}) + F'(\theta_{t-1})^{\top} (\theta^{\star} - \theta_{t-1}) \quad \Rightarrow \quad F(\theta_{t-1}) - F(\theta^{\star}) \leq F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta^{\star})
+                            F(\theta_{\star}) \geq F(\theta_{t-1}) + F'(\theta_{t-1})^{\top} (\theta_{\star} - \theta_{t-1}) \quad \Rightarrow \quad F(\theta_{t-1}) - F(\theta_{\star}) \leq F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star})
                         \end{equation*}
 
                     \item Expanding the difference of square, we have
                         \begin{equation*}
                             \begin{aligned}
-                                ||\theta_{t} - \theta^{\star}||_2^2 - ||\theta_{t-1} - \theta^{\star}||_2^2 &= ||\theta_{t-1} - \gamma_t - \theta^{\star} ||_2^2 - - ||\theta_{t-1} - \theta^{\star}||_2^2 \\
-                                &= - 2 \gamma_t F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta^{\star} ) + \gamma_t^2 ||F'(\theta_{t-1})||_2^2
+                                ||\theta_{t} - \theta_{\star}||_2^2 - ||\theta_{t-1} - \theta_{\star}||_2^2 &= ||\theta_{t-1} - \gamma_t - \theta_{\star} ||_2^2 - - ||\theta_{t-1} - \theta_{\star}||_2^2 \\
+                                &= - 2 \gamma_t F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta_{\star} ) + \gamma_t^2 ||F'(\theta_{t-1})||_2^2
                             \end{aligned}
                         \end{equation*}
                 \end{itemize}
                 Hence, with step-size $\gamma_t = 1/L$, we have
                 \begin{equation*}
                     \begin{aligned}
-                        V_t(\theta_t) - V_{t-1}(\theta_{t-1}) &\leq - \frac{t}{2L} ||F'(\theta_{t-1})||_2^2 + F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta^{\star}) - F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta^{\star}) + \frac{1}{2L} ||F'(\theta_{t-1}) ||_2^2 \\
+                        V_t(\theta_t) - V_{t-1}(\theta_{t-1}) &\leq - \frac{t}{2L} ||F'(\theta_{t-1})||_2^2 + F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta_{\star}) - F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star}) + \frac{1}{2L} ||F'(\theta_{t-1}) ||_2^2 \\
                         &= \frac{1 - t}{2L} ||F'(\theta_{t-1})||_2^2 \leq 0
                     \end{aligned}
                 \end{equation*}
                 which leads to
                 \begin{equation*}
-                    t(F(\theta_t) - F(\theta^{\star}) ) \leq V_t(\theta_t) \leq V_0(\theta_0) = \frac{L}{2} ||\theta_0 - \theta^{\star}||_2^2
+                    t(F(\theta_t) - F(\theta_{\star}) ) \leq V_t(\theta_t) \leq V_0(\theta_0) = \frac{L}{2} ||\theta_0 - \theta_{\star}||_2^2
                 \end{equation*}
-                and thus $F(\theta_t) - F(\theta^{\star}) \leq \frac{L}{2t} ||\theta_0 - \theta^{\star}||_2^2$.
+                and thus $F(\theta_t) - F(\theta_{\star}) \leq \frac{L}{2t} ||\theta_0 - \theta_{\star}||_2^2$.
 
             \end{proof}
 
@@ -2535,7 +2554,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
                     \end{equation*}
                     This simple modification leads to the following convergence rate
                     \begin{equation*}
-                        F(\theta_t) - F(\theta^{\star}) \leq \frac{2L ||\theta_0 - \theta^{\star}||_2^2 }{(t + 1)^2}
+                        F(\theta_t) - F(\theta_{\star}) \leq \frac{2L ||\theta_0 - \theta_{\star}||_2^2 }{(t + 1)^2}
                     \end{equation*}
                     For strongly convex functions, the algorithm has a similar form as for convex functions, but with all coefficients independent from $t$:
                     \begin{equation*}
@@ -2546,7 +2565,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
                     \end{equation*}
                     and the convergence rate is
                     \begin{equation*}
-                        F(\theta_t) - F(\theta^{*}) \leq L(1 - \sqrt{\mu / L})^t ||\theta_0 - \theta^{\star}||_2^2
+                        F(\theta_t) - F(\theta^{*}) \leq L(1 - \sqrt{\mu / L})^t ||\theta_0 - \theta_{\star}||_2^2
                     \end{equation*}
 
                 \item \textbf{Newton method}. Given $\theta_{t-1}$, the Newton method minimizes the second-order Tarylor expansion around $\theta_{t-1}$:
@@ -2597,40 +2616,42 @@ This note \textbf{aggregates} the contents from the following books, articles an
         Without additional assumptions, this setting is usually refered to as non-smooth optimization. Now we can apply non-smooth optimization to objective functions which are not differentiable (such as the hinge loss). For convex Lipschitz-continuous objectives, the function is differentiable almost everywhere. In points where it is not, then one can define the set of slopes of lower-bounding tangents as the \textit{subdifferential}, and any element of it as a \textit{subgradient}.
         The Gradient Descent iteration is then meant as using any subgradient instead of $F'(\theta_{t-1})$, formally,
         \begin{equation*}
-            \theta_t = \theta_{t-1} - \gamma_t G_t, \quad G_t \in \partial F(\theta_{t-1})
+            \theta_t = \theta_{t-1} - \gamma_t F'(\theta_{t-1}), \quad F'(\theta_{t-1}) \in \partial F(\theta_{t-1})
         \end{equation*}
         This method is then referred to as the Subgradient Method, and it is not a descent method anymore as the function values may go up once in a while. 
 
         We can now prove convergence rate of the Subgradient Method, with a decaying step-size, and a slower rate compared with smooth functions Gradient Descent.
 
-        \begin{theorem}[Convergence of the subgradient method]
-            Assume that $F$ is convex, $B$-Lipschitz-continuous, and admits a minimizer $\theta^{\star}$ that satisfies $||\theta^{\star} - \theta_0||_2 \leq D$. By choosing $\gamma_t = \frac{D}{B \sqrt{t}}$ then the iterates $(\theta_t)_{t \geq 0}$ of Subgradient Method on $F$ satisfy
+        \begin{theorem}[Convergence of the Subgradient Method]
+            Assume that $F$ is convex, $B$-Lipschitz-continuous, and admits a minimizer $\theta_{\star}$ that satisfies $||\theta_{\star} - \theta_0||_2 \leq D$. By choosing $\gamma_t = \frac{D}{B \sqrt{t}}$ then the iterates $(\theta_t)_{t \geq 0}$ of Subgradient Method on $F$ satisfy
             \begin{equation*}
-                \min_{0 \leq s \leq t-1} \ F(\theta_s) - F(\theta^{\star}) \leq DB \frac{2 + \log t}{2 \sqrt{t}}
+                \min_{0 \leq s \leq t-1} \ F(\theta_s) - F(\theta_{\star}) \leq BD \frac{2 + \log t}{2 \sqrt{t}}
             \end{equation*}
+            \label{thm:convergence-GD-non-smooth}
         \end{theorem}
 
         \begin{proof}
-            We look at how $\theta_t$ approaches $\theta^{\star}$, that is, we try to use $||\theta_t - \theta^{\star}||_2^2$ as a Lyapunov function. We have:
+            We look at how $\theta_t$ approaches $\theta_{\star}$, that is, we try to use $||\theta_t - \theta_{\star}||_2^2$ as a Lyapunov function. We have:
             \begin{equation*}
                 \begin{aligned}
-                    ||\theta_t - \theta^{\star}||_2^2 &= ||\theta_{t-1} - \gamma_t F'(\theta_{t-1}) - \theta^{\star}||_2^2 \\
-                    &= ||\theta_{t-1} - \theta^{\star}||_2^2 - 2 \gamma_t F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta^{\star}) + \gamma_t^2 ||F'(\theta_{t-1]})||_2^2
+                    ||\theta_t - \theta_{\star}||_2^2 &= ||\theta_{t-1} - \gamma_t F'(\theta_{t-1}) - \theta_{\star}||_2^2 \\
+                    &= ||\theta_{t-1} - \theta_{\star}||_2^2 - 2 \gamma_t F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star}) + \gamma_t^2 ||F'(\theta_{t-1]})||_2^2
                 \end{aligned}
             \end{equation*}
-            Combining this with the convexity inequality $F(\theta_{t-1}) - F(\theta^{\star}) \leq F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta^{\star})$ from Eq.(\ref{eq:convexity}), we have (also using the boundedness of gradients/Lipschiz-continuous)
+            Combining this with the convexity inequality $F(\theta_{t-1}) - F(\theta_{\star}) \leq F'(\theta_{t-1})^{\top}(\theta_{t-1} - \theta_{\star})$ from Eq.(\ref{eq:convexity}), we have (also using the boundedness of gradients/Lipschiz-continuous)
             \begin{equation*}
-                ||\theta_t - \theta^{\star}||_2^2 \leq ||\theta_{t-1} - \theta^{\star}||_2^2 - 2 \gamma_t [F(\theta_{t-1}) - F(\theta^{\star}) ] + \gamma_t^2 B^2
+                ||\theta_t - \theta_{\star}||_2^2 \leq ||\theta_{t-1} - \theta_{\star}||_2^2 - 2 \gamma_t [F(\theta_{t-1}) - F(\theta_{\star}) ] + \gamma_t^2 B^2
             \end{equation*}
             and thus, by isolating the distance to optimum in function values:
             \begin{equation}
-                \gamma_t (F(\theta_{t-1}) - F(\theta^{\star}) ) \leq \frac{1}{2} \left(||\theta_{t-1} - \theta^{\star}||_2^2 - ||\theta_t - \theta^{\star}||_2^2 \right) + \frac{1}{2} \gamma_t^2 B^2
+                \gamma_t (F(\theta_{t-1}) - F(\theta_{\star}) ) \leq \frac{1}{2} \left(||\theta_{t-1} - \theta_{\star}||_2^2 - ||\theta_t - \theta_{\star}||_2^2 \right) + \frac{1}{2} \gamma_t^2 B^2
+                \label{eq:gradient-methods-non-smooth}
             \end{equation}
-            It is sufficient to sum these inequalities up to $t$ and drop the term $-||\theta_{t+1} - \theta^{\star}||_2^2$ to get, for any $\theta^{\star} \in \mathbb{R}^d$,
+            It is sufficient to sum these inequalities up to $t$ and drop the term $-||\theta_{t+1} - \theta_{\star}||_2^2$ to get, for any $\theta_{\star} \in \mathbb{R}^d$,
             \begin{equation*}
-                \frac{1}{\sum_{s=1}^{t} \gamma_s} \sum_{s=1}^{t} \gamma_s (F(\theta_{s-1}) - F(\theta^{\star}) ) \leq \frac{||\theta_0 - \theta^{\star}||_2^2}{2 \sum_{s=1}^{t} \gamma_s} + B^2 \frac{\sum_{s=1}^{t} \gamma_s^2}{2 \sum_{s=1}^{t} \gamma_s}
+                \frac{1}{\sum_{s=1}^{t} \gamma_s} \sum_{s=1}^{t} \gamma_s (F(\theta_{s-1}) - F(\theta_{\star}) ) \leq \frac{||\theta_0 - \theta_{\star}||_2^2}{2 \sum_{s=1}^{t} \gamma_s} + B^2 \frac{\sum_{s=1}^{t} \gamma_s^2}{2 \sum_{s=1}^{t} \gamma_s}
             \end{equation*}
-            The left-hand side is trivially larger than $\min_{0 \leq s \leq t-1} (F(\theta_s) - F(\theta^{\star}) ) $, and than $F(\theta_t) - F(\theta^{\star})$ where $\bar{\theta}_t = (\sum_{s=1}^{t} \gamma_s \theta_{s-1}) / (\sum_{s=1}^{t} \gamma_s) $ by Jensen's inequality.
+            where the left-hand side is trivially larger than $\min_{0 \leq s \leq t-1} (F(\theta_s) - F(\theta_{\star}) ) $ as well as $F(\bar{\theta}_t) - F(\theta_{\star})$. Here we denote $\bar{\theta}_t = (\sum_{s=1}^{t} \gamma_s \theta_{s-1}) / (\sum_{s=1}^{t} \gamma_s) $ by Jensen's inequality.
 
             \vspace{1em}
             The upper bound goes to zero if $\sum_{s=1}^{t} \gamma_s \rightarrow \infty$ and $\gamma_t \rightarrow 0$. Let us choose $\gamma_s = \tau / \sqrt{s}$ for some $\tau > 0$. By using the series-integral comparisons below, 
@@ -2639,7 +2660,7 @@ This note \textbf{aggregates} the contents from the following books, articles an
             \end{equation*}
             we get the bound
             \begin{equation*}
-                \min_{0 \leq s \leq t-1} (F(\theta_s) - F(\theta^{\star}) ) \leq \frac{1}{2 \tau \sqrt{t}} \left(D^2 + \tau^2 B^2 (1 + \log t) \right)
+                \min_{0 \leq s \leq t-1} (F(\theta_s) - F(\theta_{\star}) ) \leq \frac{1}{2 \tau \sqrt{t}} \left(D^2 + \tau^2 B^2 (1 + \log t) \right)
             \end{equation*}
             Choosing $\tau = D/B$ leads to the desired results (which is suggested by optimizing the previous bound when $\log t = 0$).
 
@@ -2647,6 +2668,8 @@ This note \textbf{aggregates} the contents from the following books, articles an
 
         The proof scheme above is very flexible and can be extended in the following directions:
         \begin{itemize}
+            \item There is no need to know in advance an uppper-bound $D$ on the distance to optimum, we then get with the same step-size $\gamma_t = \frac{D}{B \sqrt{t}} $ a rate of the form $\frac{BD}{2 \sqrt{t}} \left(\frac{||\theta_0 - \theta_{\star}||_2^2 }{D^2} + (1 + \log t) \right) $
+
             \item The algorithm applies to \textbf{constrained minimization} over a convex set, by inserting a proection step at each iteration (the proof, which is using the contractivity of orthogonal projections, is essentially the same)
 
             \item The algorithm applies to \textbf{non-differentiable} convex and Lipschitz objective functions using sub-gradients (any vector satisfying Eq.(\ref{eq:convexity} in place of $F'(\theta_t)$)
@@ -2665,9 +2688,118 @@ This note \textbf{aggregates} the contents from the following books, articles an
     \subsection{Stochastic Gradient Descent} % (fold)
     \label{sub:stochastic_gradient_descent}
 
-        For machine learning problems,
-
+        For machine learning problems, where $F(\theta) = \frac{1}{n} \sum_{i=1}^{n} l(y_i, f_{\theta}(x_i)) + \Omega(\theta) $, at each iteration, the gradient descent algorithm requires to compute a "full" gradient $F'(\theta_{t-1})$ which could be costly as it requires accessing the entire dataset. An alternative is to instead only compute unbiased stochastic estimations of the gradient $g_t(\theta_{t-1})$, which means that 
+            $$ \mathbb{E}[g_t(\theta_{t-1}) \mid \theta_{t-1}] = F'(\theta_{t-1}) $$
+        which could be much faster to compute. Note that
         
+        \begin{itemize}
+            \item we need to condition over $\theta_{t-1}$ because $\theta_{t-1}$ encapsulates all the randomness due to past iterations, and we only require "fresh" randomness at time $t$
+
+            \item this unbiasedness does not need to be coupled with a vanishing variance: while there are always errors in the gradient, the use of a decreasing step-size will ensure convergence. If the noise in the gradient is not unbiased, then we only get convergence if the noise magnitudes go to zero.
+
+        \end{itemize}
+        The iteration algorithm of Stochastic Gradient Descent is: choose a step-size sequence $(\gamma_t)_{t \geq 0}$, pick $\theta_0 \in \mathbb{R}^d$ and for $t \geq 0$, let
+        \begin{equation}
+            \theta_{t+1} = \theta_t - \gamma_t g_t(\theta_t)
+            \label{eq:stochasitc-gradient-descent}
+        \end{equation}
+        (Warning: SGD is not a descent method, as the function values often go up). Indeed there are two ways to use SGD for supervised machine learning:
+        \begin{enumerate}
+            \item \textbf{Empirical risk minimization}. If $F(\theta) = \frac{1}{n} \sum_{i=1}^{n} l(y_i, f_{\theta}(x_i)) $, then at iteration $t$, we can choose uniformly at random $i(t) \in \{1, \dots, n\}$ and define $g_t$ as the gradient of $\theta \mapsto l(y_{i(t)}, f_(\theta)(x_{i(t)}) ) $. There exists "mini-batch" variants where at each iteration, the gradient is averaged over a random subset of the indices -- we then reduce the variance of the gradient estimate, but we use more gradients, and thus more running time. We then coverge to a minimizer $\theta_{\star}$ of the empirical risk.
+
+                Note here that since we sample with replacement, a given function will be selected serveral times.
+
+            \item \textbf{Expected risk minimization}. If $F(\theta) = \mathbb{E}[l(y, f_{\theta}(x)) ]$, then at iteration $t$ we can take a fresh sample $(x_t, y_t)$ and define $g_t$ as the gradient of $\theta \mapsto l(y_t, f_{\theta}(x_t))$, for which, if we swap the order of expectation and differentiation, we get the unbiasness. 
+
+                Note here that to presever the unbiasedness, only a single pass is allowed (otherwise, this would create dependdencies that would break it).
+
+                Here, we directly minimize the (generalization) risk. The counterpart is that if we only have $n$ samples, then we can only run $n$ SGD iterations, and when $n$ grows, the iterates will converge to a minimizer $\theta^{*}$ of the expected risk.
+
+                Note that in practice, multiple pass over the data (that is, using each observation multiple times) lead to better performance. In order to avoid overfitting, either a regularization term is added to the empirical risk, or the SGD algorithm is stopped before its convergence, which is referred to as regularization by "early stopping".
+
+        \end{enumerate}
+        We can study the two situations above using the latter one, by considering the empirical risk as the expectation with respect to the empirical distribution of the data.
+        Under the same usual assumptions on the objective functions, to study SGD, we need extra assumptions:
+        \begin{itemize}
+            \item (A1) unbiased gradient: $\forall \ t, \mathbb{E}[g_t(\theta_{t-1}) \mid \theta_{t-1}] = F'(\theta_{t-1})$
+
+            \item (A2) bounded gradient: $\forall \ t, ||g_t(\theta_{t-1})||_2^2 \leq B^2$ almost surely
+
+        \end{itemize}
+        Assumption (H2) could be replaced by other regularity conditions (e.g., Lipschitz-continuous gradients). Assumption (H1) is crucial, and is often obtain by considering independent functions $g_t$, for which we have, $\mathbb{E}[g_t(\cdot)] = F'(\cdot)$.
+
+        We firstly give the performance of SGD on non-smooth convex problem.
+
+        \begin{theorem}[Convergence of SGD]
+            Assume that $F$ is convex, $B$-Lipschitz and admits a minimizer $\theta_{\star}$ and admits a minimizer $\theta_{\star}$ that satisfies $||\theta_{\star} - \theta_0|| \leq D$. Assume that the stochastic gradients satisfy Assumption A1 - A2. Then, choosing $\gamma_t = D/ (B \sqrt{t})$, the iterates $(\theta_t)_{t\geq 0}$ of SGD on $F$ satisfy
+            \begin{equation*}
+                \mathbb{E}\left[ F(\bar{\theta}_t) - F(\theta_{\star}) \right] \leq BD \frac{2 + \log t}{2 \sqrt{t}}
+            \end{equation*}
+            where $\bar{\theta}_t = (\sum_{s=1}^{t} \gamma_s \theta_{s-1}) / (\sum_{s=1}^{t} \gamma_s )$.
+            \label{thm:convergence-SGD-non-smooth}
+        \end{theorem}
+
+        \begin{proof}
+            We follow essentially the same proof as in the determinisitc gradient method case, adding some expectations at well chosen places. We have:
+            \begin{equation*}
+                \begin{aligned}
+                    \mathbb{E}\left[ ||\theta_t - \theta_{\star}||_2^2 \right] &= \mathbb{E}\left[ ||\theta_{t-1} - \gamma_t F'(\theta_{t-1}) - \theta_{\star}||_2^2 \right] \\
+                    &= \mathbb{E}\left[ ||\theta_{t-1} - \theta_{\star}||_2^2 \right] - 2 \gamma_t \mathbb{E}\left[ F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star}) \right] + \gamma_t^2 \mathbb{E}\left[ ||F'(\theta_{t-1]})||_2^2 \right] \\
+                \end{aligned}
+            \end{equation*}
+            We can then compute the expectation of the middle term as:
+            \begin{equation*}
+                \begin{aligned}
+                    \mathbb{E}\left[g_t(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star}) \right] &= \mathbb{E}\left[\mathbb{E}\left[g_t(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star}) \mid \theta_{t-1} \right] \right] \\
+                    &= \mathbb{E}\left[ \mathbb{E}\left[g_t(\theta_{t-1}) \mid \theta_{t-1} \right]^{\top} (\theta_{t-1} - \theta_{\star}) \right] \\
+                    &= \mathbb{E}\left[F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star}) \right] \\
+                \end{aligned}
+            \end{equation*}
+            This leads to
+            \begin{equation*}
+                \mathbb{E}\left[ ||\theta_t - \theta_{\star}||_2^2 \right] \leq \mathbb{E}\left[ ||\theta_{t-1} - \theta_{\star}||_2^2 \right] - 2 \gamma_t \mathbb{E}\left[F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star}) \right] + \gamma_t^2 B^2
+            \end{equation*}
+            Thus, combining with the convexity inequality $F(\theta_{t-1}) - F(\theta_{\star}) \leq F'(\theta_{t-1})^{\top} (\theta_{t-1} - \theta_{\star})$ from Eq.(\ref{eq:convexity}), we get (also using the boundedness of gradients/Lipschiz-continuous)
+            \begin{equation*}
+                \mathbb{E}\left[ ||\theta_t - \theta_{\star}||_2^2 \right] \leq \mathbb{E}\left[ ||\theta_{t-1} - \theta_{\star}||_2^2 \right] - 2 \gamma_t \mathbb{E} \left[F(\theta_{t-1}) - F(\theta_{\star}) \right] + \gamma_t^2 B^2
+            \end{equation*}
+            which implies
+            \begin{equation}
+                 \gamma_t \mathbb{E} \left[F(\theta_{t-1}) - F(\theta_{\star}) \right] \leq \frac{1}{2} \left(\mathbb{E}[||\theta_{t-1} - \theta_{\star}||_2^2] - \mathbb{E}[||\theta_{t} - \theta_{\star}||_2^2] \right) + \frac{1}{2} \gamma_t^2 B^2
+                 \label{eq:stochastic-gradient-methods-non-smooth}
+            \end{equation}
+            Except for the expectations, this is the same bound as Eq.(\ref{eq:gradient-methods-non-smooth}), so similarily, it is sufficient to sum these inequalities up to $t$ and drop the term $-||\theta_{t+1} - \theta_{\star}||_2^2$ to get, for any $\theta_{\star} \in \mathbb{R}^d$,
+            \begin{equation*}
+                \frac{1}{\sum_{s=1}^{t} \gamma_s} \sum_{s=1}^{t} \gamma_s \mathbb{E} [ F(\theta_{s-1}) - F(\theta_{\star}) ] \leq \frac{\mathbb{E}[ ||\theta_0 - \theta_{\star}||_2^2] }{2 \sum_{s=1}^{t} \gamma_s} + B^2 \frac{\sum_{s=1}^{t} \gamma_s^2}{2 \sum_{s=1}^{t} \gamma_s}
+            \end{equation*}
+            Since $F(\theta)$ is convex, the left-hand side is trivially larger than $\mathbb{E}[F(\bar{\theta}_t) - F(\theta_{\star})]$ where we denote $\bar{\theta}_t = (\sum_{s=1}^{t} \gamma_s \theta_{s-1}) / (\sum_{s=1}^{t} \gamma_s) $ by Jensen's inequality.
+
+            \vspace{1em}
+            The upper bound goes to zero if $\sum_{s=1}^{t} \gamma_s \rightarrow \infty$ and $\gamma_t \rightarrow 0$. Let us choose $\gamma_s = \tau / \sqrt{s}$ for some $\tau > 0$. By using the series-integral comparisons below, 
+            \begin{equation*}
+                \sum_{s=1}^{t} \frac{1}{\sqrt{s}} \geq \sum_{s=1}^{t} \frac{1}{\sqrt{t} } = \sqrt{t} \quad \text{and} \quad \sum_{s=1}^{t} \frac{1}{s} \leq 1 + \sum_{s=2}^{t} \frac{1}{s} \leq 1 + \int_1^{t} \frac{ds}{s} = 1 + \log t
+            \end{equation*}
+            we get the bound
+            \begin{equation*}
+                \mathbb{E}[F(\bar{\theta}_t) - F(\theta_{\star})] \leq \frac{1}{2 \tau \sqrt{t}} \left(D^2 + \tau^2 B^2 (1 + \log t) \right)
+            \end{equation*}
+            Choosing $\tau = D/B$ leads to the desired results (which is suggested by optimizing the previous bound when $\log t = 0$).
+
+        \end{proof}
+
+        We can make the following observations:
+        \begin{itemize}
+            \item  Averaging of iterates is often performed after a certain number of iterations (e.g., one pass over the data when doing multiple passes): this speeds up the algorithms by forgetting initial conditions faster
+
+            \item Many authors consider the projected version of the algorithm where after the gradient step, we orthogonally project onto the ball of radius D and center θ0. The bound is then \textbf{exactly the same}
+
+            \item The result that we obtain, when applied to single pass SGD, is a generalization bound, that is, after the $n$ iterations, we have an excess risk proportional to $1/\sqrt{n}$, corresponding to the excess risk compared to the best predictor $f_{\theta}$.
+
+        \end{itemize}
+
+        \noindent
+        \textbf{SGD or gradient descent on the empirical risk?} As seen above, the number of iterations to reach a given precision will be larger for stochastic gradient descent, but with a complexity which is typically n times faster. Thus, for high precision, that is low values of $(\theta) − F(\theta_{\star})$ (which is not needed for machine learning), the number of iterations of SGD may become prohibitively large, and deterministic full gradient descent could be preferred. However, for low precision and large $n$, SGD is the method of choice (see also recent improvements.
+
     
     % subsection stochastic_gradient_descent (end)
 

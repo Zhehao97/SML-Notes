@@ -31,82 +31,84 @@
 \contentsline {section}{\numberline {5}Rademacher Complexity}{35}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Motivation for Rademacher Complexity}{35}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Rademacher Complexity}{36}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Lipschitz-continuous Losses}{40}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Ball-constrained Linear Predictions}{41}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Putting Things Together (Linear Predictions)}{42}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}From Constrained to Regularized Estimation}{43}{subsection.5.6}%
-\contentsline {section}{\numberline {6}Growth Function and VC-Dimension}{44}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Growth Function}{44}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}VC-dimension}{46}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Link Growth Function and VC-dimension}{49}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Lower Bounds}{50}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Covering Number and Chaining}{51}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Covering and Packing}{51}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Bound Rademacher Complexity via Covering Number}{53}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Chaining}{55}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Optimization for Machine Learning}{58}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Optimization in Machine Learning}{58}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Gradient Descent on Smooth Problems}{58}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Analysis of GD for ordinary least squares}{59}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Analysis of GD for strongly and smooth functions}{60}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.3}Analysis of GD for convex and smooth functions}{63}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {8.2.4}Beyond Gradient Descent}{65}{subsubsection.8.2.4}%
-\contentsline {subsection}{\numberline {8.3}Gradient Methods on Non-smooth Problems}{66}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Stochastic Gradient Descent}{68}{subsection.8.4}%
-\contentsline {section}{\numberline {9}Kernel Methods}{69}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Motivating Example to Kernel Function}{69}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Reproducing Kernel Hilbert Space}{72}{subsection.9.2}%
-\contentsline {subsubsection}{\numberline {9.2.1}Hilbert Space}{72}{subsubsection.9.2.1}%
-\contentsline {subsubsection}{\numberline {9.2.2}Positive Semidefinite Kernel Functions}{73}{subsubsection.9.2.2}%
-\contentsline {subsubsection}{\numberline {9.2.3}Constructing an RKHS from a Kernel}{74}{subsubsection.9.2.3}%
-\contentsline {subsubsection}{\numberline {9.2.4}Alternative Way to Construct RKHS}{74}{subsubsection.9.2.4}%
-\contentsline {subsection}{\numberline {9.3}Algorithms}{74}{subsection.9.3}%
-\contentsline {section}{\numberline {10}Local Averaging Methods}{75}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Quick Review}{75}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Local Averaging Methods}{76}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Linear Estimators}{77}{subsection.10.3}%
-\contentsline {subsubsection}{\numberline {10.3.1}Partition Estimators}{78}{subsubsection.10.3.1}%
-\contentsline {subsubsection}{\numberline {10.3.2}Nearest-Neighbors}{80}{subsubsection.10.3.2}%
-\contentsline {subsubsection}{\numberline {10.3.3}Nadaraya-Watson Estimator (Kernel Regression)}{80}{subsubsection.10.3.3}%
-\contentsline {subsection}{\numberline {10.4}Generic Consistency Analysis}{81}{subsection.10.4}%
-\contentsline {subsubsection}{\numberline {10.4.1}Fixed Partition}{83}{subsubsection.10.4.1}%
-\contentsline {subsubsection}{\numberline {10.4.2}K-nearest Neighbors}{85}{subsubsection.10.4.2}%
-\contentsline {subsubsection}{\numberline {10.4.3}Kernel Regression}{87}{subsubsection.10.4.3}%
-\contentsline {subsection}{\numberline {10.5}Universal Consistency}{89}{subsection.10.5}%
-\contentsline {section}{\numberline {11}Sparse Methods}{92}{section.11}%
-\contentsline {section}{\numberline {12}Neural Networks}{93}{section.12}%
-\contentsline {section}{Appendices}{95}{section*.28}%
-\contentsline {section}{\numberline {A}Norms}{95}{appendix.1.A}%
-\contentsline {subsection}{\numberline {A.1}Norms}{95}{subsection.1.A.1}%
-\contentsline {subsection}{\numberline {A.2}Examples of Norm}{95}{subsection.1.A.2}%
-\contentsline {subsection}{\numberline {A.3}Equivalence of Norms}{96}{subsection.1.A.3}%
-\contentsline {subsection}{\numberline {A.4}Operator Norms}{96}{subsection.1.A.4}%
-\contentsline {section}{\numberline {B}Probability Theory}{97}{appendix.1.B}%
-\contentsline {subsection}{\numberline {B.1}Independence}{97}{subsection.1.B.1}%
-\contentsline {subsection}{\numberline {B.2}Expectations}{99}{subsection.1.B.2}%
-\contentsline {subsection}{\numberline {B.3}Convergences}{102}{subsection.1.B.3}%
-\contentsline {section}{\numberline {C}Concentration of Measure}{107}{appendix.1.C}%
-\contentsline {subsection}{\numberline {C.1}Markov Inequality}{107}{subsection.1.C.1}%
-\contentsline {subsection}{\numberline {C.2}Chebyshev Inequality}{107}{subsection.1.C.2}%
-\contentsline {subsection}{\numberline {C.3}Chernoff's Methods}{108}{subsection.1.C.3}%
-\contentsline {subsection}{\numberline {C.4}Hoeffding's Inequality}{111}{subsection.1.C.4}%
-\contentsline {subsection}{\numberline {C.5}Bernstein's Inequality}{113}{subsection.1.C.5}%
-\contentsline {subsection}{\numberline {C.6}McDiarmid's Inequality}{114}{subsection.1.C.6}%
-\contentsline {subsection}{\numberline {C.7}Expectation of the Maximum}{115}{subsection.1.C.7}%
-\contentsline {section}{\numberline {D}Concentration for Matrices}{116}{appendix.1.D}%
-\contentsline {subsection}{\numberline {D.1}Matrix Analysis}{116}{subsection.1.D.1}%
-\contentsline {subsubsection}{\numberline {D.1.1}Matrix Functions}{116}{subsubsection.1.D.1.1}%
-\contentsline {subsubsection}{\numberline {D.1.2}Matrix Exponential}{116}{subsubsection.1.D.1.2}%
-\contentsline {subsubsection}{\numberline {D.1.3}Matrix Logarithm}{117}{subsubsection.1.D.1.3}%
-\contentsline {subsubsection}{\numberline {D.1.4}Expectation and the Semidefinite Order}{117}{subsubsection.1.D.1.4}%
-\contentsline {subsubsection}{\numberline {D.1.5}Matrix Martingales}{117}{subsubsection.1.D.1.5}%
-\contentsline {subsection}{\numberline {D.2}Tail Bounds via the Matrix Laplace Transform Method}{118}{subsection.1.D.2}%
-\contentsline {subsubsection}{\numberline {D.2.1}Matrix Moments and Cumulants}{118}{subsubsection.1.D.2.1}%
-\contentsline {subsubsection}{\numberline {D.2.2}Laplace Transform Method}{118}{subsubsection.1.D.2.2}%
-\contentsline {subsubsection}{\numberline {D.2.3}Failure of the Matrix MGF}{119}{subsubsection.1.D.2.3}%
-\contentsline {subsubsection}{\numberline {D.2.4}A Concave Trace Function}{119}{subsubsection.1.D.2.4}%
-\contentsline {subsubsection}{\numberline {D.2.5}Subadditivity of the Matrix CGF}{119}{subsubsection.1.D.2.5}%
-\contentsline {subsubsection}{\numberline {D.2.6}Tail Bounds of Independent Sums}{120}{subsubsection.1.D.2.6}%
-\contentsline {subsection}{\numberline {D.3}Matrix Gaussian and Rademacher}{122}{subsection.1.D.3}%
-\contentsline {subsection}{\numberline {D.4}Matrix Bennett and Bernstein Bounds}{124}{subsection.1.D.4}%
-\contentsline {subsection}{\numberline {D.5}Matrix Hoeffding and Azuma and McDiarmid}{126}{subsection.1.D.5}%
+\contentsline {subsection}{\numberline {5.3}Uniform Deviation Bounds for Linear Regression}{40}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Lipschitz-continuous Losses}{40}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Ball-constrained Linear Predictions}{41}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Putting Things Together}{42}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}From Constrained to Regularized Estimation}{43}{subsubsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.4}Generalization Bounds for SVM}{44}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Growth Function and VC-Dimension}{45}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Growth Function}{45}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}VC-dimension}{47}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Link Growth Function and VC-dimension}{50}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Lower Bounds}{51}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Covering Number and Chaining}{52}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Covering and Packing}{52}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Bound Rademacher Complexity via Covering Number}{54}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Chaining}{56}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Optimization for Machine Learning}{59}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Optimization in Machine Learning}{59}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Gradient Descent on Smooth Problems}{59}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Analysis of GD for ordinary least squares}{60}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Analysis of GD for strongly and smooth functions}{61}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Analysis of GD for convex and smooth functions}{64}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}Beyond Gradient Descent}{66}{subsubsection.8.2.4}%
+\contentsline {subsection}{\numberline {8.3}Gradient Methods on Non-smooth Problems}{67}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Stochastic Gradient Descent}{69}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Kernel Methods}{72}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Motivating Example to Kernel Function}{72}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Reproducing Kernel Hilbert Space}{75}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Hilbert Space}{75}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}Positive Semidefinite Kernel Functions}{76}{subsubsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.3}Constructing an RKHS from a Kernel}{77}{subsubsection.9.2.3}%
+\contentsline {subsubsection}{\numberline {9.2.4}Alternative Way to Construct RKHS}{77}{subsubsection.9.2.4}%
+\contentsline {subsection}{\numberline {9.3}Algorithms}{77}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Local Averaging Methods}{78}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Quick Review}{78}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Local Averaging Methods}{79}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Linear Estimators}{80}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}Partition Estimators}{81}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}Nearest-Neighbors}{83}{subsubsection.10.3.2}%
+\contentsline {subsubsection}{\numberline {10.3.3}Nadaraya-Watson Estimator (Kernel Regression)}{83}{subsubsection.10.3.3}%
+\contentsline {subsection}{\numberline {10.4}Generic Consistency Analysis}{84}{subsection.10.4}%
+\contentsline {subsubsection}{\numberline {10.4.1}Fixed Partition}{86}{subsubsection.10.4.1}%
+\contentsline {subsubsection}{\numberline {10.4.2}K-nearest Neighbors}{88}{subsubsection.10.4.2}%
+\contentsline {subsubsection}{\numberline {10.4.3}Kernel Regression}{90}{subsubsection.10.4.3}%
+\contentsline {subsection}{\numberline {10.5}Universal Consistency}{92}{subsection.10.5}%
+\contentsline {section}{\numberline {11}Sparse Methods}{95}{section.11}%
+\contentsline {section}{\numberline {12}Neural Networks}{96}{section.12}%
+\contentsline {section}{Appendices}{98}{section*.28}%
+\contentsline {section}{\numberline {A}Norms}{98}{appendix.1.A}%
+\contentsline {subsection}{\numberline {A.1}Norms}{98}{subsection.1.A.1}%
+\contentsline {subsection}{\numberline {A.2}Examples of Norm}{98}{subsection.1.A.2}%
+\contentsline {subsection}{\numberline {A.3}Equivalence of Norms}{99}{subsection.1.A.3}%
+\contentsline {subsection}{\numberline {A.4}Operator Norms}{99}{subsection.1.A.4}%
+\contentsline {section}{\numberline {B}Probability Theory}{100}{appendix.1.B}%
+\contentsline {subsection}{\numberline {B.1}Independence}{100}{subsection.1.B.1}%
+\contentsline {subsection}{\numberline {B.2}Expectations}{102}{subsection.1.B.2}%
+\contentsline {subsection}{\numberline {B.3}Convergences}{105}{subsection.1.B.3}%
+\contentsline {section}{\numberline {C}Concentration of Measure}{110}{appendix.1.C}%
+\contentsline {subsection}{\numberline {C.1}Markov Inequality}{110}{subsection.1.C.1}%
+\contentsline {subsection}{\numberline {C.2}Chebyshev Inequality}{110}{subsection.1.C.2}%
+\contentsline {subsection}{\numberline {C.3}Chernoff's Methods}{111}{subsection.1.C.3}%
+\contentsline {subsection}{\numberline {C.4}Hoeffding's Inequality}{114}{subsection.1.C.4}%
+\contentsline {subsection}{\numberline {C.5}Bernstein's Inequality}{116}{subsection.1.C.5}%
+\contentsline {subsection}{\numberline {C.6}McDiarmid's Inequality}{117}{subsection.1.C.6}%
+\contentsline {subsection}{\numberline {C.7}Expectation of the Maximum}{118}{subsection.1.C.7}%
+\contentsline {section}{\numberline {D}Concentration for Matrices}{119}{appendix.1.D}%
+\contentsline {subsection}{\numberline {D.1}Matrix Analysis}{119}{subsection.1.D.1}%
+\contentsline {subsubsection}{\numberline {D.1.1}Matrix Functions}{119}{subsubsection.1.D.1.1}%
+\contentsline {subsubsection}{\numberline {D.1.2}Matrix Exponential}{119}{subsubsection.1.D.1.2}%
+\contentsline {subsubsection}{\numberline {D.1.3}Matrix Logarithm}{120}{subsubsection.1.D.1.3}%
+\contentsline {subsubsection}{\numberline {D.1.4}Expectation and the Semidefinite Order}{120}{subsubsection.1.D.1.4}%
+\contentsline {subsubsection}{\numberline {D.1.5}Matrix Martingales}{120}{subsubsection.1.D.1.5}%
+\contentsline {subsection}{\numberline {D.2}Tail Bounds via the Matrix Laplace Transform Method}{121}{subsection.1.D.2}%
+\contentsline {subsubsection}{\numberline {D.2.1}Matrix Moments and Cumulants}{121}{subsubsection.1.D.2.1}%
+\contentsline {subsubsection}{\numberline {D.2.2}Laplace Transform Method}{121}{subsubsection.1.D.2.2}%
+\contentsline {subsubsection}{\numberline {D.2.3}Failure of the Matrix MGF}{122}{subsubsection.1.D.2.3}%
+\contentsline {subsubsection}{\numberline {D.2.4}A Concave Trace Function}{122}{subsubsection.1.D.2.4}%
+\contentsline {subsubsection}{\numberline {D.2.5}Subadditivity of the Matrix CGF}{122}{subsubsection.1.D.2.5}%
+\contentsline {subsubsection}{\numberline {D.2.6}Tail Bounds of Independent Sums}{123}{subsubsection.1.D.2.6}%
+\contentsline {subsection}{\numberline {D.3}Matrix Gaussian and Rademacher}{125}{subsection.1.D.3}%
+\contentsline {subsection}{\numberline {D.4}Matrix Bennett and Bernstein Bounds}{127}{subsection.1.D.4}%
+\contentsline {subsection}{\numberline {D.5}Matrix Hoeffding and Azuma and McDiarmid}{129}{subsection.1.D.5}%
